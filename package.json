@@ -1,0 +1,32 @@
+{
+  "name": "@benediktvaldez/web",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "14.0.5",
+    "@types/react": "16.9.35",
+    "@types/react-dom": "16.9.8",
+    "@types/styled-components": "5.1.0",
+    "@typescript-eslint/eslint-plugin": "3.0.0",
+    "@typescript-eslint/parser": "3.0.0",
+    "babel-plugin-styled-components": "^1.10.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.3",
+    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react-hooks": "4.0.2",
+    "prettier": "2.0.5",
+    "typescript": "3.9.3"
+  },
+  "license": "ISC"
+}
