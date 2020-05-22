@@ -940,7 +940,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@emotion/is-prop-valid@^0.8.8":
+"@emotion/is-prop-valid@^0.8.7", "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
   integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
@@ -982,6 +982,30 @@
   version "9.4.2"
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.4.2.tgz#a94c793b8442bcad29d4413740955dca5d7c555d"
   integrity sha512-N2bn3fU+N26Pkf+c7ZaG04T9FrDUeGtIBaJ/NGygm9GMrIkCU/6nkeWNboaAiHvji8UooqhLf1Yesf4BJLzHOA==
+
+"@styled-icons/fa-brands@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/fa-brands/-/fa-brands-10.0.0.tgz#70ad0fdc53d34ec06ab068e3fbf1b358245feb80"
+  integrity sha512-OzTXI7czu2B0XSHeVqS8QqutsYKGxy1FgY6Hq+QX11iktrOnti9wxz2fvb0CyrJT3jHm2eGb6nP6xXIgjA4YUg==
+  dependencies:
+    "@styled-icons/styled-icon" "^10.0.0"
+    tslib "^1.11.1"
+
+"@styled-icons/feather@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/feather/-/feather-10.0.0.tgz#64cd4c894b5f02f65dfde60e6c98481c9a50cd39"
+  integrity sha512-ubgZH0Irx4L0Q02WJtg7f+IFRBRA8YtNZCOCezFPS9Bqdq3IV76NrYK1/+yP6ZTEyxurxjJdzVot8JMwUhgicA==
+  dependencies:
+    "@styled-icons/styled-icon" "^10.0.0"
+    tslib "^1.11.1"
+
+"@styled-icons/styled-icon@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-10.0.0.tgz#9fe6511cd4aac1c0d57dbe5c773a6aaac23666e4"
+  integrity sha512-owIKYlIOv+daYscp6vnymOXiOAR6lsDoB2HYI10KrreovX0Ny48qbyqKjirvtxLFyEiHoz8QXSNO6QbanINv9Q==
+  dependencies:
+    "@emotion/is-prop-valid" "^0.8.7"
+    tslib "^1.11.1"
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -5651,7 +5675,7 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.11.1, tslib@^1.8.1, tslib@^1.9.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
