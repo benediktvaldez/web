@@ -1,6 +1,6 @@
 import { GlobalStyles } from '$styles';
-import { Keybase, MediumM, SnapchatGhost, StackOverflow, Dribbble } from '@styled-icons/fa-brands';
-import { Facebook, Github, Instagram, Linkedin, Twitter, Codepen } from '@styled-icons/feather';
+import { Dribbble, Keybase, MediumM, SnapchatGhost, StackOverflow } from '@styled-icons/fa-brands';
+import { Codepen, Facebook, Github, Instagram, Linkedin, Twitter } from '@styled-icons/feather';
 import Head from 'next/head';
 import styled from 'styled-components';
 
