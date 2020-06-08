@@ -1,3 +1,4 @@
+import { BlackLives } from '$components/BlackLives';
 import { GlobalStyles } from '$styles';
 import { Dribbble, Keybase, MediumM, SnapchatGhost, StackOverflow } from '@styled-icons/fa-brands';
 import { Codepen, Facebook, Github, Instagram, Linkedin, Twitter } from '@styled-icons/feather';
@@ -73,6 +74,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GlobalStyles />
+      <BlackLives />
       <Main>
         <Title>hi.</Title>
 
