@@ -32,4 +32,8 @@ export const GlobalStyles = createGlobalStyle`
   hr,img {
     box-sizing: content-box;
   }
+
+  black-lives {
+    font-family: Overpass, sans-serif;
+  }
 `;
