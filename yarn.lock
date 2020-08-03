@@ -893,10 +893,17 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@7.9.6", "@babel/runtime@^7.4.5", "@babel/runtime@^7.8.4":
+"@babel/runtime@7.9.6":
   version "7.9.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
   integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.10.5", "@babel/runtime@^7.4.5", "@babel/runtime@^7.8.4":
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.0.tgz#f10245877042a815e07f7e693faff0ae9d3a2aac"
+  integrity sha512-qArkXsjJq7H+T86WrIFV0Fnu/tNOkZ4cgXmjkzAu3b/58D5mFIO8JH/y77t7C9q0OdDRdh9s7Ue5GasYssxtXw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -985,13 +992,13 @@
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.4.4.tgz#d94cbb3b354a07f1f5b80e554d6b9e34aba99e41"
   integrity sha512-9nKENeWRI6kQk44TbeqleIVtNLfcS3klVUepzl/ZCqzR5Bi06uqBCD277hdVvG/wL1pxA+R/pgJQLqnF5E2wPQ==
 
-"@styled-icons/fa-brands@10.0.0":
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/fa-brands/-/fa-brands-10.0.0.tgz#70ad0fdc53d34ec06ab068e3fbf1b358245feb80"
-  integrity sha512-OzTXI7czu2B0XSHeVqS8QqutsYKGxy1FgY6Hq+QX11iktrOnti9wxz2fvb0CyrJT3jHm2eGb6nP6xXIgjA4YUg==
+"@styled-icons/fa-brands@10.14.1":
+  version "10.14.1"
+  resolved "https://registry.yarnpkg.com/@styled-icons/fa-brands/-/fa-brands-10.14.1.tgz#36fd2d2419758c226cb5ce7e5d24d34fcbd6afbc"
+  integrity sha512-am2sm5mzXr0FkSEpO6oV6Gk1gWSJsEF3RGjRO1qgQsd84JZi8MhlZEmZrLhVRA5c9yUolzLvPLif/jiKpz5ofw==
   dependencies:
-    "@styled-icons/styled-icon" "^10.0.0"
-    tslib "^1.11.1"
+    "@babel/runtime" "^7.10.5"
+    "@styled-icons/styled-icon" "^10.6.0"
 
 "@styled-icons/feather@10.0.0":
   version "10.0.0"
@@ -1001,13 +1008,13 @@
     "@styled-icons/styled-icon" "^10.0.0"
     tslib "^1.11.1"
 
-"@styled-icons/styled-icon@^10.0.0":
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-10.0.0.tgz#9fe6511cd4aac1c0d57dbe5c773a6aaac23666e4"
-  integrity sha512-owIKYlIOv+daYscp6vnymOXiOAR6lsDoB2HYI10KrreovX0Ny48qbyqKjirvtxLFyEiHoz8QXSNO6QbanINv9Q==
+"@styled-icons/styled-icon@^10.0.0", "@styled-icons/styled-icon@^10.6.0":
+  version "10.6.1"
+  resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-10.6.1.tgz#1314236c2f10698f054c17151efb1a035b6aac6e"
+  integrity sha512-tiy2RObJko/uluOWZDiQbuWeDOcRmuJw9EZnOiO4DPH7fQW7puOFXmkCV5CnUDWDlyYttwBmoI0lSVSX9Tsgow==
   dependencies:
+    "@babel/runtime" "^7.10.5"
     "@emotion/is-prop-valid" "^0.8.7"
-    tslib "^1.11.1"
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
