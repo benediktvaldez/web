@@ -893,10 +893,17 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@7.9.6", "@babel/runtime@^7.4.5", "@babel/runtime@^7.8.4":
+"@babel/runtime@7.9.6":
   version "7.9.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
   integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.10.5", "@babel/runtime@^7.4.5", "@babel/runtime@^7.8.4":
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.0.tgz#f10245877042a815e07f7e693faff0ae9d3a2aac"
+  integrity sha512-qArkXsjJq7H+T86WrIFV0Fnu/tNOkZ4cgXmjkzAu3b/58D5mFIO8JH/y77t7C9q0OdDRdh9s7Ue5GasYssxtXw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -993,21 +1000,21 @@
     "@styled-icons/styled-icon" "^10.0.0"
     tslib "^1.11.1"
 
-"@styled-icons/feather@10.0.0":
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/feather/-/feather-10.0.0.tgz#64cd4c894b5f02f65dfde60e6c98481c9a50cd39"
-  integrity sha512-ubgZH0Irx4L0Q02WJtg7f+IFRBRA8YtNZCOCezFPS9Bqdq3IV76NrYK1/+yP6ZTEyxurxjJdzVot8JMwUhgicA==
+"@styled-icons/feather@10.14.1":
+  version "10.14.1"
+  resolved "https://registry.yarnpkg.com/@styled-icons/feather/-/feather-10.14.1.tgz#088f7358c1ddd3aa1a25eddd3b1d2b052c182f89"
+  integrity sha512-856PVNH/OGEbYXb8gJWujKKxsanp4xHW0pSXHiWPOW3ecNNuc/RM89v1sKZhwd6kltYMWZIaQAQ+ankn++J+UA==
   dependencies:
-    "@styled-icons/styled-icon" "^10.0.0"
-    tslib "^1.11.1"
+    "@babel/runtime" "^7.10.5"
+    "@styled-icons/styled-icon" "^10.6.0"
 
-"@styled-icons/styled-icon@^10.0.0":
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-10.0.0.tgz#9fe6511cd4aac1c0d57dbe5c773a6aaac23666e4"
-  integrity sha512-owIKYlIOv+daYscp6vnymOXiOAR6lsDoB2HYI10KrreovX0Ny48qbyqKjirvtxLFyEiHoz8QXSNO6QbanINv9Q==
+"@styled-icons/styled-icon@^10.0.0", "@styled-icons/styled-icon@^10.6.0":
+  version "10.6.1"
+  resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-10.6.1.tgz#1314236c2f10698f054c17151efb1a035b6aac6e"
+  integrity sha512-tiy2RObJko/uluOWZDiQbuWeDOcRmuJw9EZnOiO4DPH7fQW7puOFXmkCV5CnUDWDlyYttwBmoI0lSVSX9Tsgow==
   dependencies:
+    "@babel/runtime" "^7.10.5"
     "@emotion/is-prop-valid" "^0.8.7"
-    tslib "^1.11.1"
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
