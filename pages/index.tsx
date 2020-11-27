@@ -1,4 +1,3 @@
-import { BlackLives } from '$components/BlackLives';
 import { GlobalStyles } from '$styles';
 import { Dribbble, Keybase, MediumM, SnapchatGhost, StackOverflow } from '@styled-icons/fa-brands';
 import { Codepen, Facebook, Github, Instagram, Linkedin, Twitter } from '@styled-icons/feather';
@@ -16,7 +15,7 @@ const Main = styled.main`
 
   background: var(--red);
 
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
 `;
 
 const Title = styled.h1`
@@ -78,7 +77,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GlobalStyles />
-      <BlackLives />
       <Main>
         <Title>hi.</Title>
 
