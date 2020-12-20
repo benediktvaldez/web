@@ -1,30 +1,9 @@
-import { GlobalStyles } from '$styles';
+import { Main } from '$components/Main/Main';
+import { GlobalStyles, NoScroll } from '$styles';
 import { Dribbble, Keybase, MediumM, SnapchatGhost, StackOverflow } from '@styled-icons/fa-brands';
 import { Codepen, Facebook, Github, Instagram, Linkedin, Twitter } from '@styled-icons/feather';
 import Head from 'next/head';
 import styled from 'styled-components';
-
-const Main = styled.main`
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  background: var(--red);
-
-  /* filter: grayscale(100%); */
-`;
-
-const Title = styled.h1`
-  margin: 0 auto;
-  line-height: 1;
-
-  font-size: 12.5rem;
-  color: var(--light);
-`;
 
 const Nav = styled.nav`
   display: flex;
@@ -77,8 +56,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GlobalStyles />
+      <NoScroll />
       <Main>
-        <Title>hi.</Title>
+        <h1>hi.</h1>
 
         <Nav>
           <Link href="https://github.com/benediktvaldez">
