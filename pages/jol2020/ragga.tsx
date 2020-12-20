@@ -112,21 +112,18 @@ export default function Jol2020() {
       <Main>
         <h2>Ragga jól 2020</h2>
         <Gifts>
-          <Item>
+          <Item fav>
             <Content>
-              <Title>Elizabeth Arden Green Tea scent spray 50ml</Title>
-              <Price>3.689 kr.</Price>
-              <Store>Lyfja</Store>
+              <Title>Braun Kaffivél</Title>
+              <Description>BRA-KF560</Description>
+              <Price>9.995 kr.</Price>
+              <Store>
+                Heimilistæki
+                <br />
+                Suðurlandsbraut
+              </Store>
             </Content>
-            <Image width="200px" height="200px" src="/ragga/10082135_400_400_2.jpg" />
-          </Item>
-          <Item>
-            <Content>
-              <Title>Elizabeth Arden Green Tea honey drops líkamskrem 500 ml.</Title>
-              <Price>5.192 kr.</Price>
-              <Store>Lyfja</Store>
-            </Content>
-            <Image width="200px" height="200px" src="/ragga/10084086_400_400_2.jpg" />
+            <Image width="200px" height="180px" src="/ragga/BRA-KF560_720_560_2.jpg" />
           </Item>
           <Item>
             <Content>
@@ -147,6 +144,22 @@ export default function Jol2020() {
               </Store>
             </Content>
             <Image width="200px" height="200px" src="/ragga/kay.png" />
+          </Item>
+          <Item>
+            <Content>
+              <Title>Elizabeth Arden Green Tea scent spray 50ml</Title>
+              <Price>3.689 kr.</Price>
+              <Store>Lyfja</Store>
+            </Content>
+            <Image width="200px" height="200px" src="/ragga/10082135_400_400_2.jpg" />
+          </Item>
+          <Item>
+            <Content>
+              <Title>Elizabeth Arden Green Tea honey drops líkamskrem 500 ml.</Title>
+              <Price>5.192 kr.</Price>
+              <Store>Lyfja</Store>
+            </Content>
+            <Image width="200px" height="200px" src="/ragga/10084086_400_400_2.jpg" />
           </Item>
           <Item>
             <Content>
