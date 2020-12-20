@@ -1,5 +1,4 @@
 {
-  "eslint.enable": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
@@ -10,13 +9,11 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "workbench.colorCustomizations": {
     "statusBar.background": "#bf1313",
-    "statusBar.border": "#bf1313",
     "statusBar.foreground": "#e7e7e7",
     "statusBarItem.hoverBackground": "#e81d1d",
     "tab.activeBorder": "#e81d1d",
     "titleBar.activeBackground": "#bf1313",
     "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.border": "#bf1313",
     "titleBar.inactiveBackground": "#bf131399",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
