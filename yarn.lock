@@ -155,7 +155,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@7.12.5", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2":
+"@babel/runtime@7.12.5", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
@@ -298,12 +298,12 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@styled-icons/fa-brands@10.22.0":
-  version "10.22.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/fa-brands/-/fa-brands-10.22.0.tgz#e2edccacc63c54fe229ecb0042628a7c0f2b4c2b"
-  integrity sha512-2nVy0/eSAETvqOdj6POmztAwbMLKnczpTMKJupk5xtRxebFValu9gL4lhA3G4BfrUFgexFEeh/2r9/3vmJjJ5A==
+"@styled-icons/fa-brands@10.23.0":
+  version "10.23.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/fa-brands/-/fa-brands-10.23.0.tgz#75920090d62d784034159087b872df6c6cb533d8"
+  integrity sha512-A4tAZWjER0iuuGsupOt97tiC7OKzkPrrTAeUF/6GI1WNXfsy4N45dIQC3tDScvnatwQT+mC9ZIR3+QtB/Xc7mg==
   dependencies:
-    "@babel/runtime" "^7.10.5"
+    "@babel/runtime" "^7.12.5"
     "@styled-icons/styled-icon" "^10.6.0"
 
 "@styled-icons/feather@10.18.0":
