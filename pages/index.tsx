@@ -14,9 +14,12 @@ const Nav = styled.nav`
 `;
 
 const Link = styled.a.attrs({ target: '_blank' })`
-  display: block;
+  display: inline-block;
   margin: 0;
-  padding: 1rem;
+  ${Nav} & {
+    display: block;
+    padding: 1rem;
+  }
 
   text-decoration: none;
   color: var(--light);
@@ -59,7 +62,12 @@ export default function Home() {
       <NoScroll />
       <Main>
         <h1>hi.</h1>
-
+        <p>
+          I'm Benedikt D. Valdez,
+          <br />
+          digital product developer at{' '}
+          <Link href="https://www.klappir.com">Klappir Green Solutions</Link>.
+        </p>
         <Nav>
           <Link href="https://github.com/benediktvaldez">
             <Github />

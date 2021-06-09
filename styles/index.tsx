@@ -69,4 +69,10 @@ export const GlobalStyles = createGlobalStyle`
     padding: 2rem 2rem 0;
     text-align: center;
   }
+
+  p {
+    margin: 0 auto 1rem;
+    color: var(--light);
+    text-align: center;
+  }
 `;
