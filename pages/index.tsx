@@ -3,6 +3,7 @@ import { GlobalStyles, NoScroll } from '$styles';
 import { Dribbble, Keybase, MediumM, SnapchatGhost, StackOverflow } from '@styled-icons/fa-brands';
 import { Codepen, Facebook, Github, Instagram, Linkedin, Twitter } from '@styled-icons/feather';
 import Head from 'next/head';
+import React from 'react';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -63,7 +64,7 @@ export default function Home() {
       <Main>
         <h1>hi.</h1>
         <p>
-          I'm Benedikt D. Valdez,
+          I&apos;m Benedikt D. Valdez,
           <br />
           digital product developer at{' '}
           <Link href="https://www.klappir.com">Klappir Green Solutions</Link>.

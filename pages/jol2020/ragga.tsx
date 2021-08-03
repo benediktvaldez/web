@@ -1,6 +1,7 @@
 import { Main } from '$components/Main/Main';
 import { GlobalStyles } from '$styles';
 import Head from 'next/head';
+import React from 'react';
 import styled from 'styled-components';
 
 const Content = styled.div`
@@ -191,7 +192,7 @@ export default function Jol2020() {
               <Description>Handsápa og handkrem</Description>
               <Price>5.250 kr.</Price>
               <Store>
-                L'Occitane
+                L&apos;Occitane
                 <br />
                 Kringlunni
               </Store>
@@ -204,7 +205,7 @@ export default function Jol2020() {
               <Description>Líkamskrem, múslískrúbbur, sturtuolía og mjólkurbað</Description>
               <Price>9.990 kr.</Price>
               <Store>
-                L'Occitane
+                L&apos;Occitane
                 <br />
                 Kringlunni
               </Store>

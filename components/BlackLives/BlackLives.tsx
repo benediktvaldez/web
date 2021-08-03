@@ -1,5 +1,8 @@
 import 'i-stand';
+import React from 'react';
 
-export default () => {
+const BlackLives: React.FC = () => {
   return <black-lives />;
 };
+
+export default BlackLives;

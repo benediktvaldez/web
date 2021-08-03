@@ -1,6 +1,7 @@
 import { Main } from '$components/Main/Main';
 import { GlobalStyles } from '$styles';
 import Head from 'next/head';
+import React from 'react';
 import styled from 'styled-components';
 
 const Content = styled.div`
@@ -243,7 +244,11 @@ export default function Jol2020() {
                 <br />
                 Snorrabraut 56
                 <br />
-                <a target="_blank" href="https://www.feldur.is/collection/mani-hat/">
+                <a
+                  target="_blank"
+                  href="https://www.feldur.is/collection/mani-hat/"
+                  rel="noreferrer"
+                >
                   Vefsíða
                 </a>
               </Store>
@@ -262,7 +267,7 @@ export default function Jol2020() {
                 <br />
                 Síðumúla 33
                 <br />
-                <a target="_blank" href="https://prosjoppan.is">
+                <a target="_blank" href="https://prosjoppan.is" rel="noreferrer">
                   Vefsíða
                 </a>
               </Store>
@@ -283,7 +288,7 @@ export default function Jol2020() {
                 <br />
                 Síðumúla 33
                 <br />
-                <a target="_blank" href="https://prosjoppan.is">
+                <a target="_blank" href="https://prosjoppan.is" rel="noreferrer">
                   Vefsíða
                 </a>
               </Store>
@@ -304,7 +309,7 @@ export default function Jol2020() {
                 <br />
                 Síðumúla 33
                 <br />
-                <a target="_blank" href="https://prosjoppan.is">
+                <a target="_blank" href="https://prosjoppan.is" rel="noreferrer">
                   Vefsíða
                 </a>
               </Store>
@@ -325,7 +330,7 @@ export default function Jol2020() {
                 <br />
                 Síðumúla 33
                 <br />
-                <a target="_blank" href="https://prosjoppan.is">
+                <a target="_blank" href="https://prosjoppan.is" rel="noreferrer">
                   Vefsíða
                 </a>
               </Store>
@@ -361,7 +366,7 @@ export default function Jol2020() {
                 <br />
                 Opið 11-22 alla daga
                 <br />
-                <a target="_blank" href="https://www.facebook.com/jorstudios">
+                <a target="_blank" href="https://www.facebook.com/jorstudios" rel="noreferrer">
                   Facebook síða
                 </a>
               </Store>
@@ -380,7 +385,7 @@ export default function Jol2020() {
                 <br />
                 Opið 11-22 alla daga
                 <br />
-                <a target="_blank" href="https://www.facebook.com/jorstudios">
+                <a target="_blank" href="https://www.facebook.com/jorstudios" rel="noreferrer">
                   Facebook síða
                 </a>
               </Store>
@@ -408,7 +413,7 @@ export default function Jol2020() {
                 <br />
                 Síðumúla 33
                 <br />
-                <a target="_blank" href="https://prosjoppan.is">
+                <a target="_blank" href="https://prosjoppan.is" rel="noreferrer">
                   Vefsíða
                 </a>
                 <br />
@@ -436,7 +441,7 @@ export default function Jol2020() {
           <Item>
             <Content>
               <Title>Odyssey White Hot Pro 2-Ball</Title>
-              <Description>Pútter, stærð 35" ef til, annars 34"</Description>
+              <Description>Pútter, stærð 35&quot; ef til, annars 34&quot;</Description>
               <Price>22.400 kr.</Price>
               <Store>
                 Golfskálinn
@@ -462,7 +467,7 @@ export default function Jol2020() {
           <Item fav>
             <Content>
               <Title>Triple Track 2Ball</Title>
-              <Description>Pútter, stærð 35" ef til, annars 34"</Description>
+              <Description>Pútter, stærð 35&quot; ef til, annars 34&quot;</Description>
               <Price>41.990 kr.</Price>
               <Store>
                 Örninn Golfverslun
