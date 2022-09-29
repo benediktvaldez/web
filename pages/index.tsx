@@ -66,8 +66,7 @@ export default function Home() {
         <p>
           I&apos;m Benedikt D. Valdez,
           <br />
-          digital product developer at{' '}
-          <Link href="https://www.klappir.com">Klappir Green Solutions</Link>.
+          digital product developer at <Link href="https://www.grid.is">GRID</Link>.
         </p>
         <Nav>
           <Link href="https://github.com/benediktvaldez">
