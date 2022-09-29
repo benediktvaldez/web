@@ -9,11 +9,11 @@ export const NoScroll = createGlobalStyle`
 
 export const GlobalStyles = createGlobalStyle`
   body {
-    --red: #BF1313;
-    --blue: #00A1E4;
+    --red: #bf1313;
+    --blue: #00a1e4;
     --dark: #272727;
     --gray: #696773;
-    --light: #EFF1F3;
+    --light: #eff1f3;
 
     margin: 0;
     padding: 0;
@@ -24,7 +24,6 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Overpass', sans-serif;
 
     background: var(--red);
-
   }
 
   #__next {
@@ -33,11 +32,14 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   /* Default box-sizing to border-box, except for images and hr */
-  *, *:before, *:after {
+  *,
+  *:before,
+  *:after {
     box-sizing: border-box;
   }
 
-  hr,img {
+  hr,
+  img {
     box-sizing: content-box;
   }
 
@@ -45,7 +47,9 @@ export const GlobalStyles = createGlobalStyle`
     font-family: Overpass, sans-serif;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     margin: 0 auto;
     line-height: 1;
 

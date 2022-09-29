@@ -1,9 +1,9 @@
 import { Main } from '$components/Main/Main';
 import { GlobalStyles, NoScroll } from '$styles';
-import { Dribbble, Keybase, MediumM, SnapchatGhost, StackOverflow } from '@styled-icons/fa-brands';
+import { Medium } from '@styled-icons/boxicons-logos';
+import { Dribbble, Keybase, Snapchat, StackOverflow } from '@styled-icons/fa-brands';
 import { Codepen, Facebook, Github, Instagram, Linkedin, Twitter } from '@styled-icons/feather';
 import Head from 'next/head';
-import React from 'react';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -93,10 +93,10 @@ export default function Home() {
             <Keybase />
           </Link>
           <Link href="https://snapchat.com/add/benediktvaldez">
-            <SnapchatGhost />
+            <Snapchat />
           </Link>
           <Link href="https://medium.com/@benediktvaldez">
-            <MediumM />
+            <Medium />
           </Link>
           <Link href="https://stackoverflow.com/users/1000085/benedikt-d-valdez?tab=profile">
             <StackOverflow />
