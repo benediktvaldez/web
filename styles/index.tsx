@@ -22,6 +22,8 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vw;
 
     font-family: 'Overpass', sans-serif;
+    font-family: 'Poppins', 'Overpass', sans-serif;
+    font-weight: 200;
 
     background: var(--red);
   }
@@ -54,6 +56,7 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1;
 
     color: var(--light);
+    font-family: 'Overpass', sans-serif;
   }
 
   h1 {
