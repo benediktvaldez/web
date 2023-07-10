@@ -9,7 +9,5 @@ export const Main = styled.main`
   align-items: center;
   flex-direction: column;
 
-  background: var(--red);
-
   /* filter: grayscale(100%); */
 `;

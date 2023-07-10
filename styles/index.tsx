@@ -26,6 +26,18 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 200;
 
     background: var(--red);
+    background-image: radial-gradient(
+      farthest-corner circle at 50% 50%,
+      #bf1313 0%,
+      75%,
+      #370000 100%
+    );
+    background-image: radial-gradient(
+      farthest-corner circle at 50% 50% in oklab,
+      oklch(51.18% 0.201 28.28) 0%,
+      75%,
+      oklch(0% 0.5 28.28) 100%
+    );
   }
 
   #__next {
