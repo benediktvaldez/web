@@ -27,16 +27,16 @@ export const GlobalStyles = createGlobalStyle`
 
     background: var(--red);
     background-image: radial-gradient(
-      farthest-corner circle at 50% 50%,
+      farthest-corner circle at 20% 0%,
       #bf1313 0%,
       75%,
-      #370000 100%
+      #370000 110%
     );
     background-image: radial-gradient(
-      farthest-corner circle at 50% 50% in oklab,
+      farthest-corner circle at 20% 0% in oklab,
       oklch(51.18% 0.201 28.28) 0%,
       75%,
-      oklch(0% 0.5 28.28) 100%
+      oklch(0% 0.5 28.28) 110%
     );
   }
 
