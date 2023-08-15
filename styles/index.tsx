@@ -22,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vw;
 
     font-family: 'Overpass', sans-serif;
-    font-family: 'Poppins', 'Overpass', sans-serif;
+    font-family: 'Nunito', 'Overpass', sans-serif;
     font-weight: 200;
 
     background: var(--red);
