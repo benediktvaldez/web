@@ -8,6 +8,4 @@ export const Main = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  /* filter: grayscale(100%); */
 `;

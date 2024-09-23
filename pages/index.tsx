@@ -52,6 +52,10 @@ const Break = styled.span`
   }
 `;
 
+const ShortGreet = styled.p`
+  text-align: center;
+`;
+
 export default function Home() {
   return (
     <>
@@ -63,11 +67,10 @@ export default function Home() {
       <NoScroll />
       <Main>
         <h1>hi.</h1>
-        <p>
+        <ShortGreet>
           I&apos;m Benedikt D. Valdez,
-          <br />
-          digital product developer at <Link href="https://www.grid.is">GRID</Link>.
-        </p>
+          <br />a full stack digital product developer
+        </ShortGreet>
         <Nav>
           <Link href="https://github.com/benediktvaldez">
             <Github />

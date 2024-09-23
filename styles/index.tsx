@@ -1,13 +1,18 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const NoScroll = createGlobalStyle`
-  body {
+  html,body {
+    overflow: hidden;
     height: 100vh !important;
     min-height: 0 !important;
   }
 `;
 
 export const GlobalStyles = createGlobalStyle`
+  html, body {
+    overscroll-behavior-y: none;
+  }
+
   body {
     --red: #bf1313;
     --blue: #00a1e4;
@@ -19,12 +24,15 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     width: 100vw;
     height: auto;
-    min-height: 100vw;
+    min-height: 100vh;
 
+    line-height: 1.375;
     font-family: 'Overpass', sans-serif;
     font-family: 'Nunito', 'Overpass', sans-serif;
     font-weight: 200;
+  }
 
+  html {
     background: var(--red);
     background-image: radial-gradient(
       farthest-corner circle at 20% 0%,
@@ -68,30 +76,28 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1;
 
     color: var(--light);
-    font-family: 'Overpass', sans-serif;
   }
 
   h1 {
     font-size: 12.5rem;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 700;
   }
 
   h2 {
-    font-size: 4rem;
-
-    padding: 2rem 2rem 0;
-    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
   }
 
   h3 {
-    font-size: 3rem;
-
-    padding: 2rem 2rem 0;
-    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
   }
 
   p {
     margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    font-weight: 200;
     color: var(--light);
-    text-align: center;
   }
 `;
