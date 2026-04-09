@@ -29,6 +29,16 @@
   margin-bottom: 3rem;
 }
 
+.subheading {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+  margin: 3rem 0 1.5rem;
+}
+
 .grid {
   display: grid;
   gap: 1.5rem;

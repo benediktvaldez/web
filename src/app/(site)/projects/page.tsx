@@ -7,6 +7,9 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
+  const personal = projects.filter((p) => p.type === "personal");
+  const community = projects.filter((p) => p.type === "community");
+
   return (
     <section className={styles.section}>
       <h1 className={styles.heading}>Projects</h1>
@@ -15,7 +18,7 @@ export default function ProjectsPage() {
       </p>
 
       <div className={styles.grid}>
-        {projects.map((project) => (
+        {personal.map((project) => (
           <article key={project.slug} className={styles.card}>
             <div className={styles.cardHeader}>
               <h2 className={styles.cardTitle}>{project.title}</h2>
@@ -51,6 +54,38 @@ export default function ProjectsPage() {
                     Source
                   </a>
                 )}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+
+      <h2 className={styles.subheading}>Community</h2>
+      <div className={styles.grid}>
+        {community.map((project) => (
+          <article key={project.slug} className={styles.card}>
+            <div className={styles.cardHeader}>
+              <h2 className={styles.cardTitle}>{project.title}</h2>
+              <span className={styles.cardYear}>{project.year}</span>
+            </div>
+            <p className={styles.cardDescription}>{project.description}</p>
+            <div className={styles.tags}>
+              {project.tags.map((tag) => (
+                <span key={tag} className={styles.tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+            {project.url && (
+              <div className={styles.cardLinks}>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.cardLink}
+                >
+                  Visit
+                </a>
               </div>
             )}
           </article>

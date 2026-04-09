@@ -19,15 +19,19 @@
   font-family: var(--font-outfit), sans-serif;
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .intro {
-  font-size: 1.25rem;
-  font-weight: 300;
-  line-height: 1.6;
   max-width: 38rem;
   margin-bottom: 3rem;
+}
+
+.intro p {
+  font-size: 1.0625rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0 0 1rem;
 }
 
 .section {
@@ -36,84 +40,58 @@
 
 .sectionHeading {
   font-family: var(--font-outfit), sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  opacity: 0.7;
+  opacity: 0.6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.entry {
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(239, 241, 243, 0.1);
+.currently {
+  display: grid;
+  gap: 1.5rem;
 }
 
-.entry:last-child {
-  border-bottom: none;
+.currentItem {
+  padding: 1.25rem;
+  border: 1px solid rgba(239, 241, 243, 0.08);
+  border-radius: 0.5rem;
+  background: rgba(239, 241, 243, 0.03);
 }
 
-.entryHeader {
-  margin-bottom: 0.5rem;
-}
-
-.entryTitle {
+.currentRole {
   font-family: var(--font-outfit), sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
-  margin: 0;
+  margin: 0 0 0.125rem;
 }
 
-.entryMeta {
+.currentCompany {
   font-size: 0.875rem;
   color: var(--light);
   opacity: 0.5;
 }
 
-.entryDescription {
-  font-size: 1rem;
+.currentDesc {
+  font-size: 0.9375rem;
   font-weight: 300;
   line-height: 1.6;
-  margin: 0.5rem 0;
-}
-
-.highlights {
   margin: 0.75rem 0 0;
-  padding-left: 1.25rem;
-  font-size: 0.9375rem;
+}
+
+.contactText {
+  font-size: 1.0625rem;
   font-weight: 300;
-  color: var(--light);
-  opacity: 0.8;
+  line-height: 1.7;
 }
 
-.highlights li {
-  margin-bottom: 0.25rem;
+.inlineLink {
+  color: var(--blue);
+  text-decoration: none;
+  transition: opacity 300ms;
 }
 
-.skillGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-  gap: 1.5rem;
-}
-
-.skillCategoryName {
-  font-family: var(--font-outfit), sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin: 0 0 0.5rem;
-  opacity: 0.6;
-}
-
-.skillList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.skillItem {
-  font-size: 0.9375rem;
-  font-weight: 300;
-  color: var(--light);
-  padding: 0.125rem 0;
+.inlineLink:hover {
+  opacity: 0.7;
 }

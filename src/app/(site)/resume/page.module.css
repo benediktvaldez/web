@@ -28,9 +28,10 @@
 }
 
 .tagline {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 300;
   margin-bottom: 0.75rem;
+  opacity: 0.8;
 }
 
 .contact {
@@ -71,7 +72,7 @@
 }
 
 .entry {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .entryLine {
@@ -80,56 +81,67 @@
   align-items: baseline;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 0.25rem;
   color: var(--light);
   font-size: 1rem;
 }
 
+.company {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.875rem;
+  color: var(--light);
+  opacity: 0.5;
+}
+
 .meta {
   font-size: 0.8125rem;
-  opacity: 0.5;
+  opacity: 0.4;
   white-space: nowrap;
 }
 
 .entryDesc {
   font-size: 0.9375rem;
   font-weight: 300;
-  line-height: 1.6;
-  margin: 0.25rem 0 0;
+  line-height: 1.65;
+  margin: 0.5rem 0;
 }
 
-.entryHighlights {
-  margin: 0.5rem 0 0;
-  padding-left: 1.25rem;
-  font-size: 0.875rem;
-  font-weight: 300;
-  opacity: 0.8;
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
 }
 
-.entryHighlights li {
-  margin-bottom: 0.125rem;
+.techItem {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  padding: 0.125rem 0.4rem;
+  border-radius: 9999px;
+  background: rgba(239, 241, 243, 0.07);
   color: var(--light);
-}
-
-.entryTags {
-  font-size: 0.8125rem;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .skillGrid {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.625rem;
+}
+
+.skillRow {
   font-size: 0.9375rem;
+  line-height: 1.5;
 }
 
 .skillLabel {
   color: var(--light);
+  margin-right: 0.5rem;
 }
 
 .skillItems {
   font-weight: 300;
   color: var(--light);
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .printButton {
@@ -159,13 +171,55 @@
   }
 
   .name {
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: var(--dark);
   }
 
+  .tagline {
+    color: var(--gray);
+    opacity: 1;
+  }
+
   .sectionTitle {
-    border-bottom-color: var(--dark);
+    border-bottom-color: var(--gray);
     opacity: 1;
     color: var(--dark);
+  }
+
+  .entryLine {
+    color: var(--dark);
+  }
+
+  .company {
+    color: var(--gray);
+    opacity: 1;
+  }
+
+  .entryDesc {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  .techItem {
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--dark);
+    opacity: 1;
+  }
+
+  .entry {
+    margin-bottom: 1.25rem;
+  }
+
+  .section {
+    margin-bottom: 1.5rem;
+  }
+
+  .skillLabel {
+    color: var(--dark);
+  }
+
+  .skillItems {
+    color: var(--gray);
+    opacity: 1;
   }
 }
