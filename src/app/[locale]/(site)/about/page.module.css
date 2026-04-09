@@ -85,41 +85,6 @@
   gap: 1.5rem;
 }
 
-.recommendation {
-  margin: 0;
-  padding: 1.25rem;
-  border: 1px solid rgba(239, 241, 243, 0.08);
-  border-radius: 0.5rem;
-  background: rgba(239, 241, 243, 0.03);
-}
-
-.quote {
-  font-size: 1rem;
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.7;
-  margin: 0 0 1rem;
-}
-
-.attribution {
-  display: flex;
-  flex-direction: column;
-  gap: 0.125rem;
-  font-size: 0.875rem;
-  color: var(--light);
-  font-style: normal;
-}
-
-.attributionMeta {
-  opacity: 0.6;
-  font-size: 0.8125rem;
-}
-
-.attributionRelation {
-  opacity: 0.4;
-  font-size: 0.75rem;
-}
-
 .contactText {
   font-size: 1.0625rem;
   font-weight: 300;

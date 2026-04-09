@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/config";
 import { getLocalizedSlug } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { recommendations } from "@/content/recommendations";
+import { RecommendationCard } from "@/components/RecommendationCard/RecommendationCard";
 import styles from "./page.module.css";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -66,18 +67,7 @@ export default async function AboutPage({ params }: Props) {
           <h2 className={styles.sectionHeading}>{t.about.recommendationsHeading}</h2>
           <div className={styles.recommendations}>
             {recommendations.map((rec) => (
-              <blockquote key={rec.name} className={styles.recommendation}>
-                <p className={styles.quote}>&ldquo;{rec.quote}&rdquo;</p>
-                <footer className={styles.attribution}>
-                  <strong>{rec.name}</strong>
-                  <span className={styles.attributionMeta}>
-                    {rec.role}, {rec.company}
-                  </span>
-                  <span className={styles.attributionRelation}>
-                    {rec.relationship}
-                  </span>
-                </footer>
-              </blockquote>
+              <RecommendationCard key={rec.name} recommendation={rec} />
             ))}
           </div>
         </section>
