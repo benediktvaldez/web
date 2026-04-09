@@ -131,4 +131,18 @@ export const experience: Experience[] = [
     description:
       "Developed marketing websites for companies and government entities in Iceland, from travel agencies to the National Power Company and the office of the President of Iceland. All projects based on an in-house .NET CMS using jQuery, LESS/SCSS, and XSLT/Razor templates.",
   },
+  {
+    company: "Netvistun",
+    role: "Web Developer & Designer",
+    period: "2011 – May 2012",
+    description:
+      "Designed and developed marketing websites for small and medium businesses in Iceland using JavaScript, LESS/CSS, XHTML, and PHP. Supported active development of an in-house PHP content management system.",
+  },
+  {
+    company: "Freelance",
+    role: "Web Developer & Designer",
+    period: "2008 – 2011",
+    description:
+      "Developed a custom modular CMS in PHP tailored to the needs of each project. Designed and built websites for small businesses and individuals in Iceland, including a golf community site with news, user profiles, and forums, and a third-party gift card shop with cart and payment integration.",
+  },
 ];
