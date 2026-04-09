@@ -1,0 +1,119 @@
+.article {
+  position: relative;
+}
+
+.article::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(
+    farthest-corner circle at 20% 0% in oklab,
+    oklch(48% 0.14 55) 0%,
+    75%,
+    oklch(0% 0.5 55) 110%
+  );
+}
+
+.heading {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 38rem;
+  margin-bottom: 3rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionHeading {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.entry {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(239, 241, 243, 0.1);
+}
+
+.entry:last-child {
+  border-bottom: none;
+}
+
+.entryHeader {
+  margin-bottom: 0.5rem;
+}
+
+.entryTitle {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.entryMeta {
+  font-size: 0.875rem;
+  color: var(--light);
+  opacity: 0.5;
+}
+
+.entryDescription {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+.highlights {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--light);
+  opacity: 0.8;
+}
+
+.highlights li {
+  margin-bottom: 0.25rem;
+}
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 1.5rem;
+}
+
+.skillCategoryName {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+  opacity: 0.6;
+}
+
+.skillList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skillItem {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--light);
+  padding: 0.125rem 0;
+}
