@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import type { Locale } from "@/i18n/config";
 
 export interface PostMeta {
   slug: string;
@@ -8,16 +9,23 @@ export interface PostMeta {
   summary: string;
 }
 
-const THOUGHTS_DIR = path.join(process.cwd(), "src/thoughts");
+function getThoughtsDir(locale: Locale): string {
+  return path.join(process.cwd(), "src/thoughts", locale);
+}
 
-export function getAllPosts(): PostMeta[] {
-  if (!fs.existsSync(THOUGHTS_DIR)) return [];
+export function getAllPosts(locale: Locale): PostMeta[] {
+  const dir = getThoughtsDir(locale);
+  const fallbackDir = getThoughtsDir("en");
 
-  const files = fs.readdirSync(THOUGHTS_DIR).filter((f) => f.endsWith(".mdx"));
+  // Use locale-specific dir, fall back to English
+  const targetDir = fs.existsSync(dir) ? dir : fallbackDir;
+  if (!fs.existsSync(targetDir)) return [];
+
+  const files = fs.readdirSync(targetDir).filter((f) => f.endsWith(".mdx"));
 
   const posts = files.map((filename) => {
     const slug = filename.replace(/\.mdx$/, "");
-    const content = fs.readFileSync(path.join(THOUGHTS_DIR, filename), "utf-8");
+    const content = fs.readFileSync(path.join(targetDir, filename), "utf-8");
     const meta = parseFrontmatter(content);
 
     return {
@@ -29,6 +37,15 @@ export function getAllPosts(): PostMeta[] {
   });
 
   return posts.sort((a, b) => (a.date > b.date ? -1 : 1));
+}
+
+/**
+ * Check if a post exists for the given locale, fall back to "en".
+ */
+export function getPostLocale(slug: string, locale: Locale): Locale {
+  const localeFile = path.join(getThoughtsDir(locale), `${slug}.mdx`);
+  if (fs.existsSync(localeFile)) return locale;
+  return "en";
 }
 
 function parseFrontmatter(content: string): Record<string, string> {

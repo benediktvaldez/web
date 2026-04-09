@@ -1,15 +1,27 @@
 import type { Metadata } from "next";
-import { experience } from "@/content/experience";
-import { skills } from "@/content/skills";
-import { projects } from "@/content/projects";
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/getDictionary";
+import { getExperience, getProjects, getSkills } from "@/content";
 import { PrintButton } from "./PrintButton";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Resume",
-};
+type Props = { params: Promise<{ locale: string }> };
 
-export default function ResumePage() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale: l } = await params;
+  const locale = l as Locale;
+  const t = await getDictionary(locale);
+  return { title: t.resume.title };
+}
+
+export default async function ResumePage({ params }: Props) {
+  const { locale: l } = await params;
+  const locale = l as Locale;
+  const t = await getDictionary(locale);
+  const experience = await getExperience(locale);
+  const projects = await getProjects(locale);
+  const skills = await getSkills(locale);
+
   const specialProjects = projects.filter(
     (p) => p.type === "personal" && p.featured,
   );
@@ -19,10 +31,7 @@ export default function ResumePage() {
     <article className={styles.article}>
       <header className={styles.header}>
         <h1 className={styles.name}>Benedikt D. Valdez</h1>
-        <p className={styles.tagline}>
-          Full stack digital product developer and crafter of beautiful user
-          interfaces
-        </p>
+        <p className={styles.tagline}>{t.resume.tagline}</p>
         <div className={styles.contact}>
           <a href="https://github.com/benediktvaldez">
             github.com/benediktvaldez
@@ -35,12 +44,9 @@ export default function ResumePage() {
       </header>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Experience</h2>
+        <h2 className={styles.sectionTitle}>{t.resume.experienceHeading}</h2>
         {experience.map((job) => (
-          <div
-            key={`${job.company}-${job.period}`}
-            className={styles.entry}
-          >
+          <div key={`${job.company}-${job.period}`} className={styles.entry}>
             <div className={styles.entryLine}>
               <strong>{job.role}</strong>
               <span className={styles.meta}>{job.period}</span>
@@ -50,9 +56,7 @@ export default function ResumePage() {
             {job.tech && (
               <div className={styles.techList}>
                 {job.tech.map((t) => (
-                  <span key={t} className={styles.techItem}>
-                    {t}
-                  </span>
+                  <span key={t} className={styles.techItem}>{t}</span>
                 ))}
               </div>
             )}
@@ -61,7 +65,7 @@ export default function ResumePage() {
       </section>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Projects</h2>
+        <h2 className={styles.sectionTitle}>{t.resume.projectsHeading}</h2>
         {specialProjects.map((project) => (
           <div key={project.slug} className={styles.entry}>
             <div className={styles.entryLine}>
@@ -71,9 +75,7 @@ export default function ResumePage() {
             <p className={styles.entryDesc}>{project.description}</p>
             <div className={styles.techList}>
               {project.tags.map((t) => (
-                <span key={t} className={styles.techItem}>
-                  {t}
-                </span>
+                <span key={t} className={styles.techItem}>{t}</span>
               ))}
             </div>
           </div>
@@ -81,7 +83,7 @@ export default function ResumePage() {
       </section>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Community</h2>
+        <h2 className={styles.sectionTitle}>{t.resume.communityHeading}</h2>
         {communityWork.map((item) => (
           <div key={item.slug} className={styles.entry}>
             <div className={styles.entryLine}>
@@ -94,7 +96,7 @@ export default function ResumePage() {
       </section>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Skills</h2>
+        <h2 className={styles.sectionTitle}>{t.resume.skillsHeading}</h2>
         <div className={styles.skillGrid}>
           {skills.map((category) => (
             <div key={category.name} className={styles.skillRow}>
@@ -107,7 +109,7 @@ export default function ResumePage() {
         </div>
       </section>
 
-      <PrintButton />
+      <PrintButton label={t.resume.print} />
     </article>
   );
 }

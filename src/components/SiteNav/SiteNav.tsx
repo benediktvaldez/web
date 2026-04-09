@@ -2,21 +2,38 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { Locale } from "@/i18n/config";
+import { getLocalizedSlug } from "@/i18n/config";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher/LanguageSwitcher";
 import styles from "./SiteNav.module.css";
 
-const links = [
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/thoughts", label: "Thoughts" },
-];
+const navItems = [
+  { slug: "about", labelKey: "about" },
+  { slug: "projects", labelKey: "projects" },
+  { slug: "thoughts", labelKey: "thoughts" },
+] as const;
 
-export function SiteNav() {
+const navLabels: Record<Locale, Record<string, string>> = {
+  en: { about: "About", projects: "Projects", thoughts: "Thoughts" },
+  is: { about: "Um", projects: "Verkefni", thoughts: "Hugleiðingar" },
+};
+
+interface Props {
+  locale: Locale;
+}
+
+export function SiteNav({ locale }: Props) {
   const pathname = usePathname();
+
+  const links = navItems.map((item) => ({
+    href: `/${locale}/${getLocalizedSlug(item.slug, locale)}`,
+    label: navLabels[locale][item.labelKey],
+  }));
 
   return (
     <aside className={styles.aside}>
       <nav className={styles.nav}>
-        <Link href="/" className={styles.name}>
+        <Link href={`/${locale}`} className={styles.name}>
           Benedikt D. Valdez
         </Link>
         <ul className={styles.links}>
@@ -31,6 +48,9 @@ export function SiteNav() {
             </li>
           ))}
         </ul>
+        <div className={styles.switcherWrapper}>
+          <LanguageSwitcher locale={locale} />
+        </div>
       </nav>
     </aside>
   );

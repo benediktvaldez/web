@@ -1,0 +1,99 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import type { Locale } from "@/i18n/config";
+import { getLocalizedSlug } from "@/i18n/config";
+import { getDictionary } from "@/i18n/getDictionary";
+import styles from "./page.module.css";
+
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale: l } = await params;
+  const locale = l as Locale;
+  const t = await getDictionary(locale);
+  return { title: t.about.title };
+}
+
+export default async function AboutPage({ params }: Props) {
+  const { locale: l } = await params;
+  const locale = l as Locale;
+  const t = await getDictionary(locale);
+
+  const projectsSlug = getLocalizedSlug("projects", locale);
+  const resumeSlug = getLocalizedSlug("resume", locale);
+
+  return (
+    <article className={styles.article}>
+      <h1 className={styles.heading}>{t.about.title}</h1>
+
+      <div className={styles.intro}>
+        {t.about.intro.map((paragraph, i) => {
+          if (paragraph.includes("{recipeLink}")) {
+            const parts = paragraph.split("{recipeLink}");
+            return (
+              <p key={i}>
+                {parts[0]}
+                <Link href={`/${locale}/${projectsSlug}`} className={styles.inlineLink}>
+                  {t.about.recipeLink}
+                </Link>
+                {parts[1]}
+              </p>
+            );
+          }
+          return <p key={i}>{paragraph}</p>;
+        })}
+      </div>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionHeading}>{t.about.currentlyHeading}</h2>
+        <div className={styles.currently}>
+          <div className={styles.currentItem}>
+            <h3 className={styles.currentRole}>{t.about.currentRole}</h3>
+            <span className={styles.currentCompany}>{t.about.currentCompany}</span>
+            <p className={styles.currentDesc}>{t.about.currentDesc}</p>
+          </div>
+          <div className={styles.currentItem}>
+            <h3 className={styles.currentRole}>{t.about.sideProjectsRole}</h3>
+            <span className={styles.currentCompany}>{t.about.sideProjectsCompany}</span>
+            <p className={styles.currentDesc}>{t.about.sideProjectsDesc}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionHeading}>{t.about.contactHeading}</h2>
+        <p className={styles.contactText}>
+          {t.about.contactText
+            .split(/(\{github\}|\{linkedin\}|\{instagram\}|\{resume\})/)
+            .map((part, i) => {
+              if (part === "{github}")
+                return (
+                  <a key={i} href="https://github.com/benediktvaldez" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                    GitHub
+                  </a>
+                );
+              if (part === "{linkedin}")
+                return (
+                  <a key={i} href="https://linkedin.com/in/benediktvaldez" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                    LinkedIn
+                  </a>
+                );
+              if (part === "{instagram}")
+                return (
+                  <a key={i} href="https://instagram.com/benediktvaldez" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                    Instagram
+                  </a>
+                );
+              if (part === "{resume}")
+                return (
+                  <Link key={i} href={`/${locale}/${resumeSlug}`} className={styles.inlineLink}>
+                    {t.nav.resume.toLowerCase()}
+                  </Link>
+                );
+              return part;
+            })}
+        </p>
+      </section>
+    </article>
+  );
+}
