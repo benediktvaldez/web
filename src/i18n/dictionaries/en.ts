@@ -8,7 +8,7 @@ const en = {
   home: {
     greeting: "hi.",
     tagline: "I'm Benedikt D. Valdez,",
-    taglineLine2: "a full stack digital product developer",
+    taglineLine2: "a developer and creator of digital experiences",
   },
   about: {
     title: "About",

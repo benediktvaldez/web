@@ -10,7 +10,7 @@ const is: Dictionary = {
   home: {
     greeting: "hæ.",
     tagline: "Ég er Benedikt D. Valdez,",
-    taglineLine2: "full stack stafrænn vöruþróunarmaður",
+    taglineLine2: "forritari og skapari stafrænna upplifana",
   },
   about: {
     title: "Um",
