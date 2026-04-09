@@ -33,6 +33,7 @@ const is: Dictionary = {
       "Crumbtrail, Fil Rouge Studio, Ólátakjallari — forrit smíðuð með Next.js og Supabase, þróuð með gervigreindarauknum vinnuferlum.",
     contactHeading: "Hafa samband",
     contactText: "Finndu mig á {github}, {linkedin}, eða {instagram}. Fyrir heildarmyndina, skoðaðu {resume}.",
+    recommendationsHeading: "Hvað aðrir segja",
   },
   projects: {
     title: "Verkefni",
@@ -53,6 +54,7 @@ const is: Dictionary = {
     projectsHeading: "Verkefni",
     communityHeading: "Samfélag",
     skillsHeading: "Hæfni",
+    recommendationsHeading: "Meðmæli",
     print: "Prenta / Vista sem PDF",
   },
 };

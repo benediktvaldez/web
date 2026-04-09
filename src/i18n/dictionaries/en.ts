@@ -31,6 +31,7 @@ const en = {
       "Crumbtrail, Fil Rouge Studio, Ólátakjallari — apps built with Next.js and Supabase, developed with AI-augmented workflows.",
     contactHeading: "Get in touch",
     contactText: "Find me on {github}, {linkedin}, or {instagram}. For the full picture, check the {resume}.",
+    recommendationsHeading: "What others say",
   },
   projects: {
     title: "Projects",
@@ -51,6 +52,7 @@ const en = {
     projectsHeading: "Projects",
     communityHeading: "Community",
     skillsHeading: "Skills",
+    recommendationsHeading: "Recommendations",
     print: "Print / Save as PDF",
   },
 };
@@ -71,6 +73,7 @@ export type Dictionary = {
     sideProjectsDesc: string;
     contactHeading: string;
     contactText: string;
+    recommendationsHeading: string;
   };
   projects: {
     title: string;
@@ -87,6 +90,7 @@ export type Dictionary = {
     projectsHeading: string;
     communityHeading: string;
     skillsHeading: string;
+    recommendationsHeading: string;
     print: string;
   };
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { getExperience, getProjects, getSkills } from "@/content";
+import { recommendations } from "@/content/recommendations";
 import { PrintButton } from "./PrintButton";
 import styles from "./page.module.css";
 
@@ -108,6 +109,27 @@ export default async function ResumePage({ params }: Props) {
           ))}
         </div>
       </section>
+
+      {recommendations.length > 0 && (
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>
+            {t.resume.recommendationsHeading}
+          </h2>
+          {recommendations.map((rec) => (
+            <div key={rec.name} className={styles.entry}>
+              <p className={styles.entryDesc}>
+                &ldquo;{rec.quote}&rdquo;
+              </p>
+              <div className={styles.entryLine}>
+                <strong>{rec.name}</strong>
+                <span className={styles.meta}>
+                  {rec.role}, {rec.company}
+                </span>
+              </div>
+            </div>
+          ))}
+        </section>
+      )}
 
       <PrintButton label={t.resume.print} />
     </article>
