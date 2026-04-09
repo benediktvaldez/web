@@ -9,7 +9,7 @@
   "jsxSingleQuote": false,
   "singleQuote": true,
   "tabWidth": 2,
-  "trailingComma": "es5",
+  "trailingComma": "all",
   "overrides": [
     {
       "files": "*.{ts,tsx}",
