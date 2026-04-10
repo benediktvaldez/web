@@ -16,7 +16,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = l as Locale;
   const posts = getAllPosts(locale);
   const post = posts.find((p) => p.slug === slug);
-  return { title: post?.title || slug };
+  return {
+    title: post?.title || slug,
+    description: post?.summary || undefined,
+    alternates: {
+      languages: {
+        en: `/en/thoughts/${slug}`,
+        is: `/is/hugleidingar/${slug}`,
+      },
+    },
+  };
 }
 
 export default async function ThoughtPage({ params }: Props) {
