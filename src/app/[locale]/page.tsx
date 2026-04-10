@@ -19,7 +19,7 @@ export default async function Home({
   const t = await getDictionary(locale);
 
   return (
-    <main className={styles.main}>
+    <main id="main-content" className={styles.main}>
       <div className={styles.langCorner}>
         <LanguageSwitcher locale={locale} />
       </div>

@@ -15,7 +15,7 @@ export default async function SiteLayout({
   return (
     <div className={styles.layout}>
       <SiteNav locale={locale} />
-      <main className={styles.main}>{children}</main>
+      <main id="main-content" className={styles.main}>{children}</main>
     </div>
   );
 }

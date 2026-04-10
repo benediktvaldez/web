@@ -19,6 +19,7 @@ export function RecommendationCard({ recommendation: rec }: Props) {
       <button
         className={styles.toggle}
         onClick={() => setExpanded(!expanded)}
+        aria-expanded={expanded}
       >
         {expanded ? "Show less" : "Read more"}
       </button>

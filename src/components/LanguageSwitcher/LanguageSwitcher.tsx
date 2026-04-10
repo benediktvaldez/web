@@ -16,7 +16,7 @@ export function LanguageSwitcher({ locale }: Props) {
   const otherPath = getLocalizedPath(pathname, otherLocale);
 
   return (
-    <div className={styles.switcher}>
+    <nav aria-label="Language" className={styles.switcher}>
       <span className={locale === "en" ? styles.active : styles.inactive}>
         {locale === "en" ? "EN" : (
           <Link href={getLocalizedPath(pathname, "en")} className={styles.link}>
@@ -32,6 +32,6 @@ export function LanguageSwitcher({ locale }: Props) {
           </Link>
         )}
       </span>
-    </div>
+    </nav>
   );
 }

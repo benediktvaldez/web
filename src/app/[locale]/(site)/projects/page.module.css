@@ -73,7 +73,7 @@
 .cardYear {
   font-size: 0.8125rem;
   color: var(--light);
-  opacity: 0.4;
+  opacity: 0.55;
 }
 
 .cardDescription {

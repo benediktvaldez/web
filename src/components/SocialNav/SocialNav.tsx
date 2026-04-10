@@ -11,8 +11,8 @@ export function SocialNav() {
   return (
     <nav className={styles.nav}>
       {links.map(({ name, href, icon: Icon }) => (
-        <a key={name} href={href} target="_blank" rel="noopener noreferrer" className={styles.link}>
-          <Icon size={32} weight="regular" />
+        <a key={name} href={href} target="_blank" rel="noopener noreferrer" className={styles.link} aria-label={name}>
+          <Icon size={32} weight="regular" aria-hidden />
         </a>
       ))}
     </nav>
