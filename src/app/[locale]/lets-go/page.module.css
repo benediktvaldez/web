@@ -302,6 +302,22 @@
   opacity: 0.7;
 }
 
+.dismiss {
+  position: absolute;
+  bottom: 2rem;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--light);
+  text-decoration: none;
+  opacity: 0.3;
+  transition: opacity 300ms;
+}
+
+.dismiss:hover {
+  opacity: 0.6;
+}
+
 @media (max-width: 768px) {
   .page {
     padding: 1.5rem;

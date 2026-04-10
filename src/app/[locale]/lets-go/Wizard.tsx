@@ -199,6 +199,12 @@ export function Wizard({ locale, t }: Props) {
           </div>
         )}
       </div>
+
+      {step < 4 && (
+        <Link href={`/${locale}`} className={styles.dismiss}>
+          {locale === 'is' ? 'Bara að skoða' : 'Just browsing'}
+        </Link>
+      )}
     </main>
   );
 }

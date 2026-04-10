@@ -15,6 +15,11 @@ import { socialLinks } from '@/content/social';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher/LanguageSwitcher';
 import styles from './SiteNav.module.css';
 
+const ctaLabels: Record<Locale, string> = {
+  en: 'Work with me',
+  is: 'Vinnum saman',
+};
+
 const navItems = [
   { slug: 'about', labelKey: 'about' },
   { slug: 'projects', labelKey: 'projects' },
@@ -64,6 +69,9 @@ export function SiteNav({ locale }: Props) {
               </li>
             ))}
           </ul>
+          <Link href={`/${locale}/${getLocalizedSlug('lets-go', locale)}`} className={styles.cta}>
+            {ctaLabels[locale]}
+          </Link>
           <div className={styles.mobileLocale}>
             <LanguageSwitcher locale={locale} />
           </div>

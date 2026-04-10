@@ -102,3 +102,33 @@
     grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
   }
 }
+
+.ctaSection {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(239, 241, 243, 0.1);
+}
+
+.ctaButton {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--light);
+  text-decoration: none;
+  animation: glow 3s ease-in-out infinite;
+  transition: opacity 300ms;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 4px rgba(239, 241, 243, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 16px rgba(239, 241, 243, 0.5);
+  }
+}
+
+.ctaButton:hover {
+  opacity: 0.8;
+}

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
+import { getLocalizedSlug } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
 import { SocialNav } from '@/components/SocialNav/SocialNav';
 import { PageNav } from '@/components/PageNav/PageNav';
@@ -39,6 +41,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </p>
       <PageNav locale={locale} />
       <SocialNav />
+      <Link href={`/${locale}/${getLocalizedSlug('lets-go', locale)}`} className={styles.cta}>
+        {locale === 'is' ? 'Vinnum saman' : 'Work with me'}
+      </Link>
     </main>
   );
 }

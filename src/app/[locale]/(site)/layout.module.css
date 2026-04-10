@@ -10,6 +10,36 @@
   max-width: 52rem;
 }
 
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 4px rgba(239, 241, 243, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 16px rgba(239, 241, 243, 0.5);
+  }
+}
+
+.pageCta {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(239, 241, 243, 0.1);
+}
+
+.ctaLink {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--light);
+  text-decoration: none;
+  animation: glow 3s ease-in-out infinite;
+  transition: opacity 300ms;
+}
+
+.ctaLink:hover {
+  opacity: 0.8;
+}
+
 @media print {
   .layout {
     display: block;

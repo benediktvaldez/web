@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
 import { getExperience, getProjects, getSkills } from '@/content';
-import { PrintButton } from './PrintButton';
 import styles from './page.module.css';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -132,7 +131,9 @@ export default async function ResumePage({ params }: Props) {
         ))}
       </section>
 
-      <PrintButton label={t.resume.print} />
+      <p className={styles.printHint} data-print-hide>
+        {locale === 'is' ? 'Prófaðu að prenta þetta' : 'Try printing this page'} ⌘P
+      </p>
     </article>
   );
 }
