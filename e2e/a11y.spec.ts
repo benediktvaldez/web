@@ -17,6 +17,8 @@ const pages = [
 for (const { path, name } of pages) {
   test(`${name} has no a11y violations`, async ({ page }) => {
     await page.goto(path);
+    // Wait for animations to complete so axe sees final state
+    await page.waitForTimeout(600);
     const results = await new AxeBuilder({ page }).analyze();
     expect(results.violations).toEqual([]);
   });
