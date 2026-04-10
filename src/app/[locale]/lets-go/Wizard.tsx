@@ -63,7 +63,7 @@ export function Wizard({ locale, t }: Props) {
   };
 
   return (
-    <main className={styles.page}>
+    <main id="main-content" className={styles.page}>
       <div className={styles.langCorner}>
         <LanguageSwitcher locale={locale} />
       </div>

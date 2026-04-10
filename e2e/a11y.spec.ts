@@ -12,6 +12,8 @@ const pages = [
   { path: '/is/hugleidingar', name: 'Thoughts (IS)' },
   { path: '/en/resume', name: 'Resume (EN)' },
   { path: '/is/ferilskra', name: 'Resume (IS)' },
+  { path: '/en/lets-go', name: 'Wizard (EN)' },
+  { path: '/is/byrjum', name: 'Wizard (IS)' },
 ];
 
 for (const { path, name } of pages) {

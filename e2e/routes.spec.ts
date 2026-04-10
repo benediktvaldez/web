@@ -1,8 +1,15 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('route rendering', () => {
-  const enPages = ['/en', '/en/about', '/en/projects', '/en/thoughts', '/en/resume'];
-  const isPages = ['/is', '/is/hver-er-eg', '/is/verkefni', '/is/hugleidingar', '/is/ferilskra'];
+  const enPages = ['/en', '/en/about', '/en/projects', '/en/thoughts', '/en/resume', '/en/lets-go'];
+  const isPages = [
+    '/is',
+    '/is/hver-er-eg',
+    '/is/verkefni',
+    '/is/hugleidingar',
+    '/is/ferilskra',
+    '/is/byrjum',
+  ];
 
   for (const path of enPages) {
     test(`${path} renders`, async ({ page }) => {
