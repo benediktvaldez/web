@@ -1,10 +1,10 @@
 # valdez.is
 
-Yes, this is a personal website with a CI pipeline, 43 unit tests, 76 end-to-end tests, automated accessibility audits on every page in both languages, bilingual routing with translated URL slugs, middleware that rewrites Icelandic vanity paths, a typed i18n dictionary system, print-optimized resume styles, pre-commit hooks running lint-staged, pre-push hooks that won't let you push broken code, and a CSS gradient system driven by custom properties in oklab color space.
+Yes, this is a personal website with a CI pipeline, 51 unit tests, 106 end-to-end tests, automated accessibility audits on every page in both languages, bilingual routing with translated URL slugs, middleware that rewrites Icelandic vanity paths, a typed i18n dictionary system, print-optimized resume styles, pre-commit hooks running lint-staged, pre-push hooks that won't let you push broken code, a contact wizard backed by a Postgres database and transactional email, page transitions with gradient cross-fades, micro-animations, and a CSS gradient system driven by custom properties in oklab color space.
 
-For a site that is essentially five pages and a blog.
+For a site that is just a few pages and a blog.
 
-Could it have been a single HTML file? Absolutely. And sometimes that's the right call. But this repo doubles as a showcase of how I work when the goal is to do things properly: clean architecture, solid testing, and the kind of attention to detail that's hard to demonstrate in a conversation. Think of it less as a website and more as an open-source portfolio piece that happens to have a URL.
+Could it have been a few HTML files? Absolutely. And sometimes that's the right call. But this repo doubles as a showcase of how I work when the goal is to do things properly: clean architecture, solid testing, and the kind of attention to detail that's hard to demonstrate in a conversation. Think of it less as a website and more as an open-source portfolio piece that happens to have a URL.
 
 ## On AI-augmented development
 
@@ -24,6 +24,10 @@ Using AI well is a skill in itself. Knowing what to delegate, when to override, 
 
 **Content as code.** TypeScript data files for structured content, MDX for prose. Type-safe, diffable, no CMS to maintain. Both locales are validated for structural symmetry in tests, so you can't accidentally add an English job entry without its Icelandic counterpart.
 
+**Page transitions.** Navigating between pages cross-fades between gradient layers while content animates in. A subtle shimmer drifts across the background. Icons have unique hover animations. Cards lift on hover. Everything respects `prefers-reduced-motion`.
+
+**Contact wizard.** A full-page, 5-step guided flow that qualifies leads while keeping the conversation casual. Backed by Neon Postgres via Drizzle ORM with email notifications through Resend. No third-party form service, no iframe embeds.
+
 ## Tech stack
 
 | Layer      | Choice                                                 |
@@ -32,8 +36,10 @@ Using AI well is a skill in itself. Knowing what to delegate, when to override, 
 | Styling    | CSS Modules, oklch gradient system                     |
 | Icons      | Phosphor Icons                                         |
 | Content    | TypeScript data files + MDX                            |
-| Unit tests | Vitest (43 tests)                                      |
-| E2E + a11y | Playwright + axe-core (76 tests)                       |
+| Unit tests | Vitest (51 tests)                                      |
+| E2E + a11y | Playwright + axe-core (106 tests)                      |
+| Database   | Neon Postgres + Drizzle ORM                            |
+| Email      | Resend                                                 |
 | CI/CD      | GitHub Actions, Vercel                                 |
 | Git hooks  | Husky (lint-staged on commit, full test suite on push) |
 
@@ -48,6 +54,7 @@ src/
         projects/         # Personal + community work
         thoughts/         # Blog (MDX)
         resume/           # Living resume with print styles
+      lets-go/            # Contact wizard (outside site layout)
       page.tsx            # Landing page
     layout.tsx            # Root layout (fonts, metadata, skip-to-content)
     globals.css           # Design tokens, resets, print styles
@@ -58,6 +65,9 @@ src/
     en/, is/              # Typed content per locale
     recommendations.ts    # Language-agnostic quotes
     social.ts             # Shared social link data
+  db/
+    schema.ts             # Drizzle schema (inquiries table)
+    index.ts              # Database client
   i18n/
     config.ts             # Slug mappings, locale utilities
     dictionaries/         # Type-safe UI strings
