@@ -1,49 +1,31 @@
-# TypeScript & Styled Components Next.js example
+# valdez.is
 
-This is a really simple project that show the usage of Next.js with TypeScript and Styled Components.
+Personal website and living resume for Benedikt D. Valdez.
 
-## Deploy your own
+## Tech stack
 
-Deploy the example using [Vercel](https://vercel.com):
+- Next.js 16 (App Router)
+- React 19, TypeScript
+- CSS Modules
+- Phosphor Icons
+- MDX for blog posts
+- Bilingual: English + Icelandic
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/zeit/next.js/tree/canary/examples/with-typescript-styled-components)
-
-## How to use it?
-
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npm init next-app --example with-typescript-styled-components with-typescript-app
-# or
-yarn create next-app --example with-typescript-styled-components with-typescript-app
-```
-
-### Download manually
-
-Download the example:
-
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-typescript-styled-components
-cd with-typescript-styled-components
-```
-
-Install it and run:
+## Development
 
 ```bash
 npm install
 npm run dev
-# or
-yarn
-yarn dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Testing
 
-## Notes
+```bash
+npm run test        # Vitest (watch + UI + coverage)
+npm run test:ci     # Vitest (single run + coverage)
+npm run test:e2e    # Playwright (routes, a11y, navigation)
+```
 
-This is an amalgamation of the 2 existing examples:
+## Deployment
 
-- [with-typescript](https://github.com/zeit/next.js/tree/canary/examples/with-typescript)
-- [with-styled-components](https://github.com/zeit/next.js/tree/canary/examples/with-styled-components)
+Pushes to `next` deploy a preview. Pushes to `main` deploy production. CI (lint, test, build, e2e) must pass before deploy.
