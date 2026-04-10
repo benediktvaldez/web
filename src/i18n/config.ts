@@ -1,24 +1,24 @@
-export const locales = ["en", "is"] as const;
+export const locales = ['en', 'is'] as const;
 export type Locale = (typeof locales)[number];
-export const defaultLocale: Locale = "en";
+export const defaultLocale: Locale = 'en';
 
 // English route name → Icelandic slug
 export const slugMap: Record<string, Record<string, string>> = {
   is: {
-    about: "um",
-    projects: "verkefni",
-    thoughts: "hugleidingar",
-    resume: "ferilskra",
+    about: 'um',
+    projects: 'verkefni',
+    thoughts: 'hugleidingar',
+    resume: 'ferilskra',
   },
 };
 
 // Icelandic slug → English route name (reverse lookup)
 export const reverseSlugMap: Record<string, Record<string, string>> = {
   is: {
-    um: "about",
-    verkefni: "projects",
-    hugleidingar: "thoughts",
-    ferilskra: "resume",
+    um: 'about',
+    verkefni: 'projects',
+    hugleidingar: 'thoughts',
+    ferilskra: 'resume',
   },
 };
 
@@ -27,7 +27,7 @@ export const reverseSlugMap: Record<string, Record<string, string>> = {
  * e.g. getLocalizedPath("about", "is") → "um"
  */
 export function getLocalizedSlug(englishSlug: string, locale: Locale): string {
-  if (locale === "en") return englishSlug;
+  if (locale === 'en') return englishSlug;
   return slugMap[locale]?.[englishSlug] ?? englishSlug;
 }
 
@@ -36,7 +36,7 @@ export function getLocalizedSlug(englishSlug: string, locale: Locale): string {
  * e.g. getEnglishSlug("um", "is") → "about"
  */
 export function getEnglishSlug(slug: string, locale: Locale): string {
-  if (locale === "en") return slug;
+  if (locale === 'en') return slug;
   return reverseSlugMap[locale]?.[slug] ?? slug;
 }
 
@@ -46,7 +46,7 @@ export function getEnglishSlug(slug: string, locale: Locale): string {
  */
 export function getLocalizedPath(pathname: string, targetLocale: Locale): string {
   // Strip current locale prefix
-  const segments = pathname.split("/").filter(Boolean);
+  const segments = pathname.split('/').filter(Boolean);
   const currentLocale = segments[0] as Locale;
   const rest = segments.slice(1);
 
@@ -55,9 +55,8 @@ export function getLocalizedPath(pathname: string, targetLocale: Locale): string
   }
 
   // Convert first segment (the page slug) to/from English
-  const englishSlug =
-    currentLocale === "en" ? rest[0] : getEnglishSlug(rest[0], currentLocale);
+  const englishSlug = currentLocale === 'en' ? rest[0] : getEnglishSlug(rest[0], currentLocale);
   const targetSlug = getLocalizedSlug(englishSlug, targetLocale);
 
-  return `/${targetLocale}/${targetSlug}${rest.length > 1 ? "/" + rest.slice(1).join("/") : ""}`;
+  return `/${targetLocale}/${targetSlug}${rest.length > 1 ? '/' + rest.slice(1).join('/') : ''}`;
 }

@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import type { Locale } from "@/i18n/config";
+import fs from 'fs';
+import path from 'path';
+import type { Locale } from '@/i18n/config';
 
 export interface PostMeta {
   slug: string;
@@ -10,29 +10,29 @@ export interface PostMeta {
 }
 
 function getThoughtsDir(locale: Locale): string {
-  return path.join(process.cwd(), "src/thoughts", locale);
+  return path.join(process.cwd(), 'src/thoughts', locale);
 }
 
 export function getAllPosts(locale: Locale): PostMeta[] {
   const dir = getThoughtsDir(locale);
-  const fallbackDir = getThoughtsDir("en");
+  const fallbackDir = getThoughtsDir('en');
 
   // Use locale-specific dir, fall back to English
   const targetDir = fs.existsSync(dir) ? dir : fallbackDir;
   if (!fs.existsSync(targetDir)) return [];
 
-  const files = fs.readdirSync(targetDir).filter((f) => f.endsWith(".mdx"));
+  const files = fs.readdirSync(targetDir).filter((f) => f.endsWith('.mdx'));
 
   const posts = files.map((filename) => {
-    const slug = filename.replace(/\.mdx$/, "");
-    const content = fs.readFileSync(path.join(targetDir, filename), "utf-8");
+    const slug = filename.replace(/\.mdx$/, '');
+    const content = fs.readFileSync(path.join(targetDir, filename), 'utf-8');
     const meta = parseFrontmatter(content);
 
     return {
       slug,
       title: meta.title || slug,
-      date: meta.date || "",
-      summary: meta.summary || "",
+      date: meta.date || '',
+      summary: meta.summary || '',
     };
   });
 
@@ -45,7 +45,7 @@ export function getAllPosts(locale: Locale): PostMeta[] {
 export function getPostLocale(slug: string, locale: Locale): Locale {
   const localeFile = path.join(getThoughtsDir(locale), `${slug}.mdx`);
   if (fs.existsSync(localeFile)) return locale;
-  return "en";
+  return 'en';
 }
 
 function parseFrontmatter(content: string): Record<string, string> {
@@ -53,11 +53,14 @@ function parseFrontmatter(content: string): Record<string, string> {
   if (!match) return {};
 
   const meta: Record<string, string> = {};
-  for (const line of match[1].split("\n")) {
-    const idx = line.indexOf(":");
+  for (const line of match[1].split('\n')) {
+    const idx = line.indexOf(':');
     if (idx === -1) continue;
     const key = line.slice(0, idx).trim();
-    const value = line.slice(idx + 1).trim().replace(/^["']|["']$/g, "");
+    const value = line
+      .slice(idx + 1)
+      .trim()
+      .replace(/^["']|["']$/g, '');
     meta[key] = value;
   }
   return meta;

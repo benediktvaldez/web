@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import type { Recommendation } from "@/content/recommendations";
-import styles from "./RecommendationCard.module.css";
+import { useState } from 'react';
+import type { Recommendation } from '@/content/recommendations';
+import styles from './RecommendationCard.module.css';
 
 interface Props {
   recommendation: Recommendation;
@@ -13,7 +13,7 @@ export function RecommendationCard({ recommendation: rec }: Props) {
 
   return (
     <blockquote className={styles.card}>
-      <p className={`${styles.quote} ${expanded ? styles.expanded : ""}`}>
+      <p className={`${styles.quote} ${expanded ? styles.expanded : ''}`}>
         &ldquo;{rec.quote}&rdquo;
       </p>
       <button
@@ -21,7 +21,7 @@ export function RecommendationCard({ recommendation: rec }: Props) {
         onClick={() => setExpanded(!expanded)}
         aria-expanded={expanded}
       >
-        {expanded ? "Show less" : "Read more"}
+        {expanded ? 'Show less' : 'Read more'}
       </button>
       <footer className={styles.attribution}>
         <strong>{rec.name}</strong>

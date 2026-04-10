@@ -1,34 +1,29 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import {
-  GithubLogo,
-  LinkedinLogo,
-  InstagramLogo,
-  EnvelopeSimple,
-} from "@phosphor-icons/react";
-import type { Locale } from "@/i18n/config";
-import { getLocalizedSlug } from "@/i18n/config";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher/LanguageSwitcher";
-import styles from "./SiteNav.module.css";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { GithubLogo, LinkedinLogo, InstagramLogo, EnvelopeSimple } from '@phosphor-icons/react';
+import type { Locale } from '@/i18n/config';
+import { getLocalizedSlug } from '@/i18n/config';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher/LanguageSwitcher';
+import styles from './SiteNav.module.css';
 
 const navItems = [
-  { slug: "about", labelKey: "about" },
-  { slug: "projects", labelKey: "projects" },
-  { slug: "thoughts", labelKey: "thoughts" },
+  { slug: 'about', labelKey: 'about' },
+  { slug: 'projects', labelKey: 'projects' },
+  { slug: 'thoughts', labelKey: 'thoughts' },
 ] as const;
 
 const navLabels: Record<Locale, Record<string, string>> = {
-  en: { about: "About", projects: "Projects", thoughts: "Thoughts" },
-  is: { about: "Um", projects: "Verkefni", thoughts: "Hugleiðingar" },
+  en: { about: 'About', projects: 'Projects', thoughts: 'Thoughts' },
+  is: { about: 'Um', projects: 'Verkefni', thoughts: 'Hugleiðingar' },
 };
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com/benediktvaldez", icon: GithubLogo },
-  { name: "LinkedIn", href: "https://linkedin.com/in/benediktvaldez", icon: LinkedinLogo },
-  { name: "Instagram", href: "https://instagram.com/benediktvaldez", icon: InstagramLogo },
-  { name: "Email", href: "mailto:hi@valdez.is", icon: EnvelopeSimple },
+  { name: 'GitHub', href: 'https://github.com/benediktvaldez', icon: GithubLogo },
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/benediktvaldez', icon: LinkedinLogo },
+  { name: 'Instagram', href: 'https://instagram.com/benediktvaldez', icon: InstagramLogo },
+  { name: 'Email', href: 'mailto:hi@valdez.is', icon: EnvelopeSimple },
 ];
 
 interface Props {
@@ -55,7 +50,7 @@ export function SiteNav({ locale }: Props) {
               <li key={href}>
                 <Link
                   href={href}
-                  className={`${styles.link} ${pathname === href ? styles.active : ""}`}
+                  className={`${styles.link} ${pathname === href ? styles.active : ''}`}
                 >
                   {label}
                 </Link>
@@ -72,8 +67,8 @@ export function SiteNav({ locale }: Props) {
                 <a
                   key={name}
                   href={href}
-                  target={href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                  target={href.startsWith('mailto:') ? undefined : '_blank'}
+                  rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                   className={styles.socialLink}
                   aria-label={name}
                 >
@@ -89,8 +84,8 @@ export function SiteNav({ locale }: Props) {
           <a
             key={name}
             href={href}
-            target={href.startsWith("mailto:") ? undefined : "_blank"}
-            rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+            target={href.startsWith('mailto:') ? undefined : '_blank'}
+            rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
             className={styles.socialLink}
             aria-label={name}
           >

@@ -1,7 +1,7 @@
-import type { Locale } from "@/i18n/config";
-import type { Experience } from "./en/experience";
-import type { Project } from "./en/projects";
-import type { SkillCategory } from "./en/skills";
+import type { Locale } from '@/i18n/config';
+import type { Experience } from './en/experience';
+import type { Project } from './en/projects';
+import type { SkillCategory } from './en/skills';
 
 export type { Experience, Project, SkillCategory };
 

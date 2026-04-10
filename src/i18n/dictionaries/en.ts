@@ -1,7 +1,8 @@
 const en = {
   meta: {
     siteDescription: 'Developer and creator of digital experiences. 15 years building for the web.',
-    aboutDescription: 'Full stack digital product developer with 15 years of experience building for the web, from Icelandic agencies to international product companies.',
+    aboutDescription:
+      'Full stack digital product developer with 15 years of experience building for the web, from Icelandic agencies to international product companies.',
     projectsDescription: 'Personal projects and community work by Benedikt D. Valdez.',
     thoughtsDescription: 'Notes, ideas, and things on my mind.',
     resumeDescription: 'Resume of Benedikt D. Valdez. Full stack digital product developer.',

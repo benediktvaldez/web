@@ -1,18 +1,18 @@
-import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/mdx";
+import type { MetadataRoute } from 'next';
+import { getAllPosts } from '@/lib/mdx';
 
-const baseUrl = "https://valdez.is";
+const baseUrl = 'https://valdez.is';
 
 const staticPages = [
-  { en: "/en", is: "/is" },
-  { en: "/en/about", is: "/is/um" },
-  { en: "/en/projects", is: "/is/verkefni" },
-  { en: "/en/thoughts", is: "/is/hugleidingar" },
-  { en: "/en/resume", is: "/is/ferilskra" },
+  { en: '/en', is: '/is' },
+  { en: '/en/about', is: '/is/um' },
+  { en: '/en/projects', is: '/is/verkefni' },
+  { en: '/en/thoughts', is: '/is/hugleidingar' },
+  { en: '/en/resume', is: '/is/ferilskra' },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllPosts("en");
+  const posts = getAllPosts('en');
 
   const pages: MetadataRoute.Sitemap = staticPages.map(({ en, is }) => ({
     url: `${baseUrl}${en}`,

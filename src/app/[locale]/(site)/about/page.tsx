@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import type { Locale } from "@/i18n/config";
-import { getLocalizedSlug } from "@/i18n/config";
-import { getDictionary } from "@/i18n/getDictionary";
-import { recommendations } from "@/content/recommendations";
-import { RecommendationCard } from "@/components/RecommendationCard/RecommendationCard";
-import styles from "./page.module.css";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import type { Locale } from '@/i18n/config';
+import { getLocalizedSlug } from '@/i18n/config';
+import { getDictionary } from '@/i18n/getDictionary';
+import { recommendations } from '@/content/recommendations';
+import { RecommendationCard } from '@/components/RecommendationCard/RecommendationCard';
+import styles from './page.module.css';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t.about.title,
     description: t.meta.aboutDescription,
-    alternates: { languages: { en: "/en/about", is: "/is/um" } },
+    alternates: { languages: { en: '/en/about', is: '/is/um' } },
   };
 }
 
@@ -25,8 +25,8 @@ export default async function AboutPage({ params }: Props) {
   const locale = l as Locale;
   const t = await getDictionary(locale);
 
-  const projectsSlug = getLocalizedSlug("projects", locale);
-  const resumeSlug = getLocalizedSlug("resume", locale);
+  const projectsSlug = getLocalizedSlug('projects', locale);
+  const resumeSlug = getLocalizedSlug('resume', locale);
 
   return (
     <article className={styles.article}>
@@ -34,8 +34,8 @@ export default async function AboutPage({ params }: Props) {
 
       <div className={styles.intro}>
         {t.about.intro.map((paragraph, i) => {
-          if (paragraph.includes("{recipeLink}")) {
-            const parts = paragraph.split("{recipeLink}");
+          if (paragraph.includes('{recipeLink}')) {
+            const parts = paragraph.split('{recipeLink}');
             return (
               <p key={i}>
                 {parts[0]}
@@ -83,25 +83,43 @@ export default async function AboutPage({ params }: Props) {
           {t.about.contactText
             .split(/(\{github\}|\{linkedin\}|\{instagram\}|\{resume\})/)
             .map((part, i) => {
-              if (part === "{github}")
+              if (part === '{github}')
                 return (
-                  <a key={i} href="https://github.com/benediktvaldez" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                  <a
+                    key={i}
+                    href="https://github.com/benediktvaldez"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.inlineLink}
+                  >
                     GitHub
                   </a>
                 );
-              if (part === "{linkedin}")
+              if (part === '{linkedin}')
                 return (
-                  <a key={i} href="https://linkedin.com/in/benediktvaldez" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                  <a
+                    key={i}
+                    href="https://linkedin.com/in/benediktvaldez"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.inlineLink}
+                  >
                     LinkedIn
                   </a>
                 );
-              if (part === "{instagram}")
+              if (part === '{instagram}')
                 return (
-                  <a key={i} href="https://instagram.com/benediktvaldez" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                  <a
+                    key={i}
+                    href="https://instagram.com/benediktvaldez"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.inlineLink}
+                  >
                     Instagram
                   </a>
                 );
-              if (part === "{resume}")
+              if (part === '{resume}')
                 return (
                   <Link key={i} href={`/${locale}/${resumeSlug}`} className={styles.inlineLink}>
                     {t.nav.resume.toLowerCase()}

@@ -12,7 +12,8 @@
     "test": "vitest --coverage --ui",
     "test:ci": "vitest run --coverage",
     "test:e2e": "playwright test",
-    "test:a11y": "playwright test e2e/a11y.spec.ts"
+    "test:a11y": "playwright test e2e/a11y.spec.ts",
+    "prepare": "husky"
   },
   "dependencies": {
     "@mdx-js/loader": "^3",
@@ -36,8 +37,17 @@
     "eslint-config-next": "^16",
     "eslint-config-prettier": "^10",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "prettier": "^3",
     "typescript": "^5.8",
     "vitest": "^4.1.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,json,md,mdx,yml}": "prettier --write"
   }
 }
