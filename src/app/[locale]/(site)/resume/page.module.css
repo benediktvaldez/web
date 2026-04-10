@@ -93,10 +93,13 @@
   padding: 0.25rem 0.625rem;
   border-radius: 9999px;
   border: 1px solid rgba(239, 241, 243, 0.12);
-  transition: opacity 300ms;
+  transition:
+    opacity 300ms,
+    transform 300ms;
 }
 
 .subnavLink:hover {
+  transform: translateY(-1px);
   opacity: 1;
 }
 

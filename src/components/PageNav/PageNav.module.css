@@ -1,3 +1,38 @@
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes liftTilt {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(8deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-6deg);
+  }
+  75% {
+    transform: rotate(6deg);
+  }
+}
+
 .nav {
   display: flex;
   gap: 0.75rem;
@@ -12,11 +47,26 @@
   padding: 1rem;
   color: var(--light);
   text-decoration: none;
-  transition: opacity 300ms;
+  transition:
+    opacity 300ms,
+    transform 300ms;
 }
 
 .link:hover {
   opacity: 1;
+  transform: translateY(-2px);
+}
+
+.about:hover > svg {
+  animation: pulse 400ms ease-out;
+}
+
+.projects:hover > svg {
+  animation: liftTilt 400ms ease-out;
+}
+
+.thoughts:hover > svg {
+  animation: wobble 400ms ease-out;
 }
 
 .tooltip {

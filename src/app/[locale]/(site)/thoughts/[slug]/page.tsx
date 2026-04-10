@@ -26,7 +26,7 @@ export default async function ThoughtPage({ params }: Props) {
   const { default: Content } = await import(`@/thoughts/${postLocale}/${slug}.mdx`);
 
   return (
-    <article className={styles.article}>
+    <article className={`${styles.article} stagger`}>
       <Content />
     </article>
   );

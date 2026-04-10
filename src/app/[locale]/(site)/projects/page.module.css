@@ -53,11 +53,16 @@
   border: 1px solid rgba(239, 241, 243, 0.08);
   border-radius: 0.5rem;
   background: rgba(239, 241, 243, 0.03);
-  transition: background 300ms;
+  transition:
+    background 300ms,
+    transform 300ms,
+    box-shadow 300ms;
 }
 
 .card:hover {
   background: rgba(239, 241, 243, 0.06);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .cardHeader {

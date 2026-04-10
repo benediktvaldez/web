@@ -31,7 +31,7 @@ export function PageNav({ locale }: Props) {
         <Link
           key={slug}
           href={`/${locale}/${getLocalizedSlug(slug, locale)}`}
-          className={styles.link}
+          className={`${styles.link} ${styles[slug]}`}
           aria-label={label[locale]}
         >
           <Icon size={32} weight="regular" aria-hidden />

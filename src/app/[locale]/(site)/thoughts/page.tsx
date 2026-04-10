@@ -27,7 +27,7 @@ export default async function ThoughtsPage({ params }: Props) {
   const thoughtsSlug = getLocalizedSlug('thoughts', locale);
 
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} stagger`}>
       <h1 className={styles.heading}>{t.thoughts.title}</h1>
       <p className={styles.intro}>{t.thoughts.intro}</p>
 

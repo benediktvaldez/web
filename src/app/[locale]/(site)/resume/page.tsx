@@ -32,7 +32,7 @@ export default async function ResumePage({ params }: Props) {
   return (
     <>
       <div className={styles.gradient} />
-      <article className={styles.article}>
+      <article className={`${styles.article} stagger`}>
         <header className={styles.header}>
           <h1 className={styles.name}>Benedikt D. Valdez</h1>
           <p className={styles.tagline}>{t.resume.tagline}</p>

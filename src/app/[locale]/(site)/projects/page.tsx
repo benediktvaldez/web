@@ -27,7 +27,7 @@ export default async function ProjectsPage({ params }: Props) {
   const community = projects.filter((p) => p.type === 'community');
 
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} stagger`}>
       <h1 className={styles.heading}>{t.projects.title}</h1>
       <p className={styles.intro}>{t.projects.intro}</p>
 

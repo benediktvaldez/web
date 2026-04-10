@@ -29,7 +29,7 @@ export default async function AboutPage({ params }: Props) {
   const resumeSlug = getLocalizedSlug('resume', locale);
 
   return (
-    <article className={styles.article}>
+    <article className={`${styles.article} stagger`}>
       <h1 className={styles.heading}>{t.about.title}</h1>
 
       <div className={styles.intro}>
