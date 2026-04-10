@@ -43,7 +43,7 @@
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  opacity: 0.6;
+  opacity: 0.65;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -70,7 +70,7 @@
 .currentCompany {
   font-size: 0.875rem;
   color: var(--light);
-  opacity: 0.5;
+  opacity: 0.65;
 }
 
 .currentDesc {

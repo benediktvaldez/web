@@ -49,7 +49,7 @@ export default async function ResumePage({ params }: Props) {
         </div>
       </header>
 
-      <nav className={styles.subnav} data-print-hide>
+      <nav aria-label="Resume sections" className={styles.subnav} data-print-hide>
         <a href="#skills" className={styles.subnavLink}>
           {t.resume.skillsHeading}
         </a>

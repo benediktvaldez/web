@@ -46,7 +46,7 @@ export function SiteNav({ locale }: Props) {
   return (
     <>
       <aside className={styles.aside}>
-        <nav className={styles.nav}>
+        <nav aria-label="Main" className={styles.nav}>
           <Link href={`/${locale}`} className={styles.name}>
             Benedikt D. Valdez
           </Link>
@@ -84,7 +84,7 @@ export function SiteNav({ locale }: Props) {
           </div>
         </nav>
       </aside>
-      <div className={styles.mobileFooter}>
+      <footer className={styles.mobileFooter}>
         {socialLinks.map(({ name, href, icon: Icon }) => (
           <a
             key={name}
@@ -97,7 +97,7 @@ export function SiteNav({ locale }: Props) {
             <Icon size={18} weight="regular" aria-hidden />
           </a>
         ))}
-      </div>
+      </footer>
     </>
   );
 }
