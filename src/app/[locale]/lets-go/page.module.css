@@ -302,6 +302,57 @@
   opacity: 0.7;
 }
 
+.summaryToggle {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--light);
+  opacity: 0.5;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 1.5rem;
+  transition: opacity 300ms;
+}
+
+.summaryToggle:hover {
+  opacity: 0.8;
+}
+
+.summary {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  background: rgba(239, 241, 243, 0.04);
+  border: 1px solid rgba(239, 241, 243, 0.08);
+  border-radius: 0.5rem;
+  text-align: left;
+  width: 100%;
+  max-width: 24rem;
+}
+
+.summary dt {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--light);
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.75rem;
+}
+
+.summary dt:first-child {
+  margin-top: 0;
+}
+
+.summary dd {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--light);
+  margin: 0.25rem 0 0;
+}
+
 .dismiss {
   position: absolute;
   bottom: 2rem;

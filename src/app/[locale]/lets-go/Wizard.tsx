@@ -23,6 +23,7 @@ export function Wizard({ locale, t }: Props) {
   const [company, setCompany] = useState('');
   const [error, setError] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [showSummary, setShowSummary] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const advance = () => setStep((s) => s + 1);
@@ -174,6 +175,37 @@ export function Wizard({ locale, t }: Props) {
               />
               {error && <p className={styles.error}>{error}</p>}
             </div>
+            <button className={styles.summaryToggle} onClick={() => setShowSummary(!showSummary)}>
+              {showSummary
+                ? locale === 'is'
+                  ? 'Fela svör'
+                  : 'Hide summary'
+                : locale === 'is'
+                  ? 'Sjá svörin mín'
+                  : 'Review my answers'}
+            </button>
+            {showSummary && (
+              <dl className={styles.summary}>
+                {type && (
+                  <>
+                    <dt>{t.step1.heading}</dt>
+                    <dd>{type}</dd>
+                  </>
+                )}
+                {details && (
+                  <>
+                    <dt>{t.step2.heading}</dt>
+                    <dd>{details}</dd>
+                  </>
+                )}
+                {timeline && (
+                  <>
+                    <dt>{t.step3.heading}</dt>
+                    <dd>{timeline}</dd>
+                  </>
+                )}
+              </dl>
+            )}
             <div className={styles.actions}>
               <button className={styles.backButton} onClick={back}>
                 {t.back}
