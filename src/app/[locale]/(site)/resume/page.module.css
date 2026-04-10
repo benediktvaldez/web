@@ -1,3 +1,15 @@
+.gradient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(
+    farthest-corner circle at 20% 0% in oklab,
+    oklch(44% 0.15 40) 0%,
+    75%,
+    oklch(0% 0.4 40) 110%
+  );
+}
+
 .article {
   position: relative;
   max-width: 42rem;
@@ -5,19 +17,6 @@
 
 .article :target {
   scroll-margin-top: 4rem;
-}
-
-.article::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(
-    farthest-corner circle at 20% 0% in oklab,
-    oklch(35% 0.06 28.28) 0%,
-    75%,
-    oklch(0% 0.3 28.28) 110%
-  );
 }
 
 .header {
@@ -98,6 +97,16 @@
 .separator {
   color: var(--light);
   opacity: 0.3;
+}
+
+.references {
+  margin-bottom: 2.5rem;
+}
+
+.referencesText {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  opacity: 0.6;
 }
 
 .section {
@@ -207,12 +216,14 @@
 }
 
 @media print {
-  .article::before {
+  .gradient {
     display: none;
   }
 
   .article {
     max-width: 100%;
+    width: 100%;
+    overflow: hidden;
   }
 
   .name {
@@ -229,6 +240,7 @@
     border-bottom-color: var(--gray);
     opacity: 1;
     color: var(--dark);
+    break-after: avoid;
   }
 
   .entryLine {
@@ -243,16 +255,38 @@
   .entryDesc {
     font-size: 0.8125rem;
     line-height: 1.5;
+    color: var(--dark);
   }
 
   .techItem {
-    background: rgba(0, 0, 0, 0.06);
-    color: var(--dark);
+    background: none;
+    color: var(--gray);
     opacity: 1;
+    padding: 0;
+  }
+
+  .techItem::after {
+    content: ",";
+  }
+
+  .techItem:last-child::after {
+    content: "";
+  }
+
+  .techList {
+    gap: 0.125rem;
+  }
+
+  .techList::before {
+    content: attr(data-print-label) " ";
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.6875rem;
   }
 
   .entry {
     margin-bottom: 1.25rem;
+    break-inside: avoid;
   }
 
   .section {
@@ -264,6 +298,15 @@
   }
 
   .skillItems {
+    color: var(--gray);
+    opacity: 1;
+  }
+
+  .contact a {
+    color: var(--dark);
+  }
+
+  .referencesText {
     color: var(--gray);
     opacity: 1;
   }

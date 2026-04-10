@@ -54,6 +54,8 @@ const en = {
     communityHeading: 'Community',
     skillsHeading: 'Skills',
     recommendationsHeading: 'Recommendations',
+    referencesHeading: 'References',
+    referencesText: 'Professional references available upon request.',
     print: 'Print / Save as PDF',
   },
 };
@@ -92,6 +94,8 @@ export type Dictionary = {
     communityHeading: string;
     skillsHeading: string;
     recommendationsHeading: string;
+    referencesHeading: string;
+    referencesText: string;
     print: string;
   };
 };

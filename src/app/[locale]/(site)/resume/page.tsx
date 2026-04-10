@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { getExperience, getProjects, getSkills } from "@/content";
-import { recommendations } from "@/content/recommendations";
-import { RecommendationCard } from "@/components/RecommendationCard/RecommendationCard";
 import { PrintButton } from "./PrintButton";
 import styles from "./page.module.css";
 
@@ -30,8 +28,10 @@ export default async function ResumePage({ params }: Props) {
   const communityWork = projects.filter((p) => p.type === "community");
 
   return (
-    <article className={styles.article}>
-      <header className={styles.header}>
+    <>
+      <div className={styles.gradient} />
+      <article className={styles.article}>
+        <header className={styles.header}>
         <h1 className={styles.name}>Benedikt D. Valdez</h1>
         <p className={styles.tagline}>{t.resume.tagline}</p>
         <div className={styles.contact}>
@@ -58,12 +58,12 @@ export default async function ResumePage({ params }: Props) {
         <a href="#community" className={styles.subnavLink}>
           {t.resume.communityHeading}
         </a>
-        {recommendations.length > 0 && (
-          <a href="#recommendations" className={styles.subnavLink}>
-            {t.resume.recommendationsHeading}
-          </a>
-        )}
       </nav>
+
+      <section className={styles.references}>
+        <h2 className={styles.sectionTitle}>{t.resume.referencesHeading}</h2>
+        <p className={styles.referencesText}>{t.resume.referencesText}</p>
+      </section>
 
       <section id="skills" className={styles.section}>
         <h2 className={styles.sectionTitle}>{t.resume.skillsHeading}</h2>
@@ -90,7 +90,10 @@ export default async function ResumePage({ params }: Props) {
             <span className={styles.company}>{job.company}</span>
             <p className={styles.entryDesc}>{job.description}</p>
             {job.tech && (
-              <div className={styles.techList}>
+              <div
+                className={styles.techList}
+                data-print-label={locale === "is" ? "Tæknistakkur:" : "Tech stack:"}
+              >
                 {job.tech.map((t) => (
                   <span key={t} className={styles.techItem}>{t}</span>
                 ))}
@@ -131,20 +134,8 @@ export default async function ResumePage({ params }: Props) {
         ))}
       </section>
 
-      {recommendations.length > 0 && (
-        <section id="recommendations" className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            {t.resume.recommendationsHeading}
-          </h2>
-          <div className={styles.cardGrid}>
-            {recommendations.map((rec) => (
-              <RecommendationCard key={rec.name} recommendation={rec} />
-            ))}
-          </div>
-        </section>
-      )}
-
       <PrintButton label={t.resume.print} />
     </article>
+    </>
   );
 }

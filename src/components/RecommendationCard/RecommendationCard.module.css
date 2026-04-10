@@ -59,3 +59,39 @@
   opacity: 0.4;
   font-size: 0.75rem;
 }
+
+@media print {
+  .card {
+    border: none;
+    background: none;
+    padding: 0;
+    break-inside: avoid;
+  }
+
+  .quote {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    color: var(--dark);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .attribution,
+  .attribution strong {
+    color: var(--dark) !important;
+  }
+
+  .meta {
+    color: var(--gray) !important;
+    opacity: 1;
+  }
+
+  .relation {
+    display: none;
+  }
+}

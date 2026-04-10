@@ -56,6 +56,8 @@ const is: Dictionary = {
     communityHeading: 'Samfélag',
     skillsHeading: 'Hæfni',
     recommendationsHeading: 'Meðmæli',
+    referencesHeading: 'Umsagnir',
+    referencesText: 'Faglegar umsagnir fáanlegar sé þess óskað.',
     print: 'Prenta / Vista sem PDF',
   },
 };
