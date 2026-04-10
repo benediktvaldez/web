@@ -2,7 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { GithubLogo, LinkedinLogo, InstagramLogo, EnvelopeSimple } from '@phosphor-icons/react';
+import {
+  GithubLogoIcon,
+  LinkedinLogoIcon,
+  InstagramLogoIcon,
+  EnvelopeSimpleIcon,
+} from '@phosphor-icons/react';
 import type { Locale } from '@/i18n/config';
 import { getLocalizedSlug } from '@/i18n/config';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher/LanguageSwitcher';
@@ -20,10 +25,10 @@ const navLabels: Record<Locale, Record<string, string>> = {
 };
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/benediktvaldez', icon: GithubLogo },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/benediktvaldez', icon: LinkedinLogo },
-  { name: 'Instagram', href: 'https://instagram.com/benediktvaldez', icon: InstagramLogo },
-  { name: 'Email', href: 'mailto:hi@valdez.is', icon: EnvelopeSimple },
+  { name: 'GitHub', href: 'https://github.com/benediktvaldez', icon: GithubLogoIcon },
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/benediktvaldez', icon: LinkedinLogoIcon },
+  { name: 'Instagram', href: 'https://instagram.com/benediktvaldez', icon: InstagramLogoIcon },
+  { name: 'Email', href: 'mailto:hi@valdez.is', icon: EnvelopeSimpleIcon },
 ];
 
 interface Props {

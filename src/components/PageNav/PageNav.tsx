@@ -1,21 +1,21 @@
 'use client';
 
 import Link from 'next/link';
-import { UserFocus, Rocket, ChatTeardropDots } from '@phosphor-icons/react';
+import { UserFocusIcon, RocketIcon, ChatTeardropDotsIcon } from '@phosphor-icons/react';
 import type { Locale } from '@/i18n/config';
 import { getLocalizedSlug } from '@/i18n/config';
 import styles from './PageNav.module.css';
 
 const pages = [
-  { slug: 'about', icon: UserFocus, label: { en: 'Who am I', is: 'Hver er ég' } },
+  { slug: 'about', icon: UserFocusIcon, label: { en: 'Who am I', is: 'Hver er ég' } },
   {
     slug: 'projects',
-    icon: Rocket,
+    icon: RocketIcon,
     label: { en: 'Projects', is: 'Verkefni' },
   },
   {
     slug: 'thoughts',
-    icon: ChatTeardropDots,
+    icon: ChatTeardropDotsIcon,
     label: { en: 'Thoughts', is: 'Hugleiðingar' },
   },
 ] as const;
@@ -32,6 +32,7 @@ export function PageNav({ locale }: Props) {
           key={slug}
           href={`/${locale}/${getLocalizedSlug(slug, locale)}`}
           className={styles.link}
+          aria-label={label[locale]}
         >
           <Icon size={32} weight="regular" aria-hidden />
           <span className={styles.tooltip}>{label[locale]}</span>

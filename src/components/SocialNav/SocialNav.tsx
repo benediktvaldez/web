@@ -1,16 +1,16 @@
 import {
-  GithubLogo,
-  LinkedinLogo,
-  InstagramLogo,
-  EnvelopeSimple,
+  GithubLogoIcon,
+  LinkedinLogoIcon,
+  InstagramLogoIcon,
+  EnvelopeSimpleIcon,
 } from '@phosphor-icons/react/dist/ssr';
 import styles from './SocialNav.module.css';
 
 const links = [
-  { name: 'GitHub', href: 'https://github.com/benediktvaldez', icon: GithubLogo },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/benediktvaldez', icon: LinkedinLogo },
-  { name: 'Instagram', href: 'https://instagram.com/benediktvaldez', icon: InstagramLogo },
-  { name: 'Email hi@valdez.is', href: 'mailto:hi@valdez.is', icon: EnvelopeSimple },
+  { name: 'GitHub', href: 'https://github.com/benediktvaldez', icon: GithubLogoIcon },
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/benediktvaldez', icon: LinkedinLogoIcon },
+  { name: 'Instagram', href: 'https://instagram.com/benediktvaldez', icon: InstagramLogoIcon },
+  { name: 'Email hi@valdez.is', href: 'mailto:hi@valdez.is', icon: EnvelopeSimpleIcon },
 ];
 
 export function SocialNav() {
