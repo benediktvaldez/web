@@ -1,0 +1,64 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+
+.gradient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(
+    farthest-corner circle at 20% 0% in oklab,
+    oklch(var(--gradient-lightness) var(--gradient-chroma) var(--gradient-hue)) 0%,
+    75%,
+    oklch(0% var(--gradient-chroma-dark) var(--gradient-hue)) 110%
+  );
+}
+
+.gradientOut {
+  z-index: -1;
+  animation: fadeOut 500ms ease-in-out forwards;
+}
+
+.gradientIn {
+  z-index: -2;
+  animation: fadeIn 500ms ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content {
+  animation: contentIn 300ms ease-out;
+}
+
+@keyframes contentIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media print {
+  .gradient {
+    display: none;
+  }
+}

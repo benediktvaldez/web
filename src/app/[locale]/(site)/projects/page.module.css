@@ -2,23 +2,6 @@
   position: relative;
 }
 
-.section::before {
-  --gradient-hue: 240;
-  --gradient-lightness: 42%;
-  --gradient-chroma: 0.12;
-  --gradient-chroma-dark: 0.4;
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(
-    farthest-corner circle at 20% 0% in oklab,
-    oklch(var(--gradient-lightness) var(--gradient-chroma) var(--gradient-hue)) 0%,
-    75%,
-    oklch(0% var(--gradient-chroma-dark) var(--gradient-hue)) 110%
-  );
-}
-
 .heading {
   font-family: var(--font-outfit), sans-serif;
   font-size: 3rem;

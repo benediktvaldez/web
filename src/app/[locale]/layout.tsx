@@ -1,4 +1,5 @@
 import { locales } from '@/i18n/config';
+import { PageTransition } from '@/components/PageTransition/PageTransition';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -13,5 +14,9 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  return <div lang={locale}>{children}</div>;
+  return (
+    <div lang={locale}>
+      <PageTransition>{children}</PageTransition>
+    </div>
+  );
 }

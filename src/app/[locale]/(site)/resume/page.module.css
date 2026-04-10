@@ -1,18 +1,4 @@
-.gradient {
-  --gradient-hue: 40;
-  --gradient-lightness: 44%;
-  --gradient-chroma: 0.15;
-  --gradient-chroma-dark: 0.4;
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(
-    farthest-corner circle at 20% 0% in oklab,
-    oklch(var(--gradient-lightness) var(--gradient-chroma) var(--gradient-hue)) 0%,
-    75%,
-    oklch(0% var(--gradient-chroma-dark) var(--gradient-hue)) 110%
-  );
-}
+/* gradient handled by PageTransition */
 
 .article {
   position: relative;
@@ -248,10 +234,6 @@
 }
 
 @media print {
-  .gradient {
-    display: none;
-  }
-
   .article {
     max-width: 100%;
     width: 100%;
