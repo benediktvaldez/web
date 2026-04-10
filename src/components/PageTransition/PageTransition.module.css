@@ -16,6 +16,31 @@
   );
 }
 
+.gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 60% at 30% 20%,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 70%
+  );
+  background-size: 200% 200%;
+  animation: shimmer 20s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 30% 100%;
+  }
+}
+
 .gradientOut {
   z-index: -1;
   animation: fadeOut 500ms ease-in-out forwards;
