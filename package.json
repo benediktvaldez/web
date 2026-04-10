@@ -13,16 +13,23 @@
     "test:ci": "vitest run --coverage",
     "test:e2e": "playwright test",
     "test:a11y": "playwright test e2e/a11y.spec.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
     "prepare": "husky"
   },
   "dependencies": {
     "@mdx-js/loader": "^3",
     "@mdx-js/react": "^3",
+    "@neondatabase/serverless": "^1.0.2",
     "@next/mdx": "^16",
     "@phosphor-icons/react": "^2.1.10",
+    "drizzle-orm": "^0.45.2",
     "next": "^16",
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "resend": "^6.10.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.1",
@@ -33,6 +40,7 @@
     "@types/react-dom": "^19",
     "@vitest/coverage-v8": "^4.1.4",
     "@vitest/ui": "^4.1.4",
+    "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "^16",
     "eslint-config-prettier": "^10",

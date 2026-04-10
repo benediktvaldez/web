@@ -68,6 +68,43 @@ const en = {
     referencesText: 'Professional references available upon request.',
     print: 'Print / Save as PDF',
   },
+  letsGo: {
+    title: "Let's go",
+    cta: "Let's build something",
+    step1: {
+      heading: 'What are you looking for?',
+      options: [
+        'Build a new product',
+        'Improve an existing one',
+        'Technical consultation',
+        'Something else',
+      ],
+    },
+    step2: {
+      heading: 'Tell me a bit more',
+      placeholder: "What's the project? What problem are you solving?",
+      skip: "I'd rather just talk",
+    },
+    step3: {
+      heading: "What's your timeline?",
+      options: ['ASAP', '1-3 months', '3-6 months', 'Just exploring'],
+    },
+    step4: {
+      heading: 'How should I reach you?',
+      name: 'Name',
+      email: 'Email',
+      company: 'Company (optional)',
+      submit: 'Send it',
+    },
+    step5: {
+      heading: "Thanks, I'll be in touch",
+      message:
+        'I usually respond within 24 hours. Looking forward to hearing more about your project.',
+      backToSite: 'Back to site',
+    },
+    back: 'Back',
+    error: 'Something went wrong. Please try again.',
+  },
 };
 
 export type Dictionary = {
@@ -116,6 +153,17 @@ export type Dictionary = {
     referencesHeading: string;
     referencesText: string;
     print: string;
+  };
+  letsGo: {
+    title: string;
+    cta: string;
+    step1: { heading: string; options: string[] };
+    step2: { heading: string; placeholder: string; skip: string };
+    step3: { heading: string; options: string[] };
+    step4: { heading: string; name: string; email: string; company: string; submit: string };
+    step5: { heading: string; message: string; backToSite: string };
+    back: string;
+    error: string;
   };
 };
 

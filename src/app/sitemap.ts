@@ -9,6 +9,7 @@ const staticPages = [
   { en: '/en/projects', is: '/is/verkefni' },
   { en: '/en/thoughts', is: '/is/hugleidingar' },
   { en: '/en/resume', is: '/is/ferilskra' },
+  { en: '/en/lets-go', is: '/is/byrjum' },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

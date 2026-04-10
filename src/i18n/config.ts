@@ -5,10 +5,11 @@ export const defaultLocale: Locale = 'en';
 // English route name → Icelandic slug
 export const slugMap: Record<string, Record<string, string>> = {
   is: {
-    about: 'hver-er-eg',
-    projects: 'verkefni',
-    thoughts: 'hugleidingar',
-    resume: 'ferilskra',
+    'about': 'hver-er-eg',
+    'projects': 'verkefni',
+    'thoughts': 'hugleidingar',
+    'resume': 'ferilskra',
+    'lets-go': 'byrjum',
   },
 };
 
@@ -19,6 +20,7 @@ export const reverseSlugMap: Record<string, Record<string, string>> = {
     'verkefni': 'projects',
     'hugleidingar': 'thoughts',
     'ferilskra': 'resume',
+    'byrjum': 'lets-go',
   },
 };
 

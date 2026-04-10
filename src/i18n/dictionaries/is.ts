@@ -70,6 +70,37 @@ const is: Dictionary = {
     referencesText: 'Faglegar umsagnir fáanlegar sé þess óskað.',
     print: 'Prenta / Vista sem PDF',
   },
+  letsGo: {
+    title: 'Byrjum',
+    cta: 'Byrjum á einhverju',
+    step1: {
+      heading: 'Hvað ertu að leita að?',
+      options: ['Byggja nýja vöru', 'Bæta núverandi lausn', 'Tæknileg ráðgjöf', 'Eitthvað annað'],
+    },
+    step2: {
+      heading: 'Segðu mér aðeins meira',
+      placeholder: 'Hvað er verkefnið? Hvaða vandamál ertu að leysa?',
+      skip: 'Ég vil frekar bara spjalla',
+    },
+    step3: {
+      heading: 'Hvert er tímaramminn?',
+      options: ['Strax', '1-3 mánuðir', '3-6 mánuðir', 'Bara að kanna'],
+    },
+    step4: {
+      heading: 'Hvernig næ ég til þín?',
+      name: 'Nafn',
+      email: 'Netfang',
+      company: 'Fyrirtæki (valfrjálst)',
+      submit: 'Senda',
+    },
+    step5: {
+      heading: 'Takk, ég hef samband',
+      message: 'Ég svara venjulega innan sólarhrings. Hlakka til að heyra meira um verkefnið þitt.',
+      backToSite: 'Til baka',
+    },
+    back: 'Til baka',
+    error: 'Eitthvað fór úrskeiðis. Vinsamlegast reyndu aftur.',
+  },
 };
 
 export default is;
