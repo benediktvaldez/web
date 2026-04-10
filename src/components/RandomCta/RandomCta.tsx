@@ -13,7 +13,7 @@ export function RandomCta({ options, href, className }: Props) {
   const [text] = useState(() => options[Math.floor(Math.random() * options.length)]);
 
   return (
-    <Link href={href} className={className}>
+    <Link href={href} className={className} suppressHydrationWarning>
       {text}
     </Link>
   );
