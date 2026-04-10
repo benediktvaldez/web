@@ -118,3 +118,25 @@
 .cardLink:hover {
   opacity: 0.7;
 }
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.125rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9375rem;
+  }
+}

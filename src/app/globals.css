@@ -35,7 +35,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   line-height: 1.375;
   font-family: var(--font-nunito), var(--font-overpass), sans-serif;
@@ -53,13 +53,13 @@ h3 {
 }
 
 h1 {
-  font-size: 12.5rem;
+  font-size: clamp(3.5rem, 10vw, 12.5rem);
   font-family: var(--font-overpass), sans-serif;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 400;
 }
 
@@ -70,7 +70,7 @@ h3 {
 
 p {
   margin: 0 auto 1rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.0625rem, 2vw, 1.5rem);
   font-weight: 200;
   color: var(--light);
 }

@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${nunito.variable} ${overpass.variable} ${outfit.variable}`}
     >
       <body>{children}</body>
