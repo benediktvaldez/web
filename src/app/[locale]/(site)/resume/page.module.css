@@ -1,12 +1,16 @@
 .gradient {
+  --gradient-hue: 40;
+  --gradient-lightness: 44%;
+  --gradient-chroma: 0.15;
+  --gradient-chroma-dark: 0.4;
   position: fixed;
   inset: 0;
   z-index: -1;
   background-image: radial-gradient(
     farthest-corner circle at 20% 0% in oklab,
-    oklch(44% 0.15 40) 0%,
+    oklch(var(--gradient-lightness) var(--gradient-chroma) var(--gradient-hue)) 0%,
     75%,
-    oklch(0% 0.4 40) 110%
+    oklch(0% var(--gradient-chroma-dark) var(--gradient-hue)) 110%
   );
 }
 

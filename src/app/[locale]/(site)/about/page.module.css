@@ -3,15 +3,19 @@
 }
 
 .article::before {
+  --gradient-hue: 55;
+  --gradient-lightness: 48%;
+  --gradient-chroma: 0.14;
+  --gradient-chroma-dark: 0.5;
   content: '';
   position: fixed;
   inset: 0;
   z-index: -1;
   background-image: radial-gradient(
     farthest-corner circle at 20% 0% in oklab,
-    oklch(48% 0.14 55) 0%,
+    oklch(var(--gradient-lightness) var(--gradient-chroma) var(--gradient-hue)) 0%,
     75%,
-    oklch(0% 0.5 55) 110%
+    oklch(0% var(--gradient-chroma-dark) var(--gradient-hue)) 110%
   );
 }
 
