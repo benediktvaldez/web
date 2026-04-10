@@ -10,7 +10,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: l } = await params;
   const locale = l as Locale;
   const t = await getDictionary(locale);
-  return { title: t.projects.title };
+  return {
+    title: t.projects.title,
+    description: t.meta.projectsDescription,
+    alternates: { languages: { en: "/en/projects", is: "/is/verkefni" } },
+  };
 }
 
 export default async function ProjectsPage({ params }: Props) {

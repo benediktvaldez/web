@@ -5,9 +5,20 @@ import { SocialNav } from "@/components/SocialNav/SocialNav";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher/LanguageSwitcher";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "@benediktvaldez",
-};
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale: l } = await params;
+  const locale = l as Locale;
+  const t = await getDictionary(locale);
+  return {
+    title: "@benediktvaldez",
+    description: t.meta.siteDescription,
+    alternates: {
+      languages: { en: "/en", is: "/is" },
+    },
+  };
+}
 
 export default async function Home({
   params,

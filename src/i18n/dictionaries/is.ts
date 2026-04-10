@@ -1,6 +1,13 @@
 import type { Dictionary } from './en';
 
 const is: Dictionary = {
+  meta: {
+    siteDescription: 'Forritari og skapari stafrænna upplifana. 15 ára reynsla af vefþróun.',
+    aboutDescription: 'Full stack stafrænn vöruþróunarmaður með 15 ára reynslu af vefþróun, frá íslenskum vefstofum til alþjóðlegra vörufyrirtækja.',
+    projectsDescription: 'Persónuleg verkefni og samfélagsstarf eftir Benedikt D. Valdez.',
+    thoughtsDescription: 'Minnispunktar, hugmyndir og hlutir sem ég hef verið að hugsa um.',
+    resumeDescription: 'Ferilskrá Benedikts D. Valdez. Full stack stafrænn vöruþróunarmaður.',
+  },
   nav: {
     about: 'Um',
     projects: 'Verkefni',

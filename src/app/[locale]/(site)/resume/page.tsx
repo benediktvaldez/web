@@ -11,7 +11,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: l } = await params;
   const locale = l as Locale;
   const t = await getDictionary(locale);
-  return { title: t.resume.title };
+  return {
+    title: t.resume.title,
+    description: t.meta.resumeDescription,
+    alternates: { languages: { en: "/en/resume", is: "/is/ferilskra" } },
+  };
 }
 
 export default async function ResumePage({ params }: Props) {

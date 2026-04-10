@@ -1,4 +1,11 @@
 const en = {
+  meta: {
+    siteDescription: 'Developer and creator of digital experiences. 15 years building for the web.',
+    aboutDescription: 'Full stack digital product developer with 15 years of experience building for the web, from Icelandic agencies to international product companies.',
+    projectsDescription: 'Personal projects and community work by Benedikt D. Valdez.',
+    thoughtsDescription: 'Notes, ideas, and things on my mind.',
+    resumeDescription: 'Resume of Benedikt D. Valdez. Full stack digital product developer.',
+  },
   nav: {
     about: 'About',
     projects: 'Projects',
@@ -61,6 +68,13 @@ const en = {
 };
 
 export type Dictionary = {
+  meta: {
+    siteDescription: string;
+    aboutDescription: string;
+    projectsDescription: string;
+    thoughtsDescription: string;
+    resumeDescription: string;
+  };
   nav: { about: string; projects: string; thoughts: string; resume: string };
   home: { greeting: string; tagline: string; taglineLine2: string };
   about: {
