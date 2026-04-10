@@ -71,7 +71,11 @@ export default async function AboutPage({ params }: Props) {
           <h2 className={styles.sectionHeading}>{t.about.recommendationsHeading}</h2>
           <div className={styles.recommendations}>
             {recommendations.map((rec) => (
-              <RecommendationCard key={rec.name} recommendation={rec} />
+              <RecommendationCard
+                key={rec.name}
+                recommendation={rec}
+                labels={{ readMore: t.about.readMore, showLess: t.about.showLess }}
+              />
             ))}
           </div>
         </section>

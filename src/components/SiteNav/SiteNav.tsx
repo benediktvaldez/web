@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import type { Icon } from '@phosphor-icons/react';
 import {
   GithubLogoIcon,
   LinkedinLogoIcon,
@@ -10,6 +11,7 @@ import {
 } from '@phosphor-icons/react';
 import type { Locale } from '@/i18n/config';
 import { getLocalizedSlug } from '@/i18n/config';
+import { socialLinks } from '@/content/social';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher/LanguageSwitcher';
 import styles from './SiteNav.module.css';
 
@@ -24,12 +26,12 @@ const navLabels: Record<Locale, Record<string, string>> = {
   is: { about: 'Hver er ég', projects: 'Verkefni', thoughts: 'Hugleiðingar' },
 };
 
-const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/benediktvaldez', icon: GithubLogoIcon },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/benediktvaldez', icon: LinkedinLogoIcon },
-  { name: 'Instagram', href: 'https://instagram.com/benediktvaldez', icon: InstagramLogoIcon },
-  { name: 'Email', href: 'mailto:hi@valdez.is', icon: EnvelopeSimpleIcon },
-];
+const iconMap: Record<string, Icon> = {
+  GithubLogo: GithubLogoIcon,
+  LinkedinLogo: LinkedinLogoIcon,
+  InstagramLogo: InstagramLogoIcon,
+  EnvelopeSimple: EnvelopeSimpleIcon,
+};
 
 interface Props {
   locale: Locale;
@@ -68,35 +70,41 @@ export function SiteNav({ locale }: Props) {
           <div className={styles.bottom}>
             <LanguageSwitcher locale={locale} />
             <div className={styles.social}>
-              {socialLinks.map(({ name, href, icon: Icon }) => (
-                <a
-                  key={name}
-                  href={href}
-                  target={href.startsWith('mailto:') ? undefined : '_blank'}
-                  rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-                  className={styles.socialLink}
-                  aria-label={name}
-                >
-                  <Icon size={18} weight="regular" aria-hidden />
-                </a>
-              ))}
+              {socialLinks.map(({ name, href, iconName, external }) => {
+                const Icon = iconMap[iconName];
+                return (
+                  <a
+                    key={name}
+                    href={href}
+                    target={external ? '_blank' : undefined}
+                    rel={external ? 'noopener noreferrer' : undefined}
+                    className={styles.socialLink}
+                    aria-label={name}
+                  >
+                    <Icon size={18} weight="regular" aria-hidden />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </nav>
       </aside>
       <footer className={styles.mobileFooter}>
-        {socialLinks.map(({ name, href, icon: Icon }) => (
-          <a
-            key={name}
-            href={href}
-            target={href.startsWith('mailto:') ? undefined : '_blank'}
-            rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-            className={styles.socialLink}
-            aria-label={name}
-          >
-            <Icon size={18} weight="regular" aria-hidden />
-          </a>
-        ))}
+        {socialLinks.map(({ name, href, iconName, external }) => {
+          const Icon = iconMap[iconName];
+          return (
+            <a
+              key={name}
+              href={href}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
+              className={styles.socialLink}
+              aria-label={name}
+            >
+              <Icon size={18} weight="regular" aria-hidden />
+            </a>
+          );
+        })}
       </footer>
     </>
   );

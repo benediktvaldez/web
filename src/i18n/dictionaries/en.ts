@@ -41,6 +41,8 @@ const en = {
     contactText:
       'Find me on {github}, {linkedin}, or {instagram}. For the full picture, check the {resume}.',
     recommendationsHeading: 'What others say',
+    readMore: 'Read more',
+    showLess: 'Show less',
   },
   projects: {
     title: 'Projects',
@@ -92,6 +94,8 @@ export type Dictionary = {
     contactHeading: string;
     contactText: string;
     recommendationsHeading: string;
+    readMore: string;
+    showLess: string;
   };
   projects: {
     title: string;

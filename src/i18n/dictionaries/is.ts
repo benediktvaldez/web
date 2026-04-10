@@ -43,6 +43,8 @@ const is: Dictionary = {
     contactText:
       'Finndu mig á {github}, {linkedin}, eða {instagram}. Fyrir heildarmyndina, skoðaðu {resume}.',
     recommendationsHeading: 'Hvað aðrir segja',
+    readMore: 'Lesa meira',
+    showLess: 'Sýna minna',
   },
   projects: {
     title: 'Verkefni',
