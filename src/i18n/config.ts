@@ -5,7 +5,7 @@ export const defaultLocale: Locale = 'en';
 // English route name → Icelandic slug
 export const slugMap: Record<string, Record<string, string>> = {
   is: {
-    about: 'um',
+    about: 'hver-er-eg',
     projects: 'verkefni',
     thoughts: 'hugleidingar',
     resume: 'ferilskra',
@@ -15,16 +15,16 @@ export const slugMap: Record<string, Record<string, string>> = {
 // Icelandic slug → English route name (reverse lookup)
 export const reverseSlugMap: Record<string, Record<string, string>> = {
   is: {
-    um: 'about',
-    verkefni: 'projects',
-    hugleidingar: 'thoughts',
-    ferilskra: 'resume',
+    'hver-er-eg': 'about',
+    'verkefni': 'projects',
+    'hugleidingar': 'thoughts',
+    'ferilskra': 'resume',
   },
 };
 
 /**
  * Get the localized path for a given English route and locale.
- * e.g. getLocalizedPath("about", "is") → "um"
+ * e.g. getLocalizedSlug("about", "is") → "hver-er-eg"
  */
 export function getLocalizedSlug(englishSlug: string, locale: Locale): string {
   if (locale === 'en') return englishSlug;
@@ -33,7 +33,7 @@ export function getLocalizedSlug(englishSlug: string, locale: Locale): string {
 
 /**
  * Get the English route name for a localized slug.
- * e.g. getEnglishSlug("um", "is") → "about"
+ * e.g. getEnglishSlug("hver-er-eg", "is") → "about"
  */
 export function getEnglishSlug(slug: string, locale: Locale): string {
   if (locale === 'en') return slug;
@@ -42,7 +42,7 @@ export function getEnglishSlug(slug: string, locale: Locale): string {
 
 /**
  * Build a full localized path.
- * e.g. getLocalizedPath("/en/about", "is") → "/is/um"
+ * e.g. getLocalizedPath("/en/about", "is") → "/is/hver-er-eg"
  */
 export function getLocalizedPath(pathname: string, targetLocale: Locale): string {
   // Strip current locale prefix

@@ -8,7 +8,7 @@ const en = {
     resumeDescription: 'Resume of Benedikt D. Valdez. Full stack digital product developer.',
   },
   nav: {
-    about: 'About',
+    about: 'Who am I',
     projects: 'Projects',
     thoughts: 'Thoughts',
     resume: 'Resume',
@@ -19,7 +19,7 @@ const en = {
     taglineLine2: 'a developer and creator of digital experiences',
   },
   about: {
-    title: 'About',
+    title: 'Who am I',
     intro: [
       "I'm a full stack digital product developer and crafter of beautiful user interfaces. I'm passionate about creating exceptional user experiences that delight.",
       "I started building for the web in 2012 in the Icelandic agency scene, eventually joining Form5 where I worked side-by-side with a designer creating award-winning experiences for clients like 66°North and Salomon. When Form5 merged with Sprettur to form Kolibri, I led front-end technical vision and worked with some of Iceland's biggest brands: Icelandair, The Blue Lagoon, Íslandsbanki.",

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
 import { SocialNav } from '@/components/SocialNav/SocialNav';
+import { PageNav } from '@/components/PageNav/PageNav';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher/LanguageSwitcher';
 import styles from './page.module.css';
 
@@ -36,6 +37,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <br />
         {t.home.taglineLine2}
       </p>
+      <PageNav locale={locale} />
       <SocialNav />
     </main>
   );

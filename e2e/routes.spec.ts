@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('route rendering', () => {
   const enPages = ['/en', '/en/about', '/en/projects', '/en/thoughts', '/en/resume'];
-  const isPages = ['/is', '/is/um', '/is/verkefni', '/is/hugleidingar', '/is/ferilskra'];
+  const isPages = ['/is', '/is/hver-er-eg', '/is/verkefni', '/is/hugleidingar', '/is/ferilskra'];
 
   for (const path of enPages) {
     test(`${path} renders`, async ({ page }) => {
@@ -35,8 +35,8 @@ test.describe('middleware redirects', () => {
     expect(page.url()).toContain('/en/about');
   });
 
-  test('/is/about redirects to /is/um', async ({ page }) => {
+  test('/is/about redirects to /is/hver-er-eg', async ({ page }) => {
     await page.goto('/is/about');
-    expect(page.url()).toContain('/is/um');
+    expect(page.url()).toContain('/is/hver-er-eg');
   });
 });

@@ -5,7 +5,7 @@ const baseUrl = 'https://valdez.is';
 
 const staticPages = [
   { en: '/en', is: '/is' },
-  { en: '/en/about', is: '/is/um' },
+  { en: '/en/about', is: '/is/hver-er-eg' },
   { en: '/en/projects', is: '/is/verkefni' },
   { en: '/en/thoughts', is: '/is/hugleidingar' },
   { en: '/en/resume', is: '/is/ferilskra' },

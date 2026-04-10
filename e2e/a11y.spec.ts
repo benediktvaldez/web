@@ -5,7 +5,7 @@ const pages = [
   { path: '/en', name: 'Home (EN)' },
   { path: '/is', name: 'Home (IS)' },
   { path: '/en/about', name: 'About (EN)' },
-  { path: '/is/um', name: 'About (IS)' },
+  { path: '/is/hver-er-eg', name: 'About (IS)' },
   { path: '/en/projects', name: 'Projects (EN)' },
   { path: '/is/verkefni', name: 'Projects (IS)' },
   { path: '/en/thoughts', name: 'Thoughts (EN)' },

@@ -10,7 +10,7 @@ const links = [
   { name: 'GitHub', href: 'https://github.com/benediktvaldez', icon: GithubLogo },
   { name: 'LinkedIn', href: 'https://linkedin.com/in/benediktvaldez', icon: LinkedinLogo },
   { name: 'Instagram', href: 'https://instagram.com/benediktvaldez', icon: InstagramLogo },
-  { name: 'Email', href: 'mailto:hi@valdez.is', icon: EnvelopeSimple },
+  { name: 'Email hi@valdez.is', href: 'mailto:hi@valdez.is', icon: EnvelopeSimple },
 ];
 
 export function SocialNav() {
@@ -26,6 +26,7 @@ export function SocialNav() {
           aria-label={name}
         >
           <Icon size={32} weight="regular" aria-hidden />
+          <span className={styles.tooltip}>{name}</span>
         </a>
       ))}
     </nav>

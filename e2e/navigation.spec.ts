@@ -23,11 +23,11 @@ test.describe('language switcher', () => {
   test('switches from EN to IS on about page', async ({ page }) => {
     await page.goto('/en/about');
     await page.getByRole('navigation', { name: 'Language' }).getByRole('link').first().click();
-    await expect(page).toHaveURL(/\/is\/um/);
+    await expect(page).toHaveURL(/\/is\/hver-er-eg/);
   });
 
   test('switches from IS to EN on about page', async ({ page }) => {
-    await page.goto('/is/um');
+    await page.goto('/is/hver-er-eg');
     await page.getByRole('navigation', { name: 'Language' }).getByRole('link').first().click();
     await expect(page).toHaveURL(/\/en\/about/);
   });

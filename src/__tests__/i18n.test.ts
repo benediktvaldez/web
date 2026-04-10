@@ -37,7 +37,7 @@ describe('getLocalizedSlug', () => {
   });
 
   it('translates slugs for is locale', () => {
-    expect(getLocalizedSlug('about', 'is')).toBe('um');
+    expect(getLocalizedSlug('about', 'is')).toBe('hver-er-eg');
     expect(getLocalizedSlug('projects', 'is')).toBe('verkefni');
     expect(getLocalizedSlug('thoughts', 'is')).toBe('hugleidingar');
     expect(getLocalizedSlug('resume', 'is')).toBe('ferilskra');
@@ -54,7 +54,7 @@ describe('getEnglishSlug', () => {
   });
 
   it('maps icelandic slugs back to english', () => {
-    expect(getEnglishSlug('um', 'is')).toBe('about');
+    expect(getEnglishSlug('hver-er-eg', 'is')).toBe('about');
     expect(getEnglishSlug('verkefni', 'is')).toBe('projects');
     expect(getEnglishSlug('hugleidingar', 'is')).toBe('thoughts');
     expect(getEnglishSlug('ferilskra', 'is')).toBe('resume');
@@ -68,8 +68,8 @@ describe('getLocalizedPath', () => {
   });
 
   it('translates page slugs when switching locale', () => {
-    expect(getLocalizedPath('/en/about', 'is')).toBe('/is/um');
-    expect(getLocalizedPath('/is/um', 'en')).toBe('/en/about');
+    expect(getLocalizedPath('/en/about', 'is')).toBe('/is/hver-er-eg');
+    expect(getLocalizedPath('/is/hver-er-eg', 'en')).toBe('/en/about');
   });
 
   it('preserves sub-paths like blog slugs', () => {

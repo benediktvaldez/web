@@ -15,8 +15,8 @@ const navItems = [
 ] as const;
 
 const navLabels: Record<Locale, Record<string, string>> = {
-  en: { about: 'About', projects: 'Projects', thoughts: 'Thoughts' },
-  is: { about: 'Um', projects: 'Verkefni', thoughts: 'Hugleiðingar' },
+  en: { about: 'Who am I', projects: 'Projects', thoughts: 'Thoughts' },
+  is: { about: 'Hver er ég', projects: 'Verkefni', thoughts: 'Hugleiðingar' },
 };
 
 const socialLinks = [
