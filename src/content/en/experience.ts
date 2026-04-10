@@ -53,7 +53,7 @@ export const experience: Experience[] = [
     role: "Senior Digital Product Developer",
     period: "Sep 2022 – Sep 2023",
     description:
-      "Helped build an interactive visualisation layer on top of GRID's proprietary spreadsheet engine — the first of its kind with integrated AI assistance. Users craft compelling data narratives from GRID spreadsheets or connected sources like Notion, Google Sheets, and Dropbox. Built upon the open source Slate editor, my contributions focused on elevating the WYSIWYG editor's capabilities, including implementing drag-and-drop for custom elements and streamlining user interactions.",
+      "Helped build an interactive visualisation layer on top of GRID's proprietary spreadsheet engine,the first of its kind with integrated AI assistance. Users craft compelling data narratives from GRID spreadsheets or connected sources like Notion, Google Sheets, and Dropbox. Built upon the open source Slate editor, my contributions focused on elevating the WYSIWYG editor's capabilities, including implementing drag-and-drop for custom elements and streamlining user interactions.",
     tech: ["Next.js", "React", "TypeScript", "Storybook", "Slate"],
   },
   {
@@ -94,7 +94,7 @@ export const experience: Experience[] = [
     role: "Senior Web Application Developer / UX Engineer",
     period: "Feb 2018 – Oct 2018",
     description:
-      "Worked with WOW air across assignments centered around their website (Django/Wagtail) and booking engine — a complex React project with elaborate business logic, partially written in Reason. Also contributed briefly to Google's websites for their Nest product line.",
+      "Worked with WOW air across assignments centered around their website (Django/Wagtail) and booking engine,a complex React project with elaborate business logic, partially written in Reason. Also contributed briefly to Google's websites for their Nest product line.",
   },
   {
     company: "Kolibri",

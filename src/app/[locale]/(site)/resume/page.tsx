@@ -45,18 +45,27 @@ export default async function ResumePage({ params }: Props) {
         </div>
       </header>
 
-      {recommendations.length > 0 && (
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
+      <nav className={styles.subnav} data-print-hide>
+        <a href="#skills" className={styles.subnavLink}>
+          {t.resume.skillsHeading}
+        </a>
+        <a href="#experience" className={styles.subnavLink}>
+          {t.resume.experienceHeading}
+        </a>
+        <a href="#projects" className={styles.subnavLink}>
+          {t.resume.projectsHeading}
+        </a>
+        <a href="#community" className={styles.subnavLink}>
+          {t.resume.communityHeading}
+        </a>
+        {recommendations.length > 0 && (
+          <a href="#recommendations" className={styles.subnavLink}>
             {t.resume.recommendationsHeading}
-          </h2>
-          {recommendations.map((rec) => (
-            <RecommendationCard key={rec.name} recommendation={rec} />
-          ))}
-        </section>
-      )}
+          </a>
+        )}
+      </nav>
 
-      <section className={styles.section}>
+      <section id="skills" className={styles.section}>
         <h2 className={styles.sectionTitle}>{t.resume.skillsHeading}</h2>
         <div className={styles.skillGrid}>
           {skills.map((category) => (
@@ -70,7 +79,7 @@ export default async function ResumePage({ params }: Props) {
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section id="experience" className={styles.section}>
         <h2 className={styles.sectionTitle}>{t.resume.experienceHeading}</h2>
         {experience.map((job) => (
           <div key={`${job.company}-${job.period}`} className={styles.entry}>
@@ -91,7 +100,7 @@ export default async function ResumePage({ params }: Props) {
         ))}
       </section>
 
-      <section className={styles.section}>
+      <section id="projects" className={styles.section}>
         <h2 className={styles.sectionTitle}>{t.resume.projectsHeading}</h2>
         {specialProjects.map((project) => (
           <div key={project.slug} className={styles.entry}>
@@ -109,7 +118,7 @@ export default async function ResumePage({ params }: Props) {
         ))}
       </section>
 
-      <section className={styles.section}>
+      <section id="community" className={styles.section}>
         <h2 className={styles.sectionTitle}>{t.resume.communityHeading}</h2>
         {communityWork.map((item) => (
           <div key={item.slug} className={styles.entry}>
@@ -121,6 +130,19 @@ export default async function ResumePage({ params }: Props) {
           </div>
         ))}
       </section>
+
+      {recommendations.length > 0 && (
+        <section id="recommendations" className={styles.section}>
+          <h2 className={styles.sectionTitle}>
+            {t.resume.recommendationsHeading}
+          </h2>
+          <div className={styles.cardGrid}>
+            {recommendations.map((rec) => (
+              <RecommendationCard key={rec.name} recommendation={rec} />
+            ))}
+          </div>
+        </section>
+      )}
 
       <PrintButton label={t.resume.print} />
     </article>

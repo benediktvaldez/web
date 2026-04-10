@@ -24,6 +24,7 @@ img {
 html {
   background: var(--dark);
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 html,

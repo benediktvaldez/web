@@ -51,17 +51,17 @@ export const projects: Project[] = [
     slug: "svef-voting",
     title: "SVEF Voting System",
     description:
-      "A web application that streamlines the review process for submissions to the Icelandic Web Awards. Originally built in React, later rewritten with Next.js, TypeScript, and GraphQL. Maintained and used annually since 2018.",
+      "A web application that streamlined the review process for submissions to the Icelandic Web Awards. Originally built in React, later rewritten with Next.js, TypeScript, and GraphQL. Built, maintained, and used annually from 2018 to 2024.",
     tags: ["Next.js", "React", "TypeScript", "GraphQL", "Vitest"],
     featured: true,
-    year: "2018 – Present",
+    year: "2018 – 2024",
     type: "personal",
   },
   {
     slug: "valdez-is",
     title: "valdez.is",
     description:
-      "This website. A living resume and personal site built with Next.js 16 App Router, CSS Modules, and per-page oklch gradients. No CMS — content as code.",
+      "This website. A living resume and personal site built with Next.js 16 App Router, CSS Modules, and per-page oklch gradients. No CMS,content as code.",
     repo: "https://github.com/benediktvaldez/web",
     tags: ["Next.js", "React", "CSS Modules", "MDX"],
     featured: false,
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     slug: "jsconf-iceland",
     title: "JSConf Iceland",
     description:
-      "Co-organized JSConf Iceland 2016 and 2018 — two-day conferences with 30+ international speakers and 400+ attendees each. Part of the global JSConf family.",
+      "Co-organized JSConf Iceland 2016 and 2018,two-day conferences with 30+ international speakers and 400+ attendees each. Part of the global JSConf family.",
     url: "https://2018.jsconf.is",
     tags: ["Conference", "Community", "JavaScript"],
     featured: true,

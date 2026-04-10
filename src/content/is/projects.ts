@@ -49,7 +49,7 @@ export const projects: Project[] = [
     slug: "valdez-is",
     title: "valdez.is",
     description:
-      "Þessi vefsíða. Lifandi ferilskrá og persónuleg síða byggð með Next.js 16 App Router, CSS Modules og oklch litastigsbreytingum á hverri síðu. Ekkert CMS — efni sem kóði.",
+      "Þessi vefsíða. Lifandi ferilskrá og persónuleg síða byggð með Next.js 16 App Router, CSS Modules og oklch litastigsbreytingum á hverri síðu. Ekkert CMS,efni sem kóði.",
     repo: "https://github.com/benediktvaldez/web",
     tags: ["Next.js", "React", "CSS Modules", "MDX"],
     featured: false,
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     slug: "jsconf-iceland",
     title: "JSConf Iceland",
     description:
-      "Meðskipuleggjandi JSConf Iceland 2016 og 2018 — tveggja daga ráðstefnur með yfir 30 alþjóðlegum fyrirlesurum og yfir 400 gestum hvor. Hluti af alþjóðlegu JSConf fjölskyldunni.",
+      "Meðskipuleggjandi JSConf Iceland 2016 og 2018,tveggja daga ráðstefnur með yfir 30 alþjóðlegum fyrirlesurum og yfir 400 gestum hvor. Hluti af alþjóðlegu JSConf fjölskyldunni.",
     url: "https://2018.jsconf.is",
     tags: ["Ráðstefna", "Samfélag", "JavaScript"],
     featured: true,
