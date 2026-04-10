@@ -105,5 +105,5 @@ npm run lint        # ESLint with jsx-a11y strict
 
 Every push triggers CI: lint, unit tests, build, e2e + accessibility. Nothing deploys until everything passes.
 
-- `next` branch deploys to preview
-- `main` branch deploys to production
+- Pushes to `next` deploy a preview
+- GitHub Releases trigger production deployment

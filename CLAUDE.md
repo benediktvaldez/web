@@ -55,8 +55,8 @@ Per-page oklch gradients using CSS custom properties:
 - All pages must pass axe-core accessibility scans
 - Content data validated for completeness across both locales
 
-## Branching
+## Branching & Deployment
 
-- `next` branch for development (deploys to preview)
-- `main` for production (deploys to valdez.is)
-- CI must pass before deploy (lint, unit tests, build, e2e)
+- `next` branch for development (deploys preview on push)
+- `main` for production (deploys only via GitHub Releases)
+- CI must pass before any deploy (lint, unit tests, build, e2e)
