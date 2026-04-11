@@ -4,6 +4,8 @@ Yes, this is a personal website with a CI pipeline, 51 unit tests, 106 end-to-en
 
 For a site that is just a few pages and a blog.
 
+Lighthouse: **100** Accessibility · **100** Best Practices · **100** SEO · **96** Performance
+
 Could it have been a few HTML files? Absolutely. And sometimes that's the right call. But this repo doubles as a showcase of how I work when the goal is to do things properly: clean architecture, solid testing, and the kind of attention to detail that's hard to demonstrate in a conversation. Think of it less as a website and more as an open-source portfolio piece that happens to have a URL.
 
 ## On AI-augmented development
