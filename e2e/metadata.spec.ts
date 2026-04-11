@@ -44,7 +44,7 @@ test.describe('metadata and SEO', () => {
   test('twitter card is set', async ({ page }) => {
     await page.goto('/en');
     const twitterCard = await page.getAttribute('meta[name="twitter:card"]', 'content');
-    expect(twitterCard).toBe('summary');
+    expect(twitterCard).toBe('summary_large_image');
   });
 });
 
