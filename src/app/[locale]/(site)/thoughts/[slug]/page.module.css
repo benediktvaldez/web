@@ -138,3 +138,32 @@
   opacity: 0.45;
   font-style: italic;
 }
+
+.missingTitle {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.missingText {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 28rem;
+  margin-bottom: 2rem;
+}
+
+.missingLink {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--light);
+  text-decoration: none;
+  transition: opacity 300ms;
+}
+
+.missingLink:hover {
+  opacity: 0.7;
+}

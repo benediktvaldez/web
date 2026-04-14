@@ -12,6 +12,7 @@ export interface PostMeta {
   type: PostType;
   era?: string;
   related?: string;
+  localeSlug?: Record<string, string>;
 }
 
 function getThoughtsDir(locale: Locale): string {
@@ -33,6 +34,14 @@ export function getAllPosts(locale: Locale): PostMeta[] {
     const content = fs.readFileSync(path.join(targetDir, filename), 'utf-8');
     const meta = parseFrontmatter(content);
 
+    // Collect locale_* fields into a map
+    const localeSlug: Record<string, string> = {};
+    for (const [key, value] of Object.entries(meta)) {
+      if (key.startsWith('locale_') && value) {
+        localeSlug[key.replace('locale_', '')] = value;
+      }
+    }
+
     return {
       slug,
       title: meta.title || slug,
@@ -41,6 +50,7 @@ export function getAllPosts(locale: Locale): PostMeta[] {
       type: (meta.type as PostType) || 'post',
       era: meta.era || undefined,
       related: meta.related || undefined,
+      localeSlug: Object.keys(localeSlug).length > 0 ? localeSlug : undefined,
     };
   });
 

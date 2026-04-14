@@ -46,7 +46,11 @@ export function getEnglishSlug(slug: string, locale: Locale): string {
  * Build a full localized path.
  * e.g. getLocalizedPath("/en/about", "is") → "/is/hver-er-eg"
  */
-export function getLocalizedPath(pathname: string, targetLocale: Locale): string {
+export function getLocalizedPath(
+  pathname: string,
+  targetLocale: Locale,
+  postSlugMap?: Record<string, string>,
+): string {
   // Strip current locale prefix
   const segments = pathname.split('/').filter(Boolean);
   const currentLocale = segments[0] as Locale;
@@ -60,5 +64,11 @@ export function getLocalizedPath(pathname: string, targetLocale: Locale): string
   const englishSlug = currentLocale === 'en' ? rest[0] : getEnglishSlug(rest[0], currentLocale);
   const targetSlug = getLocalizedSlug(englishSlug, targetLocale);
 
-  return `/${targetLocale}/${targetSlug}${rest.length > 1 ? '/' + rest.slice(1).join('/') : ''}`;
+  // Map sub-paths (e.g. blog post slugs) if a mapping is provided
+  const subPath = rest.slice(1);
+  if (subPath.length > 0 && postSlugMap?.[targetLocale]) {
+    return `/${targetLocale}/${targetSlug}/${postSlugMap[targetLocale]}`;
+  }
+
+  return `/${targetLocale}/${targetSlug}${subPath.length > 0 ? '/' + subPath.join('/') : ''}`;
 }
