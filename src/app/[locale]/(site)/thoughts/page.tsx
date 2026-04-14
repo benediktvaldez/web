@@ -40,7 +40,13 @@ export default async function ThoughtsPage({ params }: Props) {
               <Link href={`/${locale}/${thoughtsSlug}/${post.slug}`} className={styles.postLink}>
                 <h2 className={styles.postTitle}>{post.title}</h2>
                 {post.summary && <p className={styles.postSummary}>{post.summary}</p>}
-                <time className={styles.postDate}>{post.date}</time>
+                {post.type === 'archive' && post.era ? (
+                  <span className={styles.postEra}>
+                    {locale === 'is' ? 'Úr safninu' : 'From the archive'}: {post.era}
+                  </span>
+                ) : (
+                  <time className={styles.postDate}>{post.date}</time>
+                )}
               </Link>
             </li>
           ))}

@@ -2,11 +2,16 @@ import fs from 'fs';
 import path from 'path';
 import type { Locale } from '@/i18n/config';
 
+export type PostType = 'post' | 'archive';
+
 export interface PostMeta {
   slug: string;
   title: string;
   date: string;
   summary: string;
+  type: PostType;
+  era?: string;
+  related?: string;
 }
 
 function getThoughtsDir(locale: Locale): string {
@@ -33,6 +38,9 @@ export function getAllPosts(locale: Locale): PostMeta[] {
       title: meta.title || slug,
       date: meta.date || '',
       summary: meta.summary || '',
+      type: (meta.type as PostType) || 'post',
+      era: meta.era || undefined,
+      related: meta.related || undefined,
     };
   });
 

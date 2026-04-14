@@ -5,6 +5,22 @@
 
 /* gradient handled by PageTransition */
 
+.backLink {
+  display: inline-block;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--light);
+  text-decoration: none;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+  transition: opacity 300ms;
+}
+
+.backLink:hover {
+  opacity: 1;
+}
+
 .article h1 {
   font-family: var(--font-outfit), sans-serif;
   font-size: 2.5rem;
@@ -27,10 +43,17 @@
 }
 
 .article a {
-  color: var(--blue);
+  color: var(--light);
+  font-weight: 500;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
+  text-decoration-color: rgba(239, 241, 243, 0.4);
+  transition: text-decoration-color 300ms;
+}
+
+.article a:hover {
+  text-decoration-color: var(--light);
 }
 
 .article code {
@@ -73,4 +96,45 @@
   border-left: 3px solid rgba(239, 241, 243, 0.2);
   font-style: italic;
   opacity: 0.8;
+}
+
+.nextPost {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(239, 241, 243, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.nextLabel {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--light);
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nextLink {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--light);
+  text-decoration: none;
+  transition: opacity 300ms;
+}
+
+.nextLink:hover {
+  opacity: 0.8;
+}
+
+.nextEra {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--light);
+  opacity: 0.45;
+  font-style: italic;
 }
