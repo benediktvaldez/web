@@ -86,6 +86,17 @@
 
 @media print {
   .gradient {
-    display: none;
+    display: none !important;
+  }
+
+  .wrapper {
+    position: static;
+  }
+
+  .content {
+    position: static;
+    z-index: auto;
+    animation: none;
+    opacity: 1 !important;
   }
 }

@@ -55,6 +55,7 @@
   position: sticky;
   top: 0;
   z-index: 5;
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(16px) saturate(1.2);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   margin-left: -1rem;

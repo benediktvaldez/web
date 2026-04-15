@@ -164,6 +164,14 @@ p {
 }
 
 @media print {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
+
   nav,
   footer,
   [data-print-hide] {

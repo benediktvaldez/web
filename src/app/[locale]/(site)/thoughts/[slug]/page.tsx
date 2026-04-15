@@ -100,8 +100,16 @@ export default async function ThoughtPage({ params }: Props) {
         <Link href={`/${locale}/${thoughtsSlug}`} className={styles.backLink}>
           ← {locale === 'is' ? 'Til baka' : 'All thoughts'}
         </Link>
+        <h1>{currentPost.title}</h1>
+        <div className={styles.printByline}>
+          <p>
+            {locale === 'is'
+              ? 'Eftir Benedikt D. Valdez · hi@valdez.is · valdez.is'
+              : 'By Benedikt D. Valdez · hi@valdez.is · valdez.is'}
+          </p>
+        </div>
         <GalleryProvider>
-          <Content />
+          <Content components={{ h1: () => null }} />
         </GalleryProvider>
         {nextPost && (
           <div className={styles.nextPost}>
