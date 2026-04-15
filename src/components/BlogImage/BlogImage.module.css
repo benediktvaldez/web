@@ -144,3 +144,24 @@
     font-size: 2rem;
   }
 }
+
+@media print {
+  .thumbnail {
+    cursor: default;
+    margin: 0.25rem 0.25rem 0.25rem 0;
+  }
+
+  .thumbnail:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .image {
+    width: 160px;
+    height: 120px;
+  }
+
+  .lightbox {
+    display: none;
+  }
+}

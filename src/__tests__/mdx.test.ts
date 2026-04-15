@@ -26,11 +26,13 @@ describe('MDX utilities', () => {
       }
     });
 
-    it('falls back to english when locale directory is missing or empty', () => {
-      const enPosts = getAllPosts('en');
+    it('returns icelandic posts from is/ directory', () => {
       const isPosts = getAllPosts('is');
-      // Falls back to en if is/ doesn't exist, returns 0 if is/ exists but is empty
-      expect(isPosts.length === 0 || isPosts.length === enPosts.length).toBe(true);
+      expect(isPosts.length).toBeGreaterThan(0);
+      for (const post of isPosts) {
+        expect(post).toHaveProperty('slug');
+        expect(post).toHaveProperty('title');
+      }
     });
   });
 

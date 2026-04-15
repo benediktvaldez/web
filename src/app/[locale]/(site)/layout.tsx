@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
 import { getLocalizedSlug } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';

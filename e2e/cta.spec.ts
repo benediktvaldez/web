@@ -3,7 +3,10 @@ import { test, expect } from '@playwright/test';
 test.describe('CTA visibility', () => {
   test('nav has CTA link on inner pages', async ({ page }) => {
     await page.goto('/en/about');
-    const navCta = page.getByRole('navigation', { name: 'Main' }).getByText('Work with me');
+    const navCta = page
+      .getByRole('navigation', { name: 'Main' })
+      .getByRole('link', { name: 'Work with me' })
+      .first();
     await expect(navCta).toBeVisible();
   });
 
@@ -24,14 +27,20 @@ test.describe('CTA visibility', () => {
 
   test('CTA links to wizard page', async ({ page }) => {
     await page.goto('/en/about');
-    const navCta = page.getByRole('navigation', { name: 'Main' }).getByText('Work with me');
+    const navCta = page
+      .getByRole('navigation', { name: 'Main' })
+      .getByRole('link', { name: 'Work with me' })
+      .first();
     await navCta.click();
     await expect(page).toHaveURL(/\/en\/lets-go/);
   });
 
   test('icelandic nav CTA works', async ({ page }) => {
     await page.goto('/is/verkefni');
-    const navCta = page.getByRole('navigation', { name: 'Main' }).getByText('Vinnum saman');
+    const navCta = page
+      .getByRole('navigation', { name: 'Main' })
+      .getByRole('link', { name: 'Vinnum saman' })
+      .first();
     await expect(navCta).toBeVisible();
     await navCta.click();
     await expect(page).toHaveURL(/\/is\/byrjum/);
