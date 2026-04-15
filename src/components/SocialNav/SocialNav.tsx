@@ -2,7 +2,6 @@ import type { Icon } from '@phosphor-icons/react';
 import {
   GithubLogoIcon,
   LinkedinLogoIcon,
-  InstagramLogoIcon,
   EnvelopeSimpleIcon,
 } from '@phosphor-icons/react/dist/ssr';
 import { socialLinks } from '@/content/social';
@@ -11,7 +10,6 @@ import styles from './SocialNav.module.css';
 const iconMap: Record<string, Icon> = {
   GithubLogo: GithubLogoIcon,
   LinkedinLogo: LinkedinLogoIcon,
-  InstagramLogo: InstagramLogoIcon,
   EnvelopeSimple: EnvelopeSimpleIcon,
 };
 

@@ -38,8 +38,7 @@ const en = {
     sideProjectsDesc:
       'Crumbtrail, Fil Rouge Studio, Ólátakjallari. Apps built with Next.js and Supabase, developed with AI-augmented workflows.',
     contactHeading: 'Get in touch',
-    contactText:
-      'Find me on {github}, {linkedin}, or {instagram}. For the full picture, check the {resume}.',
+    contactText: 'Find me on {github} or {linkedin}. For the full picture, check the {resume}.',
     recommendationsHeading: 'What others say',
     ctaOptions: [
       'Have a project in mind? →',

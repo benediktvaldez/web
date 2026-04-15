@@ -6,7 +6,6 @@ describe('social links', () => {
     const names = socialLinks.map((l) => l.name);
     expect(names).toContain('GitHub');
     expect(names).toContain('LinkedIn');
-    expect(names).toContain('Instagram');
     expect(names).toContain('Email');
   });
 

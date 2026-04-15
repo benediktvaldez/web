@@ -90,16 +90,29 @@ export default async function ProjectsPage({ params }: Props) {
                 </span>
               ))}
             </div>
-            {project.url && (
+            {(project.url || project.urls) && (
               <div className={styles.cardLinks}>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.cardLink}
-                >
-                  {t.projects.visit}
-                </a>
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.cardLink}
+                  >
+                    {t.projects.visit}
+                  </a>
+                )}
+                {project.urls?.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.cardLink}
+                  >
+                    {link.label}
+                  </a>
+                ))}
               </div>
             )}
           </article>

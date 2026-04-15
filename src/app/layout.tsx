@@ -51,7 +51,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 'sameAs': [
                   'https://github.com/benediktvaldez',
                   'https://linkedin.com/in/benediktvaldez',
-                  'https://instagram.com/benediktvaldez',
                 ],
               },
             }),

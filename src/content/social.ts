@@ -1,7 +1,7 @@
 export interface SocialLinkData {
   name: string;
   href: string;
-  iconName: 'GithubLogo' | 'LinkedinLogo' | 'InstagramLogo' | 'EnvelopeSimple';
+  iconName: 'GithubLogo' | 'LinkedinLogo' | 'EnvelopeSimple';
   external: boolean;
 }
 
@@ -16,12 +16,6 @@ export const socialLinks: SocialLinkData[] = [
     name: 'LinkedIn',
     href: 'https://linkedin.com/in/benediktvaldez',
     iconName: 'LinkedinLogo',
-    external: true,
-  },
-  {
-    name: 'Instagram',
-    href: 'https://instagram.com/benediktvaldez',
-    iconName: 'InstagramLogo',
     external: true,
   },
   {

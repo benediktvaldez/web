@@ -1,10 +1,16 @@
 export type ProjectType = 'personal' | 'community';
 
+export interface ProjectLink {
+  label: string;
+  href: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
   description: string;
   url?: string;
+  urls?: ProjectLink[];
   repo?: string;
   tags: string[];
   featured: boolean;
@@ -19,32 +25,9 @@ export const projects: Project[] = [
     description:
       'A family recipe book app born from scattered group chats, handwritten notes, and relatives who never measured anything. Family members can browse, search, and add their own recipes. Built with AI-augmented workflows using Claude Code. What started as a personal fix is becoming a reusable product.',
     url: 'https://crumbtrail.valdez.is',
-    repo: 'https://github.com/benediktvaldez/crumbtrail',
     tags: ['Next.js', 'React', 'Mantine', 'Supabase', 'Vercel'],
     featured: true,
     year: 2026,
-    type: 'personal',
-  },
-  {
-    slug: 'fil-rouge-studio',
-    title: 'Fil Rouge Studio',
-    description:
-      'Sewing project manager for tracking fabrics, patterns, and works in progress. An editorial, minimal interface for managing the creative process.',
-    repo: 'https://github.com/benediktvaldez/fil-rouge-studio',
-    tags: ['Next.js', 'React', 'SCSS Modules', 'Supabase'],
-    featured: true,
-    year: 2025,
-    type: 'personal',
-  },
-  {
-    slug: 'olatakjallari',
-    title: 'Ólátakjallari',
-    description:
-      'An Icelandic project management tool with drag-and-drop organization and a warm, dark UI.',
-    repo: 'https://github.com/benediktvaldez/olatakjallari',
-    tags: ['Next.js', 'React', 'dnd-kit', 'Supabase'],
-    featured: true,
-    year: 2025,
     type: 'personal',
   },
   {
@@ -73,7 +56,10 @@ export const projects: Project[] = [
     title: 'JSConf Iceland',
     description:
       'Co-organized JSConf Iceland 2016 and 2018,two-day conferences with 30+ international speakers and 400+ attendees each. Part of the global JSConf family.',
-    url: 'https://2018.jsconf.is',
+    urls: [
+      { label: '2016', href: 'https://2016.jsconf.is' },
+      { label: '2018', href: 'https://2018.jsconf.is' },
+    ],
     tags: ['Conference', 'Community', 'JavaScript'],
     featured: true,
     year: '2016, 2018',

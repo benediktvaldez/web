@@ -5,12 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { Icon } from '@phosphor-icons/react';
 import { ListIcon, XIcon } from '@phosphor-icons/react';
-import {
-  GithubLogoIcon,
-  LinkedinLogoIcon,
-  InstagramLogoIcon,
-  EnvelopeSimpleIcon,
-} from '@phosphor-icons/react';
+import { GithubLogoIcon, LinkedinLogoIcon, EnvelopeSimpleIcon } from '@phosphor-icons/react';
 import type { Locale } from '@/i18n/config';
 import { getLocalizedSlug } from '@/i18n/config';
 import { socialLinks } from '@/content/social';
@@ -36,7 +31,6 @@ const navLabels: Record<Locale, Record<string, string>> = {
 const iconMap: Record<string, Icon> = {
   GithubLogo: GithubLogoIcon,
   LinkedinLogo: LinkedinLogoIcon,
-  InstagramLogo: InstagramLogoIcon,
   EnvelopeSimple: EnvelopeSimpleIcon,
 };
 

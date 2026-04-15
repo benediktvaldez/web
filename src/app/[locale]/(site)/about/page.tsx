@@ -84,53 +84,39 @@ export default async function AboutPage({ params }: Props) {
       <section className={styles.section}>
         <h2 className={styles.sectionHeading}>{t.about.contactHeading}</h2>
         <p className={styles.contactText}>
-          {t.about.contactText
-            .split(/(\{github\}|\{linkedin\}|\{instagram\}|\{resume\})/)
-            .map((part, i) => {
-              if (part === '{github}')
-                return (
-                  <a
-                    key={i}
-                    href="https://github.com/benediktvaldez"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.inlineLink}
-                  >
-                    GitHub
-                  </a>
-                );
-              if (part === '{linkedin}')
-                return (
-                  <a
-                    key={i}
-                    href="https://linkedin.com/in/benediktvaldez"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.inlineLink}
-                  >
-                    LinkedIn
-                  </a>
-                );
-              if (part === '{instagram}')
-                return (
-                  <a
-                    key={i}
-                    href="https://instagram.com/benediktvaldez"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.inlineLink}
-                  >
-                    Instagram
-                  </a>
-                );
-              if (part === '{resume}')
-                return (
-                  <Link key={i} href={`/${locale}/${resumeSlug}`} className={styles.inlineLink}>
-                    {t.nav.resume.toLowerCase()}
-                  </Link>
-                );
-              return part;
-            })}
+          {t.about.contactText.split(/(\{github\}|\{linkedin\}|\{resume\})/).map((part, i) => {
+            if (part === '{github}')
+              return (
+                <a
+                  key={i}
+                  href="https://github.com/benediktvaldez"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.inlineLink}
+                >
+                  GitHub
+                </a>
+              );
+            if (part === '{linkedin}')
+              return (
+                <a
+                  key={i}
+                  href="https://linkedin.com/in/benediktvaldez"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.inlineLink}
+                >
+                  LinkedIn
+                </a>
+              );
+            if (part === '{resume}')
+              return (
+                <Link key={i} href={`/${locale}/${resumeSlug}`} className={styles.inlineLink}>
+                  {t.nav.resume.toLowerCase()}
+                </Link>
+              );
+            return part;
+          })}
         </p>
       </section>
     </article>
