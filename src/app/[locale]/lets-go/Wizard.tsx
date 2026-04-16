@@ -99,12 +99,12 @@ export function Wizard({ locale, t }: Props) {
         {step === 1 && (
           <div className={styles.step}>
             <h1 className={styles.heading}>{t.step2.heading}</h1>
+            <p className={styles.stepDescription}>{t.step2.placeholder}</p>
             <textarea
               className={styles.textarea}
-              placeholder={t.step2.placeholder}
               value={details}
               onChange={(e) => setDetails(e.target.value)}
-              rows={4}
+              rows={5}
             />
             <div className={styles.actions}>
               <button className={styles.backButton} onClick={back}>
@@ -162,6 +162,15 @@ export function Wizard({ locale, t }: Props) {
                     setEmail(e.target.value);
                     if (emailError) setEmailError('');
                   }}
+                  onBlur={() => {
+                    if (email.trim() && !isValidEmail(email.trim())) {
+                      setEmailError(
+                        locale === 'is'
+                          ? 'Vinsamlegast sláðu inn gilt netfang'
+                          : 'Please enter a valid email address',
+                      );
+                    }
+                  }}
                   required
                 />
                 {emailError && <p className={styles.fieldError}>{emailError}</p>}
@@ -213,7 +222,7 @@ export function Wizard({ locale, t }: Props) {
               <button
                 className={styles.submitButton}
                 onClick={handleSubmit}
-                disabled={isPending || !name.trim() || !email.trim()}
+                disabled={isPending || !name.trim() || !isValidEmail(email.trim())}
               >
                 {isPending ? '...' : t.step4.submit}
               </button>
