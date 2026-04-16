@@ -7,7 +7,7 @@ import { getLocalizedSlug } from '@/i18n/config';
 import styles from './PageNav.module.css';
 
 const pages = [
-  { slug: 'about', icon: UserFocusIcon, label: { en: 'Who am I', is: 'Hver er ég' } },
+  { slug: 'who-i-am', icon: UserFocusIcon, label: { en: 'Who I am', is: 'Hver ég er' } },
   {
     slug: 'projects',
     icon: RocketIcon,

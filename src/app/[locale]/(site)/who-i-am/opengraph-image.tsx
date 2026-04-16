@@ -5,7 +5,7 @@ export const contentType = ogContentType;
 
 export default async function OgImage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const title = locale === 'is' ? 'Hver er ég' : 'Who am I';
+  const title = locale === 'is' ? 'Hver ég er' : 'Who I am';
   return generateOgImage({
     title,
     gradientFrom: '#8a6b1a',

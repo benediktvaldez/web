@@ -10,7 +10,7 @@ const is: Dictionary = {
     resumeDescription: 'Ferilskrá Benedikts D. Valdez. Full stack stafrænn vöruþróunarmaður.',
   },
   nav: {
-    about: 'Hver er ég',
+    about: 'Hver ég er',
     projects: 'Verkefni',
     thoughts: 'Hugleiðingar',
     resume: 'Ferilskrá',
@@ -21,7 +21,7 @@ const is: Dictionary = {
     taglineLine2: 'forritari og skapari stafrænna upplifana',
   },
   about: {
-    title: 'Hver er ég',
+    title: 'Hver ég er',
     intro: [
       'Ég er forritari með 15 ára reynslu af því að þróa stafrænar vörur og sérstaka ástríðu fyrir fallegum og notendavænum notendaupplifunum.',
       'Ég hóf vefforritunarferilinn árið 2012 á íslenskum vefstofum og gekk síðar til liðs við Form5 þar sem ég vann náið með hönnuði við að skapa margverðlaunaðar upplifanir fyrir viðskiptavini á borð við 66°Norður og Salomon. Þegar Form5 sameinaðist Spretti og myndaði Kolibri, leiddi ég tæknilega framtíðarsýn í framendaþróun og vann með nokkrum af stærstu vörumerkjum Íslands: Icelandair, Bláa lóninu og Íslandsbanka.',
@@ -79,7 +79,7 @@ const is: Dictionary = {
     title: 'Byrjum',
     cta: 'Byrjum á einhverju',
     step1: {
-      heading: 'Hvað ertu að leita að?',
+      heading: 'Hverju ertu að leita að?',
       options: ['Byggja nýja vöru', 'Bæta núverandi lausn', 'Tæknileg ráðgjöf', 'Eitthvað annað'],
     },
     step2: {

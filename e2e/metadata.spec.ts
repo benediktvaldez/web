@@ -15,7 +15,7 @@ test.describe('metadata and SEO', () => {
   });
 
   test('pages have descriptions', async ({ page }) => {
-    const pages = ['/en', '/en/about', '/en/projects', '/en/thoughts', '/en/resume'];
+    const pages = ['/en', '/en/who-i-am', '/en/projects', '/en/thoughts', '/en/resume'];
     for (const path of pages) {
       await page.goto(path);
       const description = await page.getAttribute('meta[name="description"]', 'content');
@@ -24,12 +24,12 @@ test.describe('metadata and SEO', () => {
   });
 
   test('pages have hreflang alternates', async ({ page }) => {
-    await page.goto('/en/about');
+    await page.goto('/en/who-i-am');
     const enAlternate = await page.getAttribute('link[hreflang="en"]', 'href');
     const isAlternate = await page.getAttribute('link[hreflang="is"]', 'href');
 
-    expect(enAlternate).toContain('/en/about');
-    expect(isAlternate).toContain('/is/hver-er-eg');
+    expect(enAlternate).toContain('/en/who-i-am');
+    expect(isAlternate).toContain('/is/hver-eg-er');
   });
 
   test('icelandic pages have correct hreflang', async ({ page }) => {
@@ -55,8 +55,8 @@ test.describe('sitemap and robots', () => {
 
     expect(body).toContain('/en');
     expect(body).toContain('/is');
-    expect(body).toContain('/en/about');
-    expect(body).toContain('/is/hver-er-eg');
+    expect(body).toContain('/en/who-i-am');
+    expect(body).toContain('/is/hver-eg-er');
     expect(body).toContain('/en/projects');
     expect(body).toContain('/is/verkefni');
     expect(body).toContain('/en/resume');

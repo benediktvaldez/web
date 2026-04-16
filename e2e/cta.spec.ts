@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('CTA visibility', () => {
   test('nav has CTA link on inner pages', async ({ page }) => {
-    await page.goto('/en/about');
+    await page.goto('/en/who-i-am');
     const navCta = page
       .getByRole('navigation', { name: 'Main' })
       .getByRole('link', { name: 'Work with me' })
@@ -26,7 +26,7 @@ test.describe('CTA visibility', () => {
   });
 
   test('CTA links to wizard page', async ({ page }) => {
-    await page.goto('/en/about');
+    await page.goto('/en/who-i-am');
     const navCta = page
       .getByRole('navigation', { name: 'Main' })
       .getByRole('link', { name: 'Work with me' })

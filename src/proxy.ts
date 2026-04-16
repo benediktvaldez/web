@@ -44,7 +44,7 @@ export function proxy(request: NextRequest) {
     // Check if this is an Icelandic slug → rewrite to English route name
     const englishRoute = reverseSlugMap[locale]?.[firstSlug];
     if (englishRoute) {
-      // Rewrite internally: /is/hver-er-eg → /is/about (keeps URL as /is/hver-er-eg)
+      // Rewrite internally: /is/hver-eg-er → /is/who-i-am (keeps URL as /is/hver-eg-er)
       const rewrittenPath = `/${locale}/${englishRoute}${restSegments.length > 1 ? '/' + restSegments.slice(1).join('/') : ''}`;
       return NextResponse.rewrite(new URL(rewrittenPath, request.url));
     }
@@ -52,7 +52,7 @@ export function proxy(request: NextRequest) {
     // Check if this is an English slug under a non-English locale → redirect to canonical
     const localizedSlug = slugMap[locale]?.[firstSlug];
     if (localizedSlug) {
-      // Redirect: /is/about → /is/hver-er-eg
+      // Redirect: /is/who-i-am → /is/hver-eg-er
       const canonicalPath = `/${locale}/${localizedSlug}${restSegments.length > 1 ? '/' + restSegments.slice(1).join('/') : ''}`;
       return NextResponse.redirect(new URL(canonicalPath, request.url));
     }

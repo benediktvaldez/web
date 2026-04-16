@@ -1,10 +1,17 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('route rendering', () => {
-  const enPages = ['/en', '/en/about', '/en/projects', '/en/thoughts', '/en/resume', '/en/lets-go'];
+  const enPages = [
+    '/en',
+    '/en/who-i-am',
+    '/en/projects',
+    '/en/thoughts',
+    '/en/resume',
+    '/en/lets-go',
+  ];
   const isPages = [
     '/is',
-    '/is/hver-er-eg',
+    '/is/hver-eg-er',
     '/is/verkefni',
     '/is/hugleidingar',
     '/is/ferilskra',
@@ -37,13 +44,13 @@ test.describe('middleware redirects', () => {
     expect(page.url()).toContain('/en');
   });
 
-  test('/about redirects to /en/about', async ({ page }) => {
-    await page.goto('/about');
-    expect(page.url()).toContain('/en/about');
+  test('/who-i-am redirects to /en/who-i-am', async ({ page }) => {
+    await page.goto('/who-i-am');
+    expect(page.url()).toContain('/en/who-i-am');
   });
 
-  test('/is/about redirects to /is/hver-er-eg', async ({ page }) => {
-    await page.goto('/is/about');
-    expect(page.url()).toContain('/is/hver-er-eg');
+  test('/is/who-i-am redirects to /is/hver-eg-er', async ({ page }) => {
+    await page.goto('/is/who-i-am');
+    expect(page.url()).toContain('/is/hver-eg-er');
   });
 });

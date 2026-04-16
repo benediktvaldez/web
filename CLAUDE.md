@@ -33,7 +33,7 @@ Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `build`, `ci
 ## i18n Architecture
 
 - All pages under `src/app/[locale]/`
-- English routes are canonical; Icelandic uses translated slugs (`/is/hver-er-eg`, `/is/verkefni`, etc.)
+- English routes are canonical; Icelandic uses translated slugs (`/is/hver-eg-er`, `/is/verkefni`, etc.)
 - `src/proxy.ts` handles slug rewriting and locale detection
 - Slug mappings in `src/i18n/config.ts`
 - UI strings in `src/i18n/dictionaries/{en,is}.ts`

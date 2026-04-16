@@ -16,7 +16,7 @@ Using AI well is a skill in itself. Knowing what to delegate, when to override, 
 
 ## The interesting bits
 
-**Bilingual routing with vanity URLs.** Both locales get URL prefixes, but Icelandic routes use translated slugs (`/is/hver-er-eg` not `/is/about`). The slug mappings are defined once in `config.ts` and used everywhere: proxy, navigation, sitemap, `hrefLang` alternates, language switcher. Add a new page and the routing just works.
+**Bilingual routing with vanity URLs.** Both locales get URL prefixes, but Icelandic routes use translated slugs (`/is/hver-eg-er` not `/is/who-i-am`). The slug mappings are defined once in `config.ts` and used everywhere: proxy, navigation, sitemap, `hrefLang` alternates, language switcher. Add a new page and the routing just works.
 
 **Per-page oklch gradients.** Each page sets 4 CSS custom properties and the gradient expression stays the same everywhere. The landing page gradient is hand-tuned in oklab color space and took an unreasonable amount of time to get right. Don't touch it.
 
@@ -52,7 +52,7 @@ src/
   app/
     [locale]/             # All pages nested under locale (en/is)
       (site)/             # Route group for pages with side nav
-        about/            # Who am I
+        who-i-am/         # Who I am
         projects/         # Personal + community work
         thoughts/         # Blog (MDX)
         resume/           # Living resume with print styles
