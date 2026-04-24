@@ -1,6 +1,6 @@
 # valdez.is
 
-Yes, this is a personal website with a CI pipeline, 51 unit tests, 106 end-to-end tests, automated accessibility audits on every page in both languages, bilingual routing with translated URL slugs, middleware that rewrites Icelandic vanity paths, a typed i18n dictionary system, print-optimized resume styles, pre-commit hooks running lint-staged, pre-push hooks that won't let you push broken code, a contact wizard backed by a Postgres database and transactional email, page transitions with gradient cross-fades, micro-animations, and a CSS gradient system driven by custom properties in oklab color space.
+Yes, this is a personal website with a CI pipeline, 51 unit tests, 110 end-to-end tests, automated accessibility audits on every page in both languages, bilingual routing with translated URL slugs, middleware that rewrites Icelandic vanity paths, a typed i18n dictionary system, print-optimized resume styles, pre-commit hooks running lint-staged, pre-push hooks that won't let you push broken code, a contact wizard backed by a Postgres database and transactional email, page transitions with gradient cross-fades, micro-animations, and a CSS gradient system driven by custom properties in oklab color space.
 
 For a site that is just a few pages and a blog.
 
@@ -39,7 +39,7 @@ Using AI well is a skill in itself. Knowing what to delegate, when to override, 
 | Icons      | Phosphor Icons                                         |
 | Content    | TypeScript data files + MDX                            |
 | Unit tests | Vitest (51 tests)                                      |
-| E2E + a11y | Playwright + axe-core (106 tests)                      |
+| E2E + a11y | Playwright + axe-core (110 tests)                      |
 | Database   | Neon Postgres + Drizzle ORM                            |
 | Email      | Resend                                                 |
 | CI/CD      | GitHub Actions, Vercel                                 |
