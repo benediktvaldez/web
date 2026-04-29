@@ -80,7 +80,7 @@ export default async function WritingPostPage({ params }: Props) {
         <li className={`${styles.chip} ${styles.langChip}`}>{currentPost.lang.toUpperCase()}</li>
         {currentPost.tags.map((tag) => (
           <li key={tag} className={styles.chip}>
-            {tag}
+            {tag.replace(/-/g, ' ')}
           </li>
         ))}
       </ul>

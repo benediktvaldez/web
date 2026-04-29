@@ -70,7 +70,7 @@ export default async function WritingPage({ params }: Props) {
                     </li>
                     {post.tags.map((tag) => (
                       <li key={tag} className={styles.chip}>
-                        {tag}
+                        {tag.replace(/-/g, ' ')}
                       </li>
                     ))}
                   </ul>
