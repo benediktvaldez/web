@@ -42,7 +42,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'valdez-is',
-    title: 'valdez.is',
+    title: 'benedikt.valdez.is',
     description:
       'This website. A living resume and personal site built with Next.js 16 App Router, CSS Modules, and per-page oklch gradients. No CMS,content as code.',
     repo: 'https://github.com/benediktvaldez/web',

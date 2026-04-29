@@ -1,4 +1,4 @@
-# valdez.is
+# benedikt.valdez.is
 
 Yes, this is a personal website with a CI pipeline, 51 unit tests, 110 end-to-end tests, automated accessibility audits on every page in both languages, bilingual routing with translated URL slugs, middleware that rewrites Icelandic vanity paths, a typed i18n dictionary system, print-optimized resume styles, pre-commit hooks running lint-staged, pre-push hooks that won't let you push broken code, a contact wizard backed by a Postgres database and transactional email, page transitions with gradient cross-fades, micro-animations, and a CSS gradient system driven by custom properties in oklab color space.
 
@@ -54,7 +54,7 @@ src/
       (site)/             # Route group for pages with side nav
         who-i-am/         # Who I am
         projects/         # Personal + community work
-        thoughts/         # Blog (MDX)
+        writing/          # Blog (MDX)
         resume/           # Living resume with print styles
       lets-go/            # Contact wizard (outside site layout)
       page.tsx            # Landing page
@@ -76,7 +76,7 @@ src/
     getDictionary.ts      # Async dictionary loader
   lib/                    # Fonts, MDX utilities
   proxy.ts                # The brains of the routing operation
-  thoughts/               # MDX blog posts per locale
+  writing/                # MDX blog posts (single flat dir; each post declares its lang)
 ```
 
 ## How a request becomes a page
@@ -85,7 +85,7 @@ Every URL hits the proxy layer first. Depending on what it finds, it either rewr
 
 ```mermaid
 flowchart LR
-    A["valdez.is/is/verkefni"] --> B{Proxy}
+    A["benedikt.valdez.is/is/verkefni"] --> B{Proxy}
     B -->|"Icelandic slug?"| C["Rewrite to /is/projects"]
     B -->|"No locale?"| D["Redirect to /en/..."]
     B -->|"English slug on /is?"| E["Redirect to canonical"]

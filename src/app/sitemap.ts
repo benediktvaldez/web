@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/mdx';
 
-const baseUrl = 'https://valdez.is';
+const baseUrl = 'https://benedikt.valdez.is';
 
 const staticPages = [
   { en: '/en', is: '/is' },

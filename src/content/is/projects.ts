@@ -24,7 +24,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'valdez-is',
-    title: 'valdez.is',
+    title: 'benedikt.valdez.is',
     description:
       'Þessi vefsíða. Lifandi ferilskrá og persónuleg síða byggð með Next.js 16 App Router, CSS Modules og oklch litastigsbreytingum á hverri síðu. Ekkert CMS,efni sem kóði.',
     repo: 'https://github.com/benediktvaldez/web',

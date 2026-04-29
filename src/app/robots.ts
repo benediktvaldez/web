@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://valdez.is/sitemap.xml',
+    sitemap: 'https://benedikt.valdez.is/sitemap.xml',
   };
 }

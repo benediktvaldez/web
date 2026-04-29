@@ -1,4 +1,4 @@
-# valdez.is - Claude Instructions
+# benedikt.valdez.is - Claude Instructions
 
 ## Project Overview
 

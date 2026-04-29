@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { nunito, overpass, outfit } from '@/lib/fonts';
 import './globals.css';
 
-const baseUrl = 'https://valdez.is';
+const baseUrl = 'https://benedikt.valdez.is';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

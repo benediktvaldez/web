@@ -68,7 +68,7 @@ export async function submitInquiry(data: InquiryData) {
             .join('')}
         </table>
         <div style="margin-top:32px;padding-top:16px;border-top:1px solid #eff1f3">
-          <span style="font-size:11px;color:#696773">via valdez.is/lets-go</span>
+          <span style="font-size:11px;color:#696773">via benedikt.valdez.is/lets-go</span>
         </div>
       </div>
     `;
