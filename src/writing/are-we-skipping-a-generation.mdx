@@ -1,0 +1,36 @@
+---
+title: 'Are we skipping a generation?'
+date: '2026-04-29'
+summary: "We're quietly running an experiment on the developer pipeline, and we won't know the results for a while."
+type: 'post'
+lang: 'en'
+tags: ['ai', 'hiring', 'industry-trends', 'career', 'opinion']
+---
+
+# Are we skipping a generation?
+
+The developers who get the most out of AI right now are the experienced ones. That's not controversial. They know when the output is good, when it's subtly wrong, when to push back, when to trust it. They have the context to review it, the instinct to catch its bullshit, and enough hard-earned scar tissue to know which corners can be cut and which absolutely cannot. AI is a force multiplier for them, but the multiplier only works because there's something to multiply.
+
+This creates a hiring dynamic that's worth sitting with. If a senior developer with AI can output what used to take a small team, the economic case for hiring juniors gets harder to make. Why train someone for two years when you can hire one experienced person and hand them a tool that makes them three times more productive? It's a reasonable question, and a lot of companies seem to be quietly answering it by not hiring juniors at all, or hiring far fewer than they used to.
+
+There's a second failure mode happening at the other end of the spectrum, and it's just as concerning. Some companies don't fully understand what experience actually buys them. They see AI output that looks competent and assume that a junior with the same tool will produce comparable work. They optimize for headcount cost over capability, hand new hires an AI assistant, and expect senior-quality output. The code that gets shipped looks fine on the surface, sometimes for months or years, until something breaks in a way nobody on the team understands well enough to fix. By then the original author has moved on, the codebase has accreted a layer of decisions nobody can explain, and the bill comes due.
+
+The cynical-but-savvy companies hoard seniors and skip juniors entirely. The optimistic-but-naive companies hire juniors and assume AI fills the experience gap. One creates a pipeline shortage, the other creates slop that won't surface until later, and both starve the next generation of the conditions they need to actually become senior.
+
+Most of the industry seems to be operating on an unspoken assumption that this is all temporary. AI will keep improving, the reasoning goes, and eventually it will be capable enough that the experience requirement fades. The problem solves itself. Junior developers will either be unnecessary or will be productive from day one because the tools are that good.
+
+That bet might pay off. I'm genuinely not predicting it won't. But it's worth noticing that we've made this bet collectively without ever really having the conversation about it. Every individual company waiting to see how AI shakes out before committing to the cost of training juniors is making a defensible local decision. They're not villains, and frankly I don't blame them. Investing in a two-year apprenticeship for a role that might not exist in its current form by the time they've grown into it is genuinely risky. The problem is that when every company makes that decision simultaneously, the aggregate outcome is a generation that doesn't get to start.
+
+I want to be careful here, because the obvious counterargument is that every generation of developer tooling has been accused of dumbing down the next generation. Higher-level languages, frameworks that abstract away whole categories of problems, even googling your error messages. The fears were mostly overblown. Each time the industry adjusted, and developers got more productive without the world ending.
+
+This time is fundamentally different, and arguably a paradigm shift. The difference lies in the feedback loop, or lack thereof. With every previous abstraction, you still had to write code that worked. The compiler, the runtime, and the tests were unforgiving teachers. You couldn't ship something you didn't understand because it wouldn't run. AI changes that. You can produce code that runs, passes tests (usually tests the AI also wrote), and works well enough to deploy, all without ever understanding why. It might even be subtly wrong in ways nobody catches for months, because it works most of the time and only fails on edge cases nobody thought to check. That's a meaningfully different situation from even googling the syntax or pulling in a framework. You can wing your way through a remarkable amount of work now, and the moment of reckoning, when something breaks and you need to actually understand it, can be deferred indefinitely. Sometimes until production.
+
+Even if AI keeps improving, and I expect it will, I'm not sure that closes this loop. Understanding why something works is a different skill than producing something that works, and those two skills decouple in a way they never have before. The industry might genuinely need fewer people who deeply understand systems in the future, and the senior-with-AI model might be the stable end state. That's possible. But we're betting an entire generation's careers on it being true, and we don't actually know.
+
+What concerns me most is that this is the kind of problem that's invisible until it isn't. The juniors who don't get hired this year and next year and the year after don't show up in any metric. They go do something else, and the industry doesn't notice they're missing until it tries to hire mid-level developers in five years and finds the cohort is half the size it should be. By then the pipeline isn't recoverable on any short timeline, because experience can't be retroactively manufactured. You either invested in people becoming senior, or you didn't, and the gap shows up a decade later in ways that are hard to trace back to the original decision.
+
+I don't have a clean answer for any of this. The current trajectory rests on assumptions about AI's future capability that we're treating as settled, and they're not. The companies betting on AI getting good enough fast enough might be right. The companies skipping juniors might be making a sound long-term decision, but the only way to find out is to run the experiment in real time, with real careers, and see what's left in ten years.
+
+What does the on-ramp look like for the next generation of developers? Who's responsible for building it, if anyone? Are we okay with the answer being nobody?
+
+I'd love to be wrong about this. I'd love for it to turn out that AI gets good enough that the experience question becomes moot, or that the industry self-corrects before the gap becomes visible, or that some new pathway into the profession emerges that none of us can see yet. Any of those would be fine outcomes. What I'm less comfortable with is the version where we don't think about it at all, and just find out.
