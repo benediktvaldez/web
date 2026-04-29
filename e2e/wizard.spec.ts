@@ -30,13 +30,14 @@ test.describe('contact wizard', () => {
     await page.getByText("I'd rather just talk").click();
     await page.getByText('Just exploring').click();
 
-    // Fill name but invalid email
+    // Fill name but invalid email, then blur to trigger validation
     await page.getByPlaceholder('Name').fill('Test');
     await page.getByPlaceholder('Email').fill('not-valid');
-    await page.getByText('Send it').click();
+    await page.getByPlaceholder('Email').blur();
 
-    // Should show validation error
+    // Inline error appears and submit stays disabled
     await expect(page.getByText('Please enter a valid email')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Send it' })).toBeDisabled();
   });
 
   test('back navigation works', async ({ page }) => {
@@ -57,7 +58,7 @@ test.describe('contact wizard', () => {
 
   test('icelandic wizard renders', async ({ page }) => {
     await page.goto('/is/byrjum');
-    await expect(page.getByRole('heading')).toContainText('Hvað ertu að leita að');
+    await expect(page.getByRole('heading')).toContainText('Hverju ertu að leita að');
   });
 
   test('progress dots update on navigation', async ({ page }) => {
