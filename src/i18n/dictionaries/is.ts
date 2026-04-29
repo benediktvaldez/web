@@ -6,13 +6,13 @@ const is: Dictionary = {
     aboutDescription:
       'Full stack stafrænn vöruþróunarmaður með 15 ára reynslu af vefþróun, frá íslenskum vefstofum til alþjóðlegra vörufyrirtækja.',
     projectsDescription: 'Persónuleg verkefni og samfélagsstarf eftir Benedikt D. Valdez.',
-    thoughtsDescription: 'Minnispunktar, hugmyndir og hlutir sem ég hef verið að hugsa um.',
+    writingDescription: 'Minnispunktar, hugmyndir og hlutir sem ég hef verið að hugsa um.',
     resumeDescription: 'Ferilskrá Benedikts D. Valdez. Full stack stafrænn vöruþróunarmaður.',
   },
   nav: {
     about: 'Hver ég er',
     projects: 'Verkefni',
-    thoughts: 'Hugleiðingar',
+    writing: 'Skrif',
     resume: 'Ferilskrá',
   },
   home: {
@@ -58,8 +58,8 @@ const is: Dictionary = {
     visit: 'Heimsækja',
     source: 'Kóði',
   },
-  thoughts: {
-    title: 'Hugleiðingar',
+  writing: {
+    title: 'Skrif',
     intro: 'Minnispunktar, hugmyndir og hlutir sem ég hef verið að hugsa um.',
     empty: 'Ekkert hér ennþá.',
   },

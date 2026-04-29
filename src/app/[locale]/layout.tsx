@@ -1,6 +1,5 @@
 import { locales } from '@/i18n/config';
 import { PageTransition } from '@/components/PageTransition/PageTransition';
-import { PostLocaleRoot } from '@/lib/post-locale-context';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -17,9 +16,7 @@ export default async function LocaleLayout({
 
   return (
     <div lang={locale}>
-      <PostLocaleRoot>
-        <PageTransition>{children}</PageTransition>
-      </PostLocaleRoot>
+      <PageTransition>{children}</PageTransition>
     </div>
   );
 }

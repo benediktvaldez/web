@@ -5,7 +5,7 @@ test.describe('route rendering', () => {
     '/en',
     '/en/who-i-am',
     '/en/projects',
-    '/en/thoughts',
+    '/en/writing',
     '/en/resume',
     '/en/lets-go',
   ];
@@ -13,7 +13,7 @@ test.describe('route rendering', () => {
     '/is',
     '/is/hver-eg-er',
     '/is/verkefni',
-    '/is/hugleidingar',
+    '/is/skrif',
     '/is/ferilskra',
     '/is/byrjum',
   ];
@@ -32,8 +32,8 @@ test.describe('route rendering', () => {
     });
   }
 
-  test('/en/thoughts/hello-world renders', async ({ page }) => {
-    const response = await page.goto('/en/thoughts/hello-world');
+  test('/en/writing/award-winning-ux-at-form5 renders', async ({ page }) => {
+    const response = await page.goto('/en/writing/award-winning-ux-at-form5');
     expect(response?.status()).toBe(200);
   });
 });

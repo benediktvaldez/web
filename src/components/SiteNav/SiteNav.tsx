@@ -20,12 +20,12 @@ const ctaLabels: Record<Locale, string> = {
 const navItems = [
   { slug: 'who-i-am', labelKey: 'about' },
   { slug: 'projects', labelKey: 'projects' },
-  { slug: 'thoughts', labelKey: 'thoughts' },
+  { slug: 'writing', labelKey: 'writing' },
 ] as const;
 
 const navLabels: Record<Locale, Record<string, string>> = {
-  en: { about: 'Who I am', projects: 'Projects', thoughts: 'Thoughts' },
-  is: { about: 'Hver ég er', projects: 'Verkefni', thoughts: 'Hugleiðingar' },
+  en: { about: 'Who I am', projects: 'Projects', writing: 'Writing' },
+  is: { about: 'Hver ég er', projects: 'Verkefni', writing: 'Skrif' },
 };
 
 const iconMap: Record<string, Icon> = {

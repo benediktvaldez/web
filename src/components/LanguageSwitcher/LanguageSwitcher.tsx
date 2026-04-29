@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getLocalizedPath } from '@/i18n/config';
 import type { Locale } from '@/i18n/config';
-import { usePostLocaleMap } from '@/lib/post-locale-context';
 import styles from './LanguageSwitcher.module.css';
 
 interface Props {
@@ -13,10 +12,9 @@ interface Props {
 
 export function LanguageSwitcher({ locale }: Props) {
   const pathname = usePathname();
-  const postSlugMap = usePostLocaleMap();
 
-  const enPath = getLocalizedPath(pathname, 'en', postSlugMap ?? undefined);
-  const isPath = getLocalizedPath(pathname, 'is', postSlugMap ?? undefined);
+  const enPath = getLocalizedPath(pathname, 'en');
+  const isPath = getLocalizedPath(pathname, 'is');
 
   return (
     <nav aria-label="Language" className={styles.switcher}>

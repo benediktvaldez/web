@@ -10,7 +10,7 @@ describe('proxy routing logic', () => {
   });
 
   it('slug maps cover all routes', () => {
-    const expectedRoutes = ['who-i-am', 'projects', 'thoughts', 'resume'];
+    const expectedRoutes = ['who-i-am', 'projects', 'writing', 'resume'];
     for (const locale of Object.keys(slugMap)) {
       for (const route of expectedRoutes) {
         expect(slugMap[locale][route], `missing ${route} in ${locale} slugMap`).toBeTruthy();

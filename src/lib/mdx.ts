@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import type { Locale } from '@/i18n/config';
+import matter from 'gray-matter';
 
 export type PostType = 'post' | 'archive';
+export type PostLang = 'en' | 'is';
 
 export interface PostMeta {
   slug: string;
@@ -10,76 +11,60 @@ export interface PostMeta {
   date: string;
   summary: string;
   type: PostType;
+  lang: PostLang;
+  tags: string[];
+  readingMinutes: number;
   era?: string;
   related?: string;
-  localeSlug?: Record<string, string>;
 }
 
-function getThoughtsDir(locale: Locale): string {
-  return path.join(process.cwd(), 'src/thoughts', locale);
+const WORDS_PER_MINUTE = 225;
+
+function getWritingDir(): string {
+  return path.join(process.cwd(), 'src/writing');
 }
 
-export function getAllPosts(locale: Locale): PostMeta[] {
-  const dir = getThoughtsDir(locale);
-  const fallbackDir = getThoughtsDir('en');
+export function getAllPosts(): PostMeta[] {
+  const dir = getWritingDir();
+  if (!fs.existsSync(dir)) return [];
 
-  // Use locale-specific dir, fall back to English
-  const targetDir = fs.existsSync(dir) ? dir : fallbackDir;
-  if (!fs.existsSync(targetDir)) return [];
-
-  const files = fs.readdirSync(targetDir).filter((f) => f.endsWith('.mdx'));
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.mdx'));
 
   const posts = files.map((filename) => {
     const slug = filename.replace(/\.mdx$/, '');
-    const content = fs.readFileSync(path.join(targetDir, filename), 'utf-8');
-    const meta = parseFrontmatter(content);
+    const raw = fs.readFileSync(path.join(dir, filename), 'utf-8');
+    const { data, content } = matter(raw);
 
-    // Collect locale_* fields into a map
-    const localeSlug: Record<string, string> = {};
-    for (const [key, value] of Object.entries(meta)) {
-      if (key.startsWith('locale_') && value) {
-        localeSlug[key.replace('locale_', '')] = value;
-      }
-    }
+    const lang = data.lang === 'is' ? 'is' : 'en';
+    const tags = Array.isArray(data.tags) ? data.tags.map((t: unknown) => String(t)) : [];
 
     return {
       slug,
-      title: meta.title || slug,
-      date: meta.date || '',
-      summary: meta.summary || '',
-      type: (meta.type as PostType) || 'post',
-      era: meta.era || undefined,
-      related: meta.related || undefined,
-      localeSlug: Object.keys(localeSlug).length > 0 ? localeSlug : undefined,
+      title: typeof data.title === 'string' ? data.title : slug,
+      date: typeof data.date === 'string' ? data.date : '',
+      summary: typeof data.summary === 'string' ? data.summary : '',
+      type: (data.type === 'archive' ? 'archive' : 'post') as PostType,
+      lang: lang as PostLang,
+      tags,
+      readingMinutes: estimateReadingMinutes(content),
+      era: typeof data.era === 'string' ? data.era : undefined,
+      related: typeof data.related === 'string' ? data.related : undefined,
     };
   });
 
   return posts.sort((a, b) => (a.date > b.date ? -1 : 1));
 }
 
-/**
- * Check if a post exists for the given locale, fall back to "en".
- */
-export function getPostLocale(slug: string, locale: Locale): Locale {
-  const localeFile = path.join(getThoughtsDir(locale), `${slug}.mdx`);
-  if (fs.existsSync(localeFile)) return locale;
-  return 'en';
+export function getPostBySlug(slug: string): PostMeta | undefined {
+  return getAllPosts().find((p) => p.slug === slug);
 }
 
-function parseFrontmatter(content: string): Record<string, string> {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
-  if (!match) return {};
-
-  const meta: Record<string, string> = {};
-  for (const line of match[1].split('\n')) {
-    const idx = line.indexOf(':');
-    if (idx === -1) continue;
-    const key = line.slice(0, idx).trim();
-    const value = line
-      .slice(idx + 1)
-      .trim()
-      .replace(/^["']|["']$/g, '');
-    meta[key] = value;
-  }
-  return meta;
+function estimateReadingMinutes(body: string): number {
+  const stripped = body
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/[#>*_~`]/g, ' ');
+  const words = stripped.split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }

@@ -7,7 +7,7 @@ export const slugMap: Record<string, Record<string, string>> = {
   is: {
     'who-i-am': 'hver-eg-er',
     'projects': 'verkefni',
-    'thoughts': 'hugleidingar',
+    'writing': 'skrif',
     'resume': 'ferilskra',
     'lets-go': 'byrjum',
   },
@@ -18,7 +18,7 @@ export const reverseSlugMap: Record<string, Record<string, string>> = {
   is: {
     'hver-eg-er': 'who-i-am',
     'verkefni': 'projects',
-    'hugleidingar': 'thoughts',
+    'skrif': 'writing',
     'ferilskra': 'resume',
     'byrjum': 'lets-go',
   },
@@ -46,11 +46,7 @@ export function getEnglishSlug(slug: string, locale: Locale): string {
  * Build a full localized path.
  * e.g. getLocalizedPath("/en/who-i-am", "is") → "/is/hver-eg-er"
  */
-export function getLocalizedPath(
-  pathname: string,
-  targetLocale: Locale,
-  postSlugMap?: Record<string, string>,
-): string {
+export function getLocalizedPath(pathname: string, targetLocale: Locale): string {
   // Strip current locale prefix
   const segments = pathname.split('/').filter(Boolean);
   const currentLocale = segments[0] as Locale;
@@ -64,11 +60,6 @@ export function getLocalizedPath(
   const englishSlug = currentLocale === 'en' ? rest[0] : getEnglishSlug(rest[0], currentLocale);
   const targetSlug = getLocalizedSlug(englishSlug, targetLocale);
 
-  // Map sub-paths (e.g. blog post slugs) if a mapping is provided
   const subPath = rest.slice(1);
-  if (subPath.length > 0 && postSlugMap?.[targetLocale]) {
-    return `/${targetLocale}/${targetSlug}/${postSlugMap[targetLocale]}`;
-  }
-
   return `/${targetLocale}/${targetSlug}${subPath.length > 0 ? '/' + subPath.join('/') : ''}`;
 }

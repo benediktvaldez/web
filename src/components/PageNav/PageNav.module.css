@@ -65,7 +65,7 @@
   animation: liftTilt 400ms ease-out;
 }
 
-.thoughts:hover > svg {
+.writing:hover > svg {
   animation: wobble 400ms ease-out;
 }
 

@@ -14,9 +14,9 @@ const pages = [
     label: { en: 'Projects', is: 'Verkefni' },
   },
   {
-    slug: 'thoughts',
+    slug: 'writing',
     icon: ChatTeardropDotsIcon,
-    label: { en: 'Thoughts', is: 'Hugleiðingar' },
+    label: { en: 'Writing', is: 'Skrif' },
   },
 ] as const;
 

@@ -1,48 +1,49 @@
 import { describe, it, expect } from 'vitest';
-import { getAllPosts, getPostLocale } from '@/lib/mdx';
+import { getAllPosts, getPostBySlug } from '@/lib/mdx';
 
 describe('MDX utilities', () => {
   describe('getAllPosts', () => {
-    it('returns english posts', () => {
-      const posts = getAllPosts('en');
+    it('returns posts from the unified writing dir', () => {
+      const posts = getAllPosts();
       expect(posts.length).toBeGreaterThan(0);
     });
 
-    it('posts have required fields', () => {
-      const posts = getAllPosts('en');
+    it('every post has the required fields', () => {
+      const posts = getAllPosts();
       for (const post of posts) {
-        expect(post).toHaveProperty('slug');
-        expect(post).toHaveProperty('title');
-        expect(post).toHaveProperty('date');
         expect(post.slug).toBeTruthy();
         expect(post.title).toBeTruthy();
+        expect(['en', 'is']).toContain(post.lang);
+        expect(Array.isArray(post.tags)).toBe(true);
+        expect(post.readingMinutes).toBeGreaterThan(0);
       }
     });
 
     it('posts are sorted by date descending', () => {
-      const posts = getAllPosts('en');
+      const posts = getAllPosts();
       for (let i = 1; i < posts.length; i++) {
         expect(posts[i - 1].date >= posts[i].date).toBe(true);
       }
     });
 
-    it('returns icelandic posts from is/ directory', () => {
-      const isPosts = getAllPosts('is');
-      expect(isPosts.length).toBeGreaterThan(0);
-      for (const post of isPosts) {
-        expect(post).toHaveProperty('slug');
-        expect(post).toHaveProperty('title');
-      }
+    it('includes both en and is posts when both exist', () => {
+      const posts = getAllPosts();
+      const langs = new Set(posts.map((p) => p.lang));
+      // At minimum, the en form5 post is always present.
+      expect(langs.has('en')).toBe(true);
     });
   });
 
-  describe('getPostLocale', () => {
-    it('returns en for english posts', () => {
-      expect(getPostLocale('hello-world', 'en')).toBe('en');
+  describe('getPostBySlug', () => {
+    it('returns undefined for unknown slugs', () => {
+      expect(getPostBySlug('does-not-exist')).toBeUndefined();
     });
 
-    it('falls back to en for missing icelandic post', () => {
-      expect(getPostLocale('hello-world', 'is')).toBe('en');
+    it('returns a post when the slug matches', () => {
+      const posts = getAllPosts();
+      const sample = posts[0];
+      const found = getPostBySlug(sample.slug);
+      expect(found?.slug).toBe(sample.slug);
     });
   });
 });

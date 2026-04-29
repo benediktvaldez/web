@@ -15,7 +15,7 @@ test.describe('metadata and SEO', () => {
   });
 
   test('pages have descriptions', async ({ page }) => {
-    const pages = ['/en', '/en/who-i-am', '/en/projects', '/en/thoughts', '/en/resume'];
+    const pages = ['/en', '/en/who-i-am', '/en/projects', '/en/writing', '/en/resume'];
     for (const path of pages) {
       await page.goto(path);
       const description = await page.getAttribute('meta[name="description"]', 'content');
@@ -61,8 +61,8 @@ test.describe('sitemap and robots', () => {
     expect(body).toContain('/is/verkefni');
     expect(body).toContain('/en/resume');
     expect(body).toContain('/is/ferilskra');
-    expect(body).toContain('/en/thoughts');
-    expect(body).toContain('/is/hugleidingar');
+    expect(body).toContain('/en/writing');
+    expect(body).toContain('/is/skrif');
   });
 
   test('sitemap.xml has hreflang alternates', async ({ page }) => {

@@ -15,8 +15,8 @@ test.describe('site navigation', () => {
       await page.getByLabel('Open menu').click();
     }
 
-    await page.getByRole('link', { name: 'Thoughts' }).first().click();
-    await expect(page).toHaveURL(/\/en\/thoughts/);
+    await page.getByRole('link', { name: 'Writing' }).first().click();
+    await expect(page).toHaveURL(/\/en\/writing/);
   });
 
   test('name link navigates to home (desktop)', async ({ page, isMobile }) => {

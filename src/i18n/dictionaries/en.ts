@@ -4,13 +4,13 @@ const en = {
     aboutDescription:
       'Full stack digital product developer with 15 years of experience building for the web, from Icelandic agencies to international product companies.',
     projectsDescription: 'Personal projects and community work by Benedikt D. Valdez.',
-    thoughtsDescription: 'Notes, ideas, and things on my mind.',
+    writingDescription: 'Notes, ideas, and things on my mind.',
     resumeDescription: 'Resume of Benedikt D. Valdez. Full stack digital product developer.',
   },
   nav: {
     about: 'Who I am',
     projects: 'Projects',
-    thoughts: 'Thoughts',
+    writing: 'Writing',
     resume: 'Resume',
   },
   home: {
@@ -56,8 +56,8 @@ const en = {
     visit: 'Visit',
     source: 'Source',
   },
-  thoughts: {
-    title: 'Thoughts',
+  writing: {
+    title: 'Writing',
     intro: "Notes, ideas, and things I've been thinking about.",
     empty: 'Nothing here yet.',
   },
@@ -117,10 +117,10 @@ export type Dictionary = {
     siteDescription: string;
     aboutDescription: string;
     projectsDescription: string;
-    thoughtsDescription: string;
+    writingDescription: string;
     resumeDescription: string;
   };
-  nav: { about: string; projects: string; thoughts: string; resume: string };
+  nav: { about: string; projects: string; writing: string; resume: string };
   home: { greeting: string; tagline: string; taglineLine2: string };
   about: {
     title: string;
@@ -147,7 +147,7 @@ export type Dictionary = {
     visit: string;
     source: string;
   };
-  thoughts: { title: string; intro: string; empty: string };
+  writing: { title: string; intro: string; empty: string };
   resume: {
     title: string;
     tagline: string;
