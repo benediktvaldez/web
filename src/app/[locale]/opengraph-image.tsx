@@ -39,7 +39,7 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
           fontFamily: 'system-ui, sans-serif',
         }}
       >
-        Benedikt D. Valdez
+        Benedikt Valdez
       </span>
     </div>,
     { ...size },

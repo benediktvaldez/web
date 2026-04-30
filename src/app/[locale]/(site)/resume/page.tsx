@@ -31,7 +31,7 @@ export default async function ResumePage({ params }: Props) {
   return (
     <article className={`${styles.article} stagger`}>
       <header className={styles.header}>
-        <h1 className={styles.name}>Benedikt D. Valdez</h1>
+        <h1 className={styles.name}>Benedikt Valdez</h1>
         <p className={styles.tagline}>{t.resume.tagline}</p>
         <div className={styles.contact}>
           <a href="https://github.com/benediktvaldez">github.com/benediktvaldez</a>

@@ -3,9 +3,9 @@ const en = {
     siteDescription: 'Developer and creator of digital experiences. 15 years building for the web.',
     aboutDescription:
       'Full stack digital product developer with 15 years of experience building for the web, from Icelandic agencies to international product companies.',
-    projectsDescription: 'Personal projects and community work by Benedikt D. Valdez.',
+    projectsDescription: 'Personal projects and community work by Benedikt Valdez.',
     writingDescription: 'Notes, ideas, and things on my mind.',
-    resumeDescription: 'Resume of Benedikt D. Valdez. Full stack digital product developer.',
+    resumeDescription: 'Resume of Benedikt Valdez. Full stack digital product developer.',
   },
   nav: {
     about: 'Who I am',
@@ -15,7 +15,7 @@ const en = {
   },
   home: {
     greeting: 'hi.',
-    tagline: "I'm Benedikt D. Valdez,",
+    tagline: "I'm Benedikt Valdez,",
     taglineLine2: 'a developer and creator of digital experiences',
   },
   about: {

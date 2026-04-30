@@ -7,15 +7,15 @@ const baseUrl = 'https://benedikt.valdez.is';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Benedikt D. Valdez',
-    template: '%s | Benedikt D. Valdez',
+    default: 'Benedikt Valdez',
+    template: '%s | Benedikt Valdez',
   },
   description: 'Developer and creator of digital experiences. 15 years building for the web.',
-  authors: [{ name: 'Benedikt D. Valdez', url: baseUrl }],
-  creator: 'Benedikt D. Valdez',
+  authors: [{ name: 'Benedikt Valdez', url: baseUrl }],
+  creator: 'Benedikt Valdez',
   openGraph: {
     type: 'website',
-    siteName: 'Benedikt D. Valdez',
+    siteName: 'Benedikt Valdez',
     locale: 'en',
   },
   twitter: {
@@ -41,11 +41,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              'name': 'Benedikt D. Valdez',
+              'name': 'Benedikt Valdez',
               'url': baseUrl,
               'author': {
                 '@type': 'Person',
-                'name': 'Benedikt D. Valdez',
+                'name': 'Benedikt Valdez',
                 'url': baseUrl,
                 'jobTitle': 'Full Stack Digital Product Developer',
                 'sameAs': [

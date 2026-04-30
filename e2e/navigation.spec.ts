@@ -22,7 +22,7 @@ test.describe('site navigation', () => {
   test('name link navigates to home (desktop)', async ({ page, isMobile }) => {
     test.skip(!!isMobile, 'Name is hidden on mobile');
     await page.goto('/en/who-i-am');
-    await page.click('text=Benedikt D. Valdez');
+    await page.click('text=Benedikt Valdez');
     await expect(page).toHaveURL(/\/en$/);
   });
 });

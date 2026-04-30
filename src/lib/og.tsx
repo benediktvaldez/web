@@ -44,7 +44,7 @@ export function generateOgImage({ title, gradientFrom, gradientTo }: OgParams) {
           fontFamily: 'system-ui, sans-serif',
         }}
       >
-        Benedikt D. Valdez
+        Benedikt Valdez
       </span>
     </div>,
     { ...ogSize },

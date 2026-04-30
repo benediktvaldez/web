@@ -10,7 +10,7 @@ test.describe('metadata and SEO', () => {
 
     expect(ogTitle).toBeTruthy();
     expect(ogDescription).toBeTruthy();
-    expect(ogSiteName).toBe('Benedikt D. Valdez');
+    expect(ogSiteName).toBe('Benedikt Valdez');
     expect(ogType).toBe('website');
   });
 

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Personal website and living resume for Benedikt D. Valdez. Bilingual (English + Icelandic) with translated URL slugs.
+Personal website and living resume for Benedikt Valdez. Bilingual (English + Icelandic) with translated URL slugs.
 
 ## Tech Stack
 

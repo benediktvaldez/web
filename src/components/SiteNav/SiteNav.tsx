@@ -52,7 +52,7 @@ export function SiteNav({ locale }: Props) {
       <aside className={styles.aside}>
         <nav aria-label="Main" className={styles.nav}>
           <Link href={`/${locale}`} className={styles.name}>
-            Benedikt D. Valdez
+            Benedikt Valdez
           </Link>
           <ul className={styles.links}>
             {links.map(({ href, label }) => (

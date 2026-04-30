@@ -5,9 +5,9 @@ const is: Dictionary = {
     siteDescription: 'Forritari og skapari stafrænna upplifana. 15 ára reynsla af vefþróun.',
     aboutDescription:
       'Full stack stafrænn vöruþróunarmaður með 15 ára reynslu af vefþróun, frá íslenskum vefstofum til alþjóðlegra vörufyrirtækja.',
-    projectsDescription: 'Persónuleg verkefni og samfélagsstarf eftir Benedikt D. Valdez.',
+    projectsDescription: 'Persónuleg verkefni og samfélagsstarf eftir Benedikt Valdez.',
     writingDescription: 'Minnispunktar, hugmyndir og hlutir sem ég hef verið að hugsa um.',
-    resumeDescription: 'Ferilskrá Benedikts D. Valdez. Full stack stafrænn vöruþróunarmaður.',
+    resumeDescription: 'Ferilskrá Benedikts Valdez. Full stack stafrænn vöruþróunarmaður.',
   },
   nav: {
     about: 'Hver ég er',
@@ -17,7 +17,7 @@ const is: Dictionary = {
   },
   home: {
     greeting: 'hæ.',
-    tagline: 'Ég er Benedikt D. Valdez,',
+    tagline: 'Ég er Benedikt Valdez,',
     taglineLine2: 'forritari og skapari stafrænna upplifana',
   },
   about: {

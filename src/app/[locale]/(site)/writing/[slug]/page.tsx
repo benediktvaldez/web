@@ -87,8 +87,8 @@ export default async function WritingPostPage({ params }: Props) {
       <div className={styles.printByline}>
         <p>
           {locale === 'is'
-            ? 'Eftir Benedikt D. Valdez · hi@valdez.is · benedikt.valdez.is'
-            : 'By Benedikt D. Valdez · hi@valdez.is · benedikt.valdez.is'}
+            ? 'Eftir Benedikt Valdez · hi@valdez.is · benedikt.valdez.is'
+            : 'By Benedikt Valdez · hi@valdez.is · benedikt.valdez.is'}
         </p>
       </div>
       <GalleryProvider>
