@@ -102,3 +102,27 @@
     transform 200ms,
     visibility 0ms;
 }
+
+@media (hover: none) {
+  .nav {
+    align-items: flex-start;
+  }
+
+  .tooltip {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0.5rem;
+    transition: none;
+  }
+
+  .link {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .link:hover {
+    transform: none;
+  }
+}
