@@ -14,9 +14,7 @@ export function RecommendationCard({ recommendation: rec, labels }: Props) {
 
   return (
     <blockquote className={styles.card}>
-      <p className={`${styles.quote} ${expanded ? styles.expanded : ''}`}>
-        &ldquo;{rec.quote}&rdquo;
-      </p>
+      <p className={`${styles.quote} ${expanded ? styles.expanded : ''}`}>{rec.quote}</p>
       <button
         className={styles.toggle}
         onClick={() => setExpanded(!expanded)}
@@ -29,7 +27,7 @@ export function RecommendationCard({ recommendation: rec, labels }: Props) {
         <span className={styles.meta}>
           {rec.role}, {rec.company}
         </span>
-        <span className={styles.relation}>{rec.relationship}</span>
+        {rec.relationship && <span className={styles.relation}>{rec.relationship}</span>}
       </footer>
     </blockquote>
   );

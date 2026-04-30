@@ -64,7 +64,6 @@ describe('content validation', () => {
         expect(rec.name).toBeTruthy();
         expect(rec.role).toBeTruthy();
         expect(rec.company).toBeTruthy();
-        expect(rec.relationship).toBeTruthy();
         expect(rec.quote).toBeTruthy();
         expect(rec.quote.length).toBeGreaterThan(50);
       }

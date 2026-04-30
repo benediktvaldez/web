@@ -26,8 +26,8 @@ const is: Dictionary = {
       'Ég er forritari með 15 ára reynslu af því að þróa stafrænar vörur og sérstaka ástríðu fyrir fallegum og notendavænum notendaupplifunum.',
       'Ég hóf vefforritunarferilinn árið 2012 á íslenskum vefstofum og gekk síðar til liðs við Form5 þar sem ég vann náið með hönnuði við að skapa margverðlaunaðar upplifanir fyrir viðskiptavini á borð við 66°Norður og Salomon. Þegar Form5 sameinaðist Spretti og myndaði Kolibri, leiddi ég tæknilega framtíðarsýn í framendaþróun og vann með nokkrum af stærstu vörumerkjum Íslands: Icelandair, Bláa lóninu og Íslandsbanka.',
       'Þaðan færði ég mig yfir í vöruþróunarhlutverk: endurhannaði vefsvæði Össurar fyrir 23 lönd, byggði upp sjálfbærnivettvang hjá Klöppum, tók þátt í að smíða gagnvirkt sjónrænt lag ofan á töflureiknivél GRID og leiði nú nútímavæðingu á tæknivettvangi CookieHub, þar sem við færum okkur frá PHP-monolith yfir í dreifðar TypeScript-örþjónustur.',
-      'Ég hef verið hluti af íslenska vefsamfélaginu, tók þátt í að skipuleggja JSConf Iceland árin 2016 og 2018 og sat í stjórn SVEF, Samtaka vefiðnaðarins. Ég byggði og sá um kosningakerfi fyrir Íslensku vefverðlaunin frá 2018 til 2024.',
-      'Utan CookieHub bý ég til persónuleg verkefni sem leysa mín eigin vandamál, eins og {recipeLink}, verkefnastýringu fyrir saumaskap og fleira.',
+      'Ég hef verið virkur hluti af íslenska vefsamfélaginu í yfir áratug, tók þátt í að skipuleggja JSConf Iceland árin 2016 og 2018 og sat í stjórn SVEF, Samtaka vefiðnaðarins, í þó nokkur ár. Ég byggði og sá um kosningakerfi fyrir Íslensku vefverðlaunin frá 2018 til 2024.',
+      'Utan CookieHub bý ég til persónuleg verkefni sem leyfa mér að spreyta mig á sköpunargleðinni, eins og {recipeLink}, verkefnastýringu fyrir saumaskap og fleira.',
     ],
     recipeLink: 'uppskriftaapp fyrir fjölskylduna',
     currentlyHeading: 'Núna',
@@ -38,10 +38,10 @@ const is: Dictionary = {
     sideProjectsRole: 'Að smíða hluti',
     sideProjectsCompany: 'Aukaverkefni',
     sideProjectsDesc:
-      'Crumbtrail, Fil Rouge Studio, Ólátakjallari. Forrit smíðuð með Next.js og Supabase, þróuð með gervigreindarauknum vinnuferlum.',
+      'Crumbtrail, Fil Rouge Studio, og fleira. Forrit smíðuð með Next.js og Supabase, þróuð með gervigreindarauknum vinnuferlum.',
     contactHeading: 'Hafa samband',
     contactText: 'Finndu mig á {github} eða {linkedin}. Fyrir heildarmyndina, skoðaðu {resume}.',
-    recommendationsHeading: 'Hvað aðrir segja',
+    recommendationsHeading: 'Nokkur falleg orð',
     ctaOptions: [
       'Ertu með verkefni í huga? →',
       'Þarftu forritara? →',

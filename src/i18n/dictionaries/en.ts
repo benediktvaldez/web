@@ -24,8 +24,8 @@ const en = {
       "I'm a full stack digital product developer and crafter of beautiful user interfaces. I'm passionate about creating exceptional user experiences that delight.",
       "I started building for the web in 2012 in the Icelandic agency scene, eventually joining Form5 where I worked side-by-side with a designer creating award-winning experiences for clients like 66°North and Salomon. When Form5 merged with Sprettur to form Kolibri, I led front-end technical vision and worked with some of Iceland's biggest brands: Icelandair, The Blue Lagoon, Íslandsbanki.",
       "From there I moved into product roles: redesigning Össur's web platform across 23 regions, building a sustainability platform at Klappir, building an interactive visualisation layer overtop of GRID's proprietary spreadsheet engine, and currently leading a platform modernization at CookieHub, migrating from a PHP monolith to distributed TypeScript microservices.",
-      "I've been part of the Icelandic web community, co-organizing JSConf Iceland in 2016 and 2018, and serving on the board of SVEF, the Icelandic Web Industry Association. I built and maintained a voting system for the Icelandic Web Awards from 2018 to 2024.",
-      'Outside of CookieHub, I build personal projects that scratch my own itches, like a {recipeLink}, a sewing project manager, and more.',
+      "I've been an active part of the Icelandic web community for over a decade, co-organizing JSConf Iceland in 2016 and 2018, and serving on the board of SVEF, the Icelandic Web Industry Association, for several years. I built and maintained a voting system for the Icelandic Web Awards from 2018 to 2024.",
+      'Outside of CookieHub, I build personal projects that let me flex my creative muscles, like a {recipeLink}, a sewing project manager, and more.',
     ],
     recipeLink: 'family recipe app',
     currentlyHeading: 'Currently',
@@ -36,10 +36,10 @@ const en = {
     sideProjectsRole: 'Building things',
     sideProjectsCompany: 'Side projects',
     sideProjectsDesc:
-      'Crumbtrail, Fil Rouge Studio, Ólátakjallari. Apps built with Next.js and Supabase, developed with AI-augmented workflows.',
+      'Crumbtrail, Fil Rouge Studio, and more. Apps built with Next.js and Supabase, developed with AI-augmented workflows.',
     contactHeading: 'Get in touch',
     contactText: 'Find me on {github} or {linkedin}. For the full picture, check the {resume}.',
-    recommendationsHeading: 'What others say',
+    recommendationsHeading: 'A few good words',
     ctaOptions: [
       'Have a project in mind? →',
       'Need a developer? →',
