@@ -34,7 +34,7 @@ const is: Dictionary = {
     currentRole: 'Senior Digital Product Developer',
     currentCompany: 'CookieHub',
     currentDesc:
-      'Leiði nútímavæðingu kerfisins, flyt úr PHP/Laravel yfir í TypeScript örþjónustur, endurskrifa samþykkisgræjuna í React og byggi greiningar með ClickHouse.',
+      'Leiði endursmíði kerfisins, færi úr PHP/Laravel einliðu yfir í TypeScript örþjónustur á Terraform-stýrðu AWS. Set grunninn fyrir sjálfvirkar prófanir og CI/CD-ferla þvert á þróunarteymið.',
     sideProjectsRole: 'Að smíða hluti',
     sideProjectsCompany: 'Aukaverkefni',
     sideProjectsDesc:

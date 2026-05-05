@@ -32,7 +32,7 @@ const en = {
     currentRole: 'Senior Digital Product Developer',
     currentCompany: 'CookieHub',
     currentDesc:
-      'Leading platform modernization, migrating from PHP/Laravel to TypeScript microservices, rewriting the consent widget in React, and building analytics with ClickHouse.',
+      'Leading the replatforming of a privacy and consent-tech SaaS, taking a PHP/Laravel monolith to TypeScript microservices on Terraform-managed AWS. Defining the testing and CI/CD foundation across the engineering org.',
     sideProjectsRole: 'Building things',
     sideProjectsCompany: 'Side projects',
     sideProjectsDesc:

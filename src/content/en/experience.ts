@@ -13,7 +13,7 @@ export const experience: Experience[] = [
     role: 'Senior Digital Product Developer',
     period: 'Nov 2025 – Present',
     description:
-      'Leading platform modernization at a privacy and consent-tech SaaS, migrating from a PHP/Laravel monolith to distributed TypeScript microservices. Rewrote the customer-facing consent widget from legacy JavaScript to a component-based React system with state machine-driven flows, shadow DOM isolation, and TCF/CCPA framework support. Built schema-first REST APIs using Hono and Drizzle ORM, including a consent analytics service backed by ClickHouse with materialized views. Extended Terraform-managed AWS infrastructure and established CI/CD pipelines across all repositories.',
+      'Leading the replatforming of a privacy and consent-tech SaaS from a PHP/Laravel monolith to distributed TypeScript microservices. Rewrote the customer-facing consent widget from legacy JavaScript to a component-based React system with state machine-driven flows, shadow DOM isolation, and TCF/CCPA framework support. Built schema-first REST APIs using Hono and Drizzle ORM, including a consent analytics service backed by ClickHouse with materialized views. Extended Terraform-managed AWS infrastructure and established CI/CD pipelines across all repositories.',
     tech: [
       'TypeScript',
       'Node.js',
