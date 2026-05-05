@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { loadOgFonts } from '@/lib/og';
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
@@ -6,6 +7,7 @@ export const contentType = 'image/png';
 export default async function OgImage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const greeting = locale === 'is' ? 'hæ.' : 'hi.';
+  const fonts = await loadOgFonts();
 
   return new ImageResponse(
     <div
@@ -17,6 +19,7 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
         alignItems: 'center',
         justifyContent: 'center',
         background: 'linear-gradient(135deg, #bf1313 0%, #370000 100%)',
+        fontFamily: 'Outfit',
       }}
     >
       <span
@@ -24,7 +27,6 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
           fontSize: 120,
           fontWeight: 700,
           color: '#eff1f3',
-          fontFamily: 'system-ui, sans-serif',
         }}
       >
         {greeting}
@@ -36,12 +38,11 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
           color: '#eff1f3',
           opacity: 0.8,
           marginTop: 16,
-          fontFamily: 'system-ui, sans-serif',
         }}
       >
         Benedikt Valdez
       </span>
     </div>,
-    { ...size },
+    { ...size, fonts },
   );
 }
