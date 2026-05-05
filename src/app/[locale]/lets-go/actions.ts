@@ -82,6 +82,24 @@ export async function submitInquiry(data: InquiryData) {
       text: rows.map((r) => `${r.label}: ${r.value}`).join('\n'),
     });
 
+    if (process.env.NTFY_INQUIRY_URL) {
+      try {
+        const who = d.company ? `${d.name} (${d.company})` : d.name;
+        await fetch(process.env.NTFY_INQUIRY_URL, {
+          method: 'POST',
+          headers: {
+            Title: 'New inquiry',
+            Priority: 'default',
+            Tags: 'incoming_envelope',
+            Click: 'mailto:hi@valdez.is',
+          },
+          body: `${who}: ${d.type}`,
+        });
+      } catch {
+        // best-effort, never block submission
+      }
+    }
+
     return { success: true };
   } catch {
     return { success: false, error: 'Failed to submit' };
