@@ -14,6 +14,10 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-pathname', pathname);
+  const passThrough = () => NextResponse.next({ request: { headers: requestHeaders } });
+
   const segments = pathname.split('/').filter(Boolean);
   const firstSegment = segments[0] as string | undefined;
 
@@ -58,7 +62,7 @@ export function proxy(request: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  return passThrough();
 }
 
 export const config = {

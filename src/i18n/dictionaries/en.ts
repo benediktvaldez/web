@@ -110,6 +110,11 @@ const en = {
     back: 'Back',
     error: 'Something went wrong. Please try again.',
   },
+  notFound: {
+    heading: '404',
+    message: "This page doesn't exist. Maybe it never did.",
+    link: 'Take me home',
+  },
 };
 
 export type Dictionary = {
@@ -171,6 +176,7 @@ export type Dictionary = {
     back: string;
     error: string;
   };
+  notFound: { heading: string; message: string; link: string };
 };
 
 export default en;

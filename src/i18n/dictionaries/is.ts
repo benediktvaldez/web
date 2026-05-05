@@ -106,6 +106,11 @@ const is: Dictionary = {
     back: 'Til baka',
     error: 'Eitthvað fór úrskeiðis. Vinsamlegast reyndu aftur.',
   },
+  notFound: {
+    heading: '404',
+    message: 'Þessi síða er ekki til. Kannski var hún aldrei til.',
+    link: 'Heim',
+  },
 };
 
 export default is;
