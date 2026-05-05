@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
 import { getLocalizedSlug } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
+import type { ReactNode } from 'react';
 import { recommendations } from '@/content/recommendations';
 import { RecommendationCard } from '@/components/RecommendationCard/RecommendationCard';
 import styles from './page.module.css';
@@ -26,7 +27,6 @@ export default async function AboutPage({ params }: Props) {
   const t = await getDictionary(locale);
 
   const projectsSlug = getLocalizedSlug('projects', locale);
-  const resumeSlug = getLocalizedSlug('resume', locale);
 
   return (
     <article className={`${styles.article} stagger`}>
@@ -84,7 +84,7 @@ export default async function AboutPage({ params }: Props) {
       <section className={styles.section}>
         <h2 className={styles.sectionHeading}>{t.about.contactHeading}</h2>
         <p className={styles.contactText}>
-          {t.about.contactText.split(/(\{github\}|\{linkedin\}|\{resume\})/).map((part, i) => {
+          {t.about.contactText.split(/(\{github\}|\{linkedin\})/).map((part, i): ReactNode => {
             if (part === '{github}')
               return (
                 <a
@@ -108,12 +108,6 @@ export default async function AboutPage({ params }: Props) {
                 >
                   LinkedIn
                 </a>
-              );
-            if (part === '{resume}')
-              return (
-                <Link key={i} href={`/${locale}/${resumeSlug}`} className={styles.inlineLink}>
-                  {t.nav.resume.toLowerCase()}
-                </Link>
               );
             return part;
           })}

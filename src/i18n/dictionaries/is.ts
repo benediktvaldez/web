@@ -40,7 +40,7 @@ const is: Dictionary = {
     sideProjectsDesc:
       'Crumbtrail, Fil Rouge Studio, og fleira. Forrit smíðuð með Next.js og Supabase, þróuð með gervigreindarauknum vinnuferlum.',
     contactHeading: 'Hafa samband',
-    contactText: 'Finndu mig á {github} eða {linkedin}. Fyrir heildarmyndina, skoðaðu {resume}.',
+    contactText: 'Finndu mig á {github} eða {linkedin}.',
     recommendationsHeading: 'Nokkur falleg orð',
     ctaOptions: [
       'Ertu með verkefni í huga? →',
