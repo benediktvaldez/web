@@ -26,27 +26,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "uploads.valdez.is"
-        }
-      ],
-      "destination": "https://www.dropbox.com/request/hKJ1ABrZGyM6lPy5hCSh"
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "linkedin.valdez.is"
-        }
-      ],
-      "destination": "https://linkedin.com/in/benediktvaldez"
-    }
   ]
 }
