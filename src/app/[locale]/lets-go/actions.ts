@@ -75,7 +75,7 @@ export async function submitInquiry(data: InquiryData) {
 
     await resend.emails.send({
       from: 'valdez.is <noreply@valdez.is>',
-      to: 'hi@valdez.is',
+      to: 'benedikt@valdez.is',
       replyTo: d.email,
       subject: `New inquiry from ${d.name}`,
       html,
@@ -91,7 +91,7 @@ export async function submitInquiry(data: InquiryData) {
             Title: 'New inquiry',
             Priority: 'default',
             Tags: 'incoming_envelope',
-            Click: 'mailto:hi@valdez.is',
+            Click: 'mailto:benedikt@valdez.is',
           },
           body: `${who}: ${d.type}`,
         });

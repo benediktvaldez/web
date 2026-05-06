@@ -3,8 +3,10 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
 import { locales, getLocalizedSlug } from '@/i18n/config';
+import { getDictionary } from '@/i18n/getDictionary';
 import { getAllPosts, getPostBySlug } from '@/lib/mdx';
 import { GalleryProvider } from '@/components/BlogImage/BlogImage';
+import { SubscribeForm } from '@/components/SubscribeForm/SubscribeForm';
 import styles from './page.module.css';
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -33,6 +35,7 @@ export default async function WritingPostPage({ params }: Props) {
   const { locale: l, slug } = await params;
   const locale = l as Locale;
   const writingSlug = getLocalizedSlug('writing', locale);
+  const t = await getDictionary(locale);
 
   const posts = getAllPosts();
   const currentIndex = posts.findIndex((p) => p.slug === slug);
@@ -87,8 +90,8 @@ export default async function WritingPostPage({ params }: Props) {
       <div className={styles.printByline}>
         <p>
           {locale === 'is'
-            ? 'Eftir Benedikt Valdez · hi@valdez.is · benedikt.valdez.is'
-            : 'By Benedikt Valdez · hi@valdez.is · benedikt.valdez.is'}
+            ? 'Eftir Benedikt Valdez · benedikt@valdez.is · benedikt.valdez.is'
+            : 'By Benedikt Valdez · benedikt@valdez.is · benedikt.valdez.is'}
         </p>
       </div>
       <GalleryProvider>
@@ -96,6 +99,9 @@ export default async function WritingPostPage({ params }: Props) {
           <Content components={{ h1: () => null }} />
         </div>
       </GalleryProvider>
+      <div className={styles.subscribeBlock} data-print-hide>
+        <SubscribeForm locale={locale} t={t.subscribe} variant="inline" />
+      </div>
       {nextPost && (
         <div className={styles.nextPost} lang={locale}>
           <span className={styles.nextLabel}>{locale === 'is' ? 'Lestu einnig' : 'Read next'}</span>

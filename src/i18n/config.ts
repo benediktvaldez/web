@@ -10,6 +10,7 @@ export const slugMap: Record<string, Record<string, string>> = {
     'writing': 'skrif',
     'resume': 'ferilskra',
     'lets-go': 'byrjum',
+    'subscribe': 'askrift',
   },
 };
 
@@ -21,6 +22,7 @@ export const reverseSlugMap: Record<string, Record<string, string>> = {
     'skrif': 'writing',
     'ferilskra': 'resume',
     'byrjum': 'lets-go',
+    'askrift': 'subscribe',
   },
 };
 

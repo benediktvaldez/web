@@ -115,6 +115,59 @@ const en = {
     message: "This page doesn't exist. Maybe it never did.",
     link: 'Take me home',
   },
+  subscribe: {
+    title: 'Subscribe',
+    metaDescription: 'A monthly note from Benedikt. Once a month, never more, sometimes less.',
+    pageIntro:
+      "Once a month I send a short note rounding up whatever I've published. Never more often, sometimes less. Unsubscribe any time.",
+    heading: 'A monthly note',
+    inlineHeading: 'Get the next one in your inbox',
+    intro: 'Once a month, sometimes less. Never more.',
+    emailLabel: 'Email address',
+    emailPlaceholder: 'you@example.com',
+    submit: 'Subscribe',
+    invalidEmail: 'Please enter a valid email address',
+    error: 'Something went wrong. Please try again.',
+    privacy: 'Just the monthly note. Unsubscribe any time.',
+    successHeading: 'Almost there',
+    successBody: 'Check your inbox to confirm.',
+    confirmSuccessHeading: "You're in",
+    confirmSuccessBody: "I'll write again soon.",
+    confirmExpiredHeading: 'Link expired',
+    confirmExpiredBody: 'Subscribe again to get a fresh link.',
+    confirmInvalidHeading: 'Link not valid',
+    confirmInvalidBody: 'It may have already been used or copied incorrectly.',
+    unsubscribeHeading: "You're unsubscribed",
+    unsubscribeBody: 'Sorry to see you go.',
+    resubscribe: 'Subscribe again',
+    toWriting: 'See what I write',
+    confirmEmail: {
+      subject: "Confirm your subscription to Benedikt's writing",
+      preview: 'One click to start receiving the monthly note.',
+      heading: 'Confirm your subscription',
+      body: 'Click the button below to confirm and start getting the monthly note from me.',
+      button: 'Confirm subscription',
+      fallback: 'If the button does not work, paste this link into your browser:',
+      footer: "If you did not request this, ignore this email and you won't hear from me again.",
+    },
+    issueEmail: {
+      unsubscribeLabel: 'Unsubscribe',
+      siteLabel: 'You are getting this because you subscribed at benedikt.valdez.is.',
+    },
+    survey: {
+      leadIn: 'Mind sharing why? Totally optional.',
+      submit: 'Send',
+      noThanks: 'No thanks',
+      thankYou: 'Thanks for letting me know.',
+      otherPlaceholder: 'Anything you want to add (optional)',
+      reasons: {
+        inboxCleanup: 'Just cleaning up my inbox',
+        notForMe: "The content isn't quite for me",
+        accidental: 'I subscribed by accident',
+        other: 'Something else (tell me?)',
+      },
+    },
+  },
 };
 
 export type Dictionary = {
@@ -177,6 +230,58 @@ export type Dictionary = {
     error: string;
   };
   notFound: { heading: string; message: string; link: string };
+  subscribe: {
+    title: string;
+    metaDescription: string;
+    pageIntro: string;
+    heading: string;
+    inlineHeading: string;
+    intro: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    submit: string;
+    invalidEmail: string;
+    error: string;
+    privacy: string;
+    successHeading: string;
+    successBody: string;
+    confirmSuccessHeading: string;
+    confirmSuccessBody: string;
+    confirmExpiredHeading: string;
+    confirmExpiredBody: string;
+    confirmInvalidHeading: string;
+    confirmInvalidBody: string;
+    unsubscribeHeading: string;
+    unsubscribeBody: string;
+    resubscribe: string;
+    toWriting: string;
+    confirmEmail: {
+      subject: string;
+      preview: string;
+      heading: string;
+      body: string;
+      button: string;
+      fallback: string;
+      footer: string;
+    };
+    issueEmail: {
+      unsubscribeLabel: string;
+      siteLabel: string;
+    };
+    survey: {
+      leadIn: string;
+      submit: string;
+      noThanks: string;
+      thankYou: string;
+      otherPlaceholder: string;
+      reasons: {
+        inboxCleanup: string;
+        notForMe: string;
+        accidental: string;
+        other: string;
+      };
+    };
+  };
 };
 
 export default en;

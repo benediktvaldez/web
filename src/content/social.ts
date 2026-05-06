@@ -20,7 +20,7 @@ export const socialLinks: SocialLinkData[] = [
   },
   {
     name: 'Email',
-    href: 'mailto:hi@valdez.is',
+    href: 'mailto:benedikt@valdez.is',
     iconName: 'EnvelopeSimple',
     external: false,
   },

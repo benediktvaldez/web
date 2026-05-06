@@ -4,6 +4,7 @@ import type { Locale } from '@/i18n/config';
 import { getLocalizedSlug } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
 import { getAllPosts } from '@/lib/mdx';
+import { SubscribeForm } from '@/components/SubscribeForm/SubscribeForm';
 import styles from './page.module.css';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -80,6 +81,10 @@ export default async function WritingPage({ params }: Props) {
           ))}
         </ul>
       )}
+
+      <div className={styles.subscribeBlock}>
+        <SubscribeForm locale={locale} t={t.subscribe} variant="block" />
+      </div>
     </section>
   );
 }
