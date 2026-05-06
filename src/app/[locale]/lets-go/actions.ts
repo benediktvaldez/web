@@ -82,18 +82,22 @@ export async function submitInquiry(data: InquiryData) {
       text: rows.map((r) => `${r.label}: ${r.value}`).join('\n'),
     });
 
-    if (process.env.NTFY_INQUIRY_URL) {
+    if (process.env.NTFY_INQUIRY_URL && process.env.NTFY_INQUIRY_TOKEN) {
       try {
         const who = d.company ? `${d.name} (${d.company})` : d.name;
+        const summary = d.details
+          ? `${d.type}\n${d.details.slice(0, 140)}${d.details.length > 140 ? '…' : ''}`
+          : d.type;
         await fetch(process.env.NTFY_INQUIRY_URL, {
           method: 'POST',
           headers: {
-            Title: 'New inquiry',
+            Authorization: `Bearer ${process.env.NTFY_INQUIRY_TOKEN}`,
+            Title: `New inquiry from ${who}`,
             Priority: 'default',
             Tags: 'incoming_envelope',
             Click: 'mailto:benedikt@valdez.is',
           },
-          body: `${who}: ${d.type}`,
+          body: summary,
         });
       } catch {
         // best-effort, never block submission
