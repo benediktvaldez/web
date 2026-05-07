@@ -50,7 +50,9 @@ export function proxy(request: NextRequest) {
     if (englishRoute) {
       // Rewrite internally: /is/hver-eg-er → /is/who-i-am (keeps URL as /is/hver-eg-er)
       const rewrittenPath = `/${locale}/${englishRoute}${restSegments.length > 1 ? '/' + restSegments.slice(1).join('/') : ''}`;
-      return NextResponse.rewrite(new URL(rewrittenPath, request.url));
+      const rewrittenUrl = new URL(rewrittenPath, request.url);
+      rewrittenUrl.search = request.nextUrl.search;
+      return NextResponse.rewrite(rewrittenUrl);
     }
 
     // Check if this is an English slug under a non-English locale → redirect to canonical
@@ -58,7 +60,9 @@ export function proxy(request: NextRequest) {
     if (localizedSlug) {
       // Redirect: /is/who-i-am → /is/hver-eg-er
       const canonicalPath = `/${locale}/${localizedSlug}${restSegments.length > 1 ? '/' + restSegments.slice(1).join('/') : ''}`;
-      return NextResponse.redirect(new URL(canonicalPath, request.url));
+      const canonicalUrl = new URL(canonicalPath, request.url);
+      canonicalUrl.search = request.nextUrl.search;
+      return NextResponse.redirect(canonicalUrl);
     }
   }
 
