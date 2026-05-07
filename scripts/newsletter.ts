@@ -178,6 +178,7 @@ async function main() {
 
   for (const r of recipients) {
     const unsubscribeUrl = `${siteUrl}/${issue.locale}/subscribe/unsubscribe?token=${encodeURIComponent(r.unsubscribeToken)}`;
+    const listUnsubscribeUrl = `${siteUrl}/api/unsubscribe?token=${encodeURIComponent(r.unsubscribeToken)}&locale=${issue.locale}`;
     const html = await render(
       NewsletterIssue({
         locale: issue.locale,
@@ -214,7 +215,7 @@ async function main() {
         html,
         text,
         headers: {
-          'List-Unsubscribe': `<${unsubscribeUrl}>`,
+          'List-Unsubscribe': `<${listUnsubscribeUrl}>`,
           'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
         },
       });
