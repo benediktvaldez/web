@@ -74,4 +74,47 @@ test.describe('contact wizard', () => {
     // Should now have 2 active dots
     await expect(activeDots).toHaveCount(2);
   });
+
+  test('emits umami events as the user steps through', async ({ page }) => {
+    // Stub window.umami before any page script runs so the wrapper records calls
+    // even when NEXT_PUBLIC_UMAMI_WEBSITE_ID is unset in CI.
+    await page.addInitScript(() => {
+      const calls: Array<{ event: string; props: Record<string, string> }> = [];
+      (window as unknown as { __umamiCalls: typeof calls }).__umamiCalls = calls;
+      (window as unknown as { umami: unknown }).umami = {
+        track: (event: string, props: Record<string, string>) => calls.push({ event, props }),
+      };
+    });
+
+    await page.goto('/en/lets-go');
+    await page.getByText('Build a new product').click();
+    await page.getByText("I'd rather just talk").click();
+    await page.getByText('Just exploring').click();
+
+    const calls = await page.evaluate(
+      () =>
+        (
+          window as unknown as {
+            __umamiCalls: Array<{ event: string; props: Record<string, string> }>;
+          }
+        ).__umamiCalls,
+    );
+
+    const wizardSteps = calls.filter((c) => c.event === 'wizard_step');
+    expect(wizardSteps.length).toBeGreaterThanOrEqual(2);
+
+    // First beacon (mount) is the 'type' step in English
+    expect(wizardSteps[0].props).toMatchObject({ step: 'type', locale: 'en' });
+
+    // Stepping through advances to 'contact' eventually
+    const stepNames = wizardSteps.map((c) => c.props.step);
+    expect(stepNames).toContain('contact');
+
+    // PII never leaks into events
+    for (const c of calls) {
+      for (const key of ['name', 'email', 'company', 'details']) {
+        expect(c.props).not.toHaveProperty(key);
+      }
+    }
+  });
 });

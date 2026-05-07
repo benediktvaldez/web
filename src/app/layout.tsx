@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { nunito, overpass, outfit } from '@/lib/fonts';
 import './globals.css';
+
+const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
 
 const baseUrl = 'https://benedikt.valdez.is';
 
@@ -60,6 +64,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         {children}
+        {umamiWebsiteId && (
+          <Script
+            src="https://stats.valdez.is/stats.js"
+            data-website-id={umamiWebsiteId}
+            strategy="afterInteractive"
+          />
+        )}
+        <SpeedInsights />
       </body>
     </html>
   );

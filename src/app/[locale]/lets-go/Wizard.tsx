@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useTransition } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/dictionaries/en';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher/LanguageSwitcher';
+import { WIZARD_STEPS, trackInquirySubmitted, trackWizardStep } from '@/lib/analytics';
 import { submitInquiry } from './actions';
 import styles from './page.module.css';
 
@@ -26,8 +27,18 @@ export function Wizard({ locale, t }: Props) {
   const [showSummary, setShowSummary] = useState(false);
   const [isPending, startTransition] = useTransition();
 
-  const advance = () => setStep((s) => s + 1);
-  const back = () => setStep((s) => Math.max(0, s - 1));
+  useEffect(() => {
+    trackWizardStep('type', locale);
+  }, [locale]);
+
+  const goTo = (next: number) => {
+    setStep(next);
+    if (next >= 0 && next < WIZARD_STEPS.length) {
+      trackWizardStep(WIZARD_STEPS[next], locale);
+    }
+  };
+  const advance = () => goTo(step + 1);
+  const back = () => goTo(Math.max(0, step - 1));
 
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
@@ -56,6 +67,7 @@ export function Wizard({ locale, t }: Props) {
         locale,
       });
       if (result.success) {
+        trackInquirySubmitted(locale, type, timeline);
         advance();
       } else {
         setError(t.error);
@@ -242,7 +254,15 @@ export function Wizard({ locale, t }: Props) {
       </div>
 
       {step < 4 && (
-        <Link href={`/${locale}`} className={styles.dismiss}>
+        <Link
+          href={`/${locale}`}
+          className={styles.dismiss}
+          onClick={() =>
+            trackWizardStep('dismissed', locale, {
+              atStep: WIZARD_STEPS[step] ?? 'unknown',
+            })
+          }
+        >
           {locale === 'is' ? 'Bara að skoða' : 'Just browsing'}
         </Link>
       )}
