@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { locales, defaultLocale, slugMap, reverseSlugMap } from '@/i18n/config';
 import type { Locale } from '@/i18n/config';
+import { buildCspPolicy, generateCspNonce } from '@/lib/csp';
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -14,9 +15,19 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  const nonce = generateCspNonce();
+  const cspPolicy = buildCspPolicy(nonce);
+
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-pathname', pathname);
-  const passThrough = () => NextResponse.next({ request: { headers: requestHeaders } });
+  requestHeaders.set('x-csp-nonce', nonce);
+
+  const stampCsp = (response: NextResponse) => {
+    response.headers.set('Content-Security-Policy-Report-Only', cspPolicy);
+    return response;
+  };
+
+  const passThrough = () => stampCsp(NextResponse.next({ request: { headers: requestHeaders } }));
 
   const segments = pathname.split('/').filter(Boolean);
   const firstSegment = segments[0] as string | undefined;

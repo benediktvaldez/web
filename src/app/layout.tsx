@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Script from 'next/script';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { nunito, overpass, outfit } from '@/lib/fonts';
@@ -31,7 +32,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // CSP nonce is generated per-request in proxy.ts and forwarded via this
+  // header. Inline <script> tags must carry it; otherwise CSP (Report-Only
+  // for now) reports a violation.
+  const headersList = await headers();
+  const nonce = headersList.get('x-csp-nonce') ?? undefined;
+
   return (
     <html
       lang="en"
@@ -41,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <script
           type="application/ld+json"
+          nonce={nonce}
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
@@ -69,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             src="https://stats.valdez.is/stats.js"
             data-website-id={umamiWebsiteId}
             strategy="afterInteractive"
+            nonce={nonce}
           />
         )}
         <SpeedInsights />
