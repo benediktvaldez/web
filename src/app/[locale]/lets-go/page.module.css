@@ -414,3 +414,13 @@
     right: 1rem;
   }
 }
+
+/* Honeypot — hidden from humans + assistive tech, visible to dumb bots. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}

@@ -10,6 +10,8 @@ const inquirySchema = z.object({
   email: z.string().email(),
   company: z.string().optional().default(''),
   locale: z.string().min(2).max(2),
+  honeypot: z.string().optional().default(''),
+  mountedAt: z.number().optional(),
 });
 
 describe('inquiry validation', () => {
@@ -98,6 +100,34 @@ describe('inquiry validation', () => {
       expect(result.data.details).toBe('');
       expect(result.data.timeline).toBe('');
       expect(result.data.company).toBe('');
+      expect(result.data.honeypot).toBe('');
+      expect(result.data.mountedAt).toBeUndefined();
     }
+  });
+
+  it('accepts anti-spam fields when present', () => {
+    const result = inquirySchema.safeParse({
+      type: 'Build a new product',
+      name: 'Test',
+      email: 'test@example.com',
+      locale: 'en',
+      honeypot: '',
+      mountedAt: 1700000000000,
+    });
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.mountedAt).toBe(1700000000000);
+    }
+  });
+
+  it('rejects non-numeric mountedAt', () => {
+    const result = inquirySchema.safeParse({
+      type: 'Build a new product',
+      name: 'Test',
+      email: 'test@example.com',
+      locale: 'en',
+      mountedAt: 'not-a-number',
+    });
+    expect(result.success).toBe(false);
   });
 });

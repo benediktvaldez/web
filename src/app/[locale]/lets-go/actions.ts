@@ -15,7 +15,15 @@ const inquirySchema = z.object({
   email: z.string().email(),
   company: z.string().optional().default(''),
   locale: z.string().min(2).max(2),
+  // Anti-spam (client-supplied, server-validated).
+  honeypot: z.string().optional().default(''),
+  mountedAt: z.number().optional(),
 });
+
+// Minimum interaction time before a submission is considered human-paced.
+// Real users take seconds to fill the contact step; bots fire the action
+// almost instantly after page load.
+const MIN_FILL_TIME_MS = 3000;
 
 export type InquiryData = z.infer<typeof inquirySchema>;
 
@@ -23,6 +31,17 @@ export async function submitInquiry(data: InquiryData) {
   const parsed = inquirySchema.safeParse(data);
   if (!parsed.success) {
     return { success: false, error: 'Invalid data' };
+  }
+
+  // Anti-spam: silently fake-success so bots don't learn what tripped them.
+  // - Honeypot filled    → almost certainly a bot
+  // - Submitted < 3s after mount → too fast for a human to read + fill
+  const honeypotFilled = parsed.data.honeypot.trim().length > 0;
+  const tooFast =
+    typeof parsed.data.mountedAt === 'number' &&
+    Date.now() - parsed.data.mountedAt < MIN_FILL_TIME_MS;
+  if (honeypotFilled || tooFast) {
+    return { success: true };
   }
 
   try {

@@ -25,7 +25,13 @@ export function Wizard({ locale, t }: Props) {
   const [error, setError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [showSummary, setShowSummary] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
   const [isPending, startTransition] = useTransition();
+
+  // Anti-spam: capture mount time so the server can reject submissions that
+  // arrive impossibly fast (typical bot behaviour). useState's lazy init runs
+  // exactly once at mount.
+  const [mountedAt] = useState(() => Date.now());
 
   useEffect(() => {
     trackWizardStep('type', locale);
@@ -65,6 +71,8 @@ export function Wizard({ locale, t }: Props) {
         email: email.trim(),
         company: company.trim(),
         locale,
+        honeypot,
+        mountedAt,
       });
       if (result.success) {
         trackInquirySubmitted(locale, type, timeline);
@@ -193,6 +201,17 @@ export function Wizard({ locale, t }: Props) {
                 placeholder={t.step4.company}
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
+              />
+              {/* Honeypot — hidden from humans, attractive to dumb bots. */}
+              <input
+                className={styles.honeypot}
+                type="text"
+                name="company_url"
+                tabIndex={-1}
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                aria-hidden="true"
               />
               {error && <p className={styles.error}>{error}</p>}
             </div>
