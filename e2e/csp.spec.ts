@@ -12,7 +12,17 @@ test.describe('CSP', () => {
   // response bodies retain the attribute and let us cross-check against the
   // CSP header.
 
-  for (const path of ['/en', '/en/who-i-am', '/en/projects', '/en/lets-go', '/is']) {
+  // Note: '/is/hver-eg-er' exercises the proxy *rewrite* path (Icelandic slug
+  // → English route name internally). Easy to forget to stamp CSP on rewrites.
+  for (const path of [
+    '/en',
+    '/en/who-i-am',
+    '/en/projects',
+    '/en/lets-go',
+    '/is',
+    '/is/hver-eg-er',
+    '/is/byrjum',
+  ]) {
     test(`${HEADER} header is set on ${path}`, async ({ request }) => {
       const response = await request.get(path);
       expect(response.status()).toBeLessThan(400);

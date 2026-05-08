@@ -63,7 +63,7 @@ export function proxy(request: NextRequest) {
       const rewrittenPath = `/${locale}/${englishRoute}${restSegments.length > 1 ? '/' + restSegments.slice(1).join('/') : ''}`;
       const rewrittenUrl = new URL(rewrittenPath, request.url);
       rewrittenUrl.search = request.nextUrl.search;
-      return NextResponse.rewrite(rewrittenUrl);
+      return stampCsp(NextResponse.rewrite(rewrittenUrl, { request: { headers: requestHeaders } }));
     }
 
     // Check if this is an English slug under a non-English locale → redirect to canonical
